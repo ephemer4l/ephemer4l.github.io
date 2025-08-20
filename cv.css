@@ -1,0 +1,108 @@
+body {
+    background: #1a1c2b;
+    color: #d8dce6;
+    margin: 0 20px 200px 20px;
+    font-family: monospace, "Garamond", Georgia, serif, 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji';
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1200px; /* Wider to fit columns */
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    font-family: monospace, "Fira Sans", sans;
+    padding-bottom: 20pt;
+}
+header h1 {
+    font-size: 30pt;
+    margin-bottom: 0;
+    color: #82aaff;
+}
+header h2 {
+    margin-top: 0;
+    font-style: italic;
+    padding: .5em;
+    color: #89ddff;
+}
+
+/* Multi-column grid */
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    gap: 30px; /* Space between columns */
+}
+
+h2 {
+    color: #89ddff;
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    grid-column: 1 / -1; /* Span full width */
+}
+h3 {
+    color: tan;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+p, dd, li {
+    margin-bottom: 0.8em;
+}
+
+dl dt {
+    font-weight: bold;
+    color: wheat;
+    margin-top: 1em;
+}
+dl dd {
+    margin-left: 20px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+a {
+    color: #33bbff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    color: #c792ea;
+}
+
+.crypto {
+    font-size: x-small;
+}
+
+footer {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    text-align: left;
+    grid-column: 1 / -1; /* Span full width */
+}
+
+.lw {
+    max-height: .8em;
+    max-width: 1em;
+    vertical-align: middle;
+}
+
+sup {
+    vertical-align: top;
+    font-size: 0.6em;
+}
+
+/* Collapse to single column on smaller screens */
+@media (max-width: 800px) {
+    article {
+        grid-template-columns: 1fr;
+    }
+}
