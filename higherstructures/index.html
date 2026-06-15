@@ -1896,6 +1896,12 @@
                     }
                 }
             });
+
+            // --- TAB PERSISTENCE INITIALIZATION ---
+            const savedTab = localStorage.getItem('activeGroupTab');
+            if (savedTab && document.getElementById(savedTab)) {
+                openTab(null, savedTab);
+            }
         });
 
         // --- GLOBAL INTERFACE CONTROLS ---
@@ -1919,6 +1925,9 @@
                 const btn = document.querySelector(`.tab-button[onclick*="'${tabId}'"]`);
                 if (btn) btn.classList.add("active");
             }
+
+            // Store active tab locally
+            localStorage.setItem('activeGroupTab', tabId);
         }
 
         window.filterFromMember = function(event, category) {
