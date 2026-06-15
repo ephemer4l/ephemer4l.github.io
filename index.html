@@ -1,63 +1,512 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>ephemer4l</title>
-	<link rel="canonical" href="https://ephemer4l.me/">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" href="favicon.ico">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="index, follow">
-	<meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Efe İzbudak - Mathematics and Cryptography Researcher">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ephemer4l.me/">
+    
+    <title>Efe İzbudak | ephemer4l</title>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" async></script>
+
+    <style>
+        :root {
+            /* Light Theme */
+            --bg-color: #fdfdfc;
+            --text-main: #222222;
+            --text-muted: #555555;
+            --accent-color: #990000;
+            --accent-hover: #cc0000;
+            --border-color: #e0e0e0;
+            --code-bg: #f4f4f4;
+            --card-bg: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark Theme */
+                --bg-color: #121212;
+                --text-main: #e0e0e0;
+                --text-muted: #999999;
+                --accent-color: #ff6b6b;
+                --accent-hover: #ff8787;
+                --border-color: #333333;
+                --code-bg: #1e1e1e;
+                --card-bg: #1a1a1a;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
+            font-weight: normal;
+            color: var(--text-main);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 0.2rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .lead-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .links-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .link-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            text-decoration: none !important;
+        }
+
+        .link-badge:hover {
+            border-color: var(--accent-color);
+            background: var(--code-bg);
+            transform: translateY(-1px);
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .entry-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .entry-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .entry-desc {
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .pub-item {
+            margin-bottom: 1.2rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .pub-item:hover {
+            border-left-color: var(--accent-color);
+        }
+
+        .pub-title {
+            font-weight: bold;
+            display: block;
+        }
+
+        .pub-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .pub-links {
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+            display: block;
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-card p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            word-break: break-all;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .crypto-box {
+            display: inline-block;
+            text-align: left;
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+            max-width: 100%;
+        }
+
+        .crypto-box img {
+            vertical-align: middle;
+            height: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .entry-header {
+                flex-direction: column;
+            }
+            .entry-meta {
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
+
 <main>
-<a href="https://ephemer4l.me/"><header>
-	<h1 id="mainlink">Efe İzbudak</h1>
-</header></a>
-<article>
-<!-- <h2 id="introduction">Introduction</h2> -->
+    <header class="profile-header">
+        <img src="https://avatars.githubusercontent.com/u/102478867?v=4" alt="Efe İzbudak" class="profile-img">
+        <div class="profile-info">
+            <a href="https://ephemer4l.me/" style="text-decoration: none;">
+                <h1>Efe İzbudak</h1>
+            </a>
+            <p class="lead-text">
+                BSc Student in Mathematics at Middle East Technical University.<br>
+                <strong>Interests:</strong> Higher structures, derived geometry, lattice-based cryptography, and homomorphic encryption.
+            </p>
+            
+            <div class="links-grid">
+                <a href="cv.pdf" class="link-badge">📜 Curriculum Vitae</a>
+                <a href="mailto:efe@liberior.org" class="link-badge">📧 efe@liberior.org</a>
+                <a href="https://github.com/ephemer4l" class="link-badge" target="_blank" rel="noopener">💻 GitHub</a>
+                <a href="https://pixelfed.social/@ephemer4l" class="link-badge" target="_blank" rel="noopener">📷 Pixelfed</a>
+            </div>
+        </div>
+    </header>
 
-<figure class="resright"><img src="https://avatars.githubusercontent.com/u/102478867?v=4" title="Efe" height="500"></figure>
+    <section>
+        <h2>Education & Research</h2>
+        <ul class="entry-list">
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title"><a href="https://metu.edu.tr" target="_blank">Middle East Technical University</a></span>
+                    <span class="entry-meta">Aug 2022 – Jul 2026 | Ankara, TR</span>
+                </div>
+                <div class="entry-desc">
+                    BSc in Mathematics (GPA: 4.00/4.00).<br>
+                    <strong>Higher Structures Group:</strong> Investigating shifted contact structures on derived stacks with Kadri İlker Berktav (Mar 2026 – Current).
+                </div>
+            </li>
 
-<!-- <p>Hi there. I'm <code>ephemer4l</code>. Thanks for stopping by.</p> -->
-<!-- <ul> -->
-<!-- <li><a href="cv.pdf">📜 Curriculum Vitae</a></li> -->
-<!-- <li><a href="mailto:ephemer4l@liberior.org">📧 Contact</a></li> -->
-<!-- <li><a href="https://pixelfed.social/@ephemer4l">📷 Pixelfed</a></li> -->
-<!-- </ul> -->
-<a href="cv.pdf">📜 Curriculum Vitae</a>
-<br>
-<a href="mailto:ephemer4l@liberior.org">📧 Contact</a>
-<br>
-<a href="https://pixelfed.social/@ephemer4l">📷 Pixelfed</a>
-<br>
-<!-- <h2 id="posts">Posts</h2> -->
-<ul>
-</ul>
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title"><a href="https://sabanciuniv.edu" target="_blank">Sabanci University</a> & <a href="https://www.encryptonlabs.com/" target="_blank">enCRYPTON Labs</a></span>
+                    <span class="entry-meta">Aug 2024 – Current | İstanbul, TR</span>
+                </div>
+                <div class="entry-desc">
+                    <strong>Cryptography and Information Security Group:</strong> Analysis of algebraic and approximation-theoretic techniques for homomorphic encryption scheme optimization. Exploring client-efficient fully homomorphic encryption paradigms. <br>
+                    <strong>PURE Program (Summers 2024, 2025):</strong> Developed accelerators for HE. Implemented CKKS bootstrapping, GPU-accelerated algorithms, and supervised undergraduate implementation of TFHE. Supervised by Erkay Savaş. 
+                    (<a href="https://ephemer4l.me/reports/PURE_Final_Report_2024.pdf" target="_blank">2024 Report</a>, <a href="https://ephemer4l.me/reports/PURE_Final_Report_2025.pdf" target="_blank">2025 Report</a>)
+                </div>
+            </li>
+        </ul>
+    </section>
 
-<h2 id="my-projects">My Projects</h2>
-<dl>
-<dt><a href="https://github.com/ephemer4l/pm"><img src="key.svg" alt=""> pm</a></dt>
-<dd>Tiny shell script to manage your passwords</dd>
-<dt><a href="https://github.com/ephemer4l/gp"><img src="gp.svg" alt=""> gp</a></dt>
-<dd>Tiny shell script to create secure passwords</dd>
-<dt><a href="https://packages.gentoo.org/maintainer/efe.izbudak@metu.edu.tr"><img src="gentoo.svg" alt=""> Gentoo packages</a></dt>
-<dd>Packages I maintain on ::gentoo</dd>
-<dt><a href="https://github.com/ephemer4l"><img src="git.svg" alt=""> Github</a></dt>
-<dd>and other projects.</dd>
-</dl>
+    <section>
+        <h2>Publications & Preprints</h2>
+        
+        <div class="pub-item">
+            <span class="pub-title">AKSZ Construction for Shifted Contact Structures</span>
+            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2606.13866" target="_blank">arXiv:2606.13866 [math.AG]</a></span>
+        </div>
 
-<br clear="all">
-</article>
+        <div class="pub-item">
+            <span class="pub-title">Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences</span>
+            <span class="pub-authors">Efe İzbudak (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2606.11179" target="_blank">arXiv:2606.11179 [math.AG]</a></span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem</span>
+            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2605.08394" target="_blank">arXiv:2605.08394 [math.AG]</a></span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">A Derived Legendrian Category for Shifted Contact Stacks</span>
+            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2605.13792" target="_blank">arXiv:2605.13792 [math.AG]</a></span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">Derived Contact Surgery</span>
+            <span class="pub-authors">Efe İzbudak, Kadri İlker Berktav, and M. Fırat Arıkan (2026)</span>
+            <span class="pub-links">Work in progress</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">Network Efficient Fully Homomorphic Encryption</span>
+            <span class="pub-authors">Efe İzbudak, Ali Şah Özcan, and Tolun Tosun (2026)</span>
+            <span class="pub-links">Work in progress</span>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases</span>
+            <span class="pub-authors">Efe İzbudak, Kübra Kaytancı, Ferruh Özbudak, and Erkay Savaş (2026)</span>
+            <span class="pub-links">Work in progress</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Selected Talks</h2>
+        <ul class="entry-list">
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title">Constructing Spaces</span>
+                    <span class="entry-meta">Dec 2026 | METU</span>
+                </div>
+                <div class="entry-desc"><a href="https://ephemer4l.me/notes/spaces.pdf" target="_blank">📄 Notes</a></div>
+            </li>
+            
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title">Moduli Problems and Stacks</span>
+                    <span class="entry-meta">Dec 2026 | METU</span>
+                </div>
+                <div class="entry-desc"><a href="https://ephemer4l.me/notes/genesis_of_stacks.pdf" target="_blank">📄 Notes</a></div>
+            </li>
+
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title">Contractibility & Basics of $\mathrm{Set}_\Delta$</span>
+                    <span class="entry-meta">Apr - May 2026 | METU</span>
+                </div>
+                <div class="entry-desc">
+                    <a href="https://ephemer4l.me/notes/contractibility.pdf" target="_blank">📄 Contractibility Notes</a> &nbsp;|&nbsp; 
+                    <a href="https://ephemer4l.me/notes/basics_of_sset.pdf" target="_blank">📄 Basics Notes</a>
+                </div>
+            </li>
+
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title">All Morphisms Are Equal, But Some Morphisms Are More Equal Than Others</span>
+                    <span class="entry-meta">Sep 2024 | DRP Türkiye, Sabanci Univ.</span>
+                </div>
+                <div class="entry-desc">
+                    <a href="https://www.youtube.com/watch?v=7a13k4S1eok" target="_blank">🎥 Video</a> &nbsp;|&nbsp;
+                    <a href="https://ephemer4l.me/reports/DRP_Report.pdf" target="_blank">📄 Report</a> &nbsp;|&nbsp;
+                    <a href="https://ephemer4l.me/presentations/DRP_Presentation.pdf" target="_blank">📊 Slides</a>
+                </div>
+            </li>
+
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title">Cryptography Series: FHE, PLWE, & Matrix Multiplication</span>
+                    <span class="entry-meta">Fall 2024 - Winter 2025 | Online / METU / Sabanci</span>
+                </div>
+                <div class="entry-desc">
+                    Selected topics covering Ciphertext-Ciphertext Matrix Multiplication, HERMES Ring Packing, Cryptanalysis of PLWE, Lattice-Based Foundations of HE, and Sparse Packing for CKKS.<br>
+                    <em>(See <a href="cv.pdf">CV</a> for comprehensive slide links)</em>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 id="projects">Software & Open Source</h2>
+        
+        <p>I have maintained packages on Gentoo Linux as a Proxied Maintainer (e.g., <code>sc-im</code>, <code>mutt-wizard</code>) and operate a Tor relay to support global internet freedom. Here are a few active software projects:</p>
+
+        <div class="project-grid">
+            <a href="https://github.com/ephemer4l/pm" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+                <h3>🔑 pm</h3>
+                <p>Tiny shell script to manage your passwords securely.</p>
+            </a>
+            
+            <a href="https://github.com/ephemer4l/gp" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+                <h3>🛡️ gp</h3>
+                <p>Tiny shell script to generate strong, secure passwords.</p>
+            </a>
+
+            <a href="https://packages.gentoo.org/maintainer/efe.izbudak@metu.edu.tr" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+                <h3>🐧 Gentoo Packages</h3>
+                <p>Packages I maintain on the ::gentoo repository.</p>
+            </a>
+            
+            <a href="https://github.com/ephemer4l" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+                <h3>💻 GitHub</h3>
+                <p>Other scripts, dotfiles, and open source contributions.</p>
+            </a>
+        </div>
+    </section>
 </main>
+
 <footer>
-	<!-- <a href="https://ephemer4l.me/">https://ephemer4l.me</a> -->
-	<p>
-	<!-- <img class="lw" src="btc.svg"> Bitcoin (<a href="btc-qr.png">QR</a>):<br> <code>bc1qrc6guvr2nxwrt0lzny4zvyzt5k5xxd5d5cdald</code> -->
-	<!-- <br> -->
-	<img class="lw" src="xmr.svg"> Monero (<a href="xmr-qr.png">QR</a>):<br> <code class="crypto">89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code>
-</p></footer>
+    <div class="crypto-box">
+        <strong>Support / Donations:</strong><br>
+        <div style="margin-top: 0.5rem; word-break: break-all;">
+            <!-- Using simple unicode icons to avoid external SVG dependencies if they break, though you can replace with your own SVGs -->
+            <span style="color: #f26822; font-weight: bold;">ɱ</span> Monero (<a href="xmr-qr.png" style="text-decoration:underline;">QR</a>):<br>
+            <code>89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code>
+        </div>
+    </div>
+    <p style="margin-top: 2rem;">&copy; 2026 Efe İzbudak. All rights reserved.</p>
+</footer>
 
-
-</body></html>
+</body>
+</html>
