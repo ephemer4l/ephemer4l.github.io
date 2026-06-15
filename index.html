@@ -12,13 +12,13 @@
     <meta property="og:description" content="BSc Student in Mathematics at METU. Interests: Higher structures, derived geometry, lattice-based cryptography, and homomorphic encryption.">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://ephemer4l.me/">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/102478867?v=4">
+    <meta property="og:image" content="https://ephemer4l.me/profile.png">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Efe İzbudak">
     <meta name="twitter:description" content="Mathematics and Cryptography Researcher at METU.">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/102478867?v=4">
+    <meta name="twitter:image" content="https://ephemer4l.me/profile.png">
 
     <!-- Favicon (FontAwesome Infinity Icon) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%230366d6' d='M67.2 173.2C26.1 202.9 0 252 0 304c0 88.4 71.6 160 160 160c59.3 0 111-32.2 139.5-81.6l8.5-14.7 8.5 14.7C345 431.8 396.7 464 456 464c88.4 0 160-71.6 160-160c0-52-26.1-101.1-67.2-130.8C507.7 143.5 453.3 128 400 128c-52 0-101.1 26.1-130.8 67.2l-21.2 29.5-21.2-29.5C197.1 154.1 148 128 96 128c-53.3 0-107.7 15.5-148.8 45.2zM400 192c32.4 0 65 10.5 90.6 29.4C516.3 240.2 536 271.4 536 304c0 44.2-35.8 80-80 80c-26.7 0-51-13.1-65.7-34.8L350.5 280.4c-16.7-24.6-45.7-39.4-75.7-39.4c-4.2 0-8.4 .3-12.6 .9L311.4 173.6c27-29.7 65.6-45.6 104.6-45.6zM151.7 172.9c16.7 24.6 45.7 39.4 75.7 39.4c4.2 0 8.4-.3 12.6-.9l-49.2 68.3c-27 29.7-65.6 45.6-104.6 45.6c-32.4 0-65-10.5-90.6-29.4C19.7 267.8 0 236.6 0 204c0-44.2 35.8-80 80-80c26.7 0 51 13.1 65.7 34.8L185.5 231.6l-33.8-58.7z'/></svg>">
@@ -33,7 +33,7 @@
       "name": "Efe İzbudak",
       "alternateName": "ephemer4l",
       "url": "https://ephemer4l.me/",
-      "image": "https://avatars.githubusercontent.com/u/102478867?v=4",
+      "image": "https://ephemer4l.me/profile.png",
       "jobTitle": "Mathematics and Cryptography Researcher",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
@@ -70,6 +70,12 @@
     <!-- Privacy-friendly analytics (Plausible) -->
     <script defer data-domain="ephemer4l.me" src="https://plausible.io/js/script.js"></script>
 
+    <!-- Prevent Dark Mode FOUC -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
     <style>
         :root {
             /* Light Theme */
@@ -83,12 +89,24 @@
             --card-bg: #ffffff;
         }
 
+        html[data-theme="dark"] {
+            /* Dark Theme */
+            --bg-color: #121212;
+            --text-main: #e0e0e0;
+            --text-muted: #aaaaaa;
+            --accent-color: #58a6ff;
+            --accent-hover: #79c0ff;
+            --border-color: #333333;
+            --code-bg: #1e1e1e;
+            --card-bg: #1a1a1a;
+        }
+
         @media (prefers-color-scheme: dark) {
-            :root {
-                /* Dark Theme */
+            html:not([data-theme="light"]) {
+                /* Dark Theme Fallback */
                 --bg-color: #121212;
                 --text-main: #e0e0e0;
-                --text-muted: #999999;
+                --text-muted: #aaaaaa;
                 --accent-color: #58a6ff;
                 --accent-hover: #79c0ff;
                 --border-color: #333333;
@@ -107,27 +125,34 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.65;
             color: var(--text-main);
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
-            font-size: 16px;
+            font-size: 18px;
             transition: background-color 0.3s, color 0.3s;
+            overflow-wrap: break-word;
         }
 
         main {
-            max-width: 800px;
+            max-width: 1050px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 4rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4.5rem;
+            scroll-margin-top: 6rem;
         }
 
         h1, h2, h3, h4 {
             font-family: Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
             font-weight: normal;
             color: var(--text-main);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
         }
 
         h1 {
@@ -162,32 +187,53 @@
             text-decoration: underline;
         }
 
+        a:focus-visible, button:focus-visible {
+            outline: 2px dashed var(--accent-color);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+        
+        .entry-desc a[target="_blank"]::after,
+        .pub-links a[target="_blank"]::after {
+            content: " ↗";
+            font-size: 0.85em;
+            opacity: 0.7;
+            text-decoration: none;
+            display: inline-block;
+        }
+
         .profile-header {
             display: flex;
             align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 320px;
+            height: 320px;
+            border-radius: 12px;
             object-fit: cover;
             border: 2px solid var(--border-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
 
         .profile-info {
-            flex: 1;
-            min-width: 250px;
+            flex: 1 1 0;
+            min-width: 0;
         }
 
         .lead-text {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .links-grid {
@@ -203,11 +249,12 @@
             gap: 0.5rem;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 0.4rem 0.8rem;
+            padding: 0.5rem 1rem;
             border-radius: 6px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-main);
             text-decoration: none !important;
+            white-space: nowrap;
         }
 
         .link-badge:hover {
@@ -221,7 +268,7 @@
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .entry-list {
@@ -230,7 +277,7 @@
         }
 
         .entry-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .entry-header {
@@ -238,28 +285,31 @@
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.5rem 1rem;
         }
 
         .entry-title {
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            flex: 1 1 0;
+            min-width: 200px;
         }
 
         .entry-meta {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-align: right;
+            flex-shrink: 0;
         }
 
         .entry-desc {
-            margin-top: 0.3rem;
-            font-size: 0.95rem;
+            margin-top: 0.4rem;
+            font-size: 1rem;
         }
 
         .pub-item {
-            margin-bottom: 1.2rem;
-            padding-left: 1rem;
+            margin-bottom: 1.8rem;
+            padding-left: 1.2rem;
             border-left: 3px solid var(--border-color);
         }
 
@@ -270,24 +320,83 @@
         .pub-title {
             font-weight: bold;
             display: block;
+            font-size: 1.05rem;
         }
 
         .pub-authors {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             display: block;
         }
 
         .pub-links {
-            font-size: 0.85rem;
-            margin-top: 0.2rem;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
             display: block;
+        }
+        
+        details.bibtex-toggle {
+            margin-top: 0.4rem;
+        }
+        
+        details.bibtex-toggle summary {
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            user-select: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+        
+        details.bibtex-toggle summary:hover {
+            color: var(--accent-color);
+        }
+
+        .bibtex-wrapper {
+            position: relative;
+            margin-top: 0.5rem;
+        }
+        
+        details.bibtex-toggle pre {
+            background: var(--code-bg);
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 0;
+        }
+
+        .bibtex-copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .bibtex-wrapper:hover .bibtex-copy-btn,
+        .bibtex-copy-btn:focus-visible {
+            opacity: 1;
+        }
+
+        .bibtex-copy-btn:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            background: var(--code-bg);
         }
 
         /* Project Grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -296,7 +405,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 1.2rem;
+            padding: 1.4rem;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
@@ -308,15 +417,15 @@
 
         .project-card h3 {
             margin-top: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .project-card p {
-            margin: 0.5rem 0 0 0;
-            font-size: 0.9rem;
+            margin: 0.6rem 0 0 0;
+            font-size: 0.95rem;
             color: var(--text-muted);
         }
 
@@ -330,11 +439,11 @@
         }
 
         footer {
-            margin-top: 4rem;
+            margin-top: 5rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border-color);
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
         }
 
@@ -342,7 +451,7 @@
             display: inline-block;
             text-align: left;
             background: var(--code-bg);
-            padding: 1rem;
+            padding: 1.2rem;
             border-radius: 6px;
             margin-top: 1rem;
             border: 1px solid var(--border-color);
@@ -354,26 +463,162 @@
             height: 1.2rem;
             margin-right: 0.5rem;
         }
+        
+        .copy-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
 
-        @media (max-width: 600px) {
+        .copy-btn:hover {
+            background: var(--code-bg);
+            border-color: var(--accent-color);
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        /* --- UI Improvements: Nav & Theme Toggle --- */
+        .theme-toggle-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.6rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--code-bg);
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .quick-nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(253, 253, 252, 0.85); /* Light mode frosted glass */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 50;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            transition: background-color 0.3s;
+        }
+
+        html[data-theme="dark"] .quick-nav {
+            background-color: rgba(18, 18, 18, 0.85); /* Dark mode frosted glass */
+        }
+
+        @media (prefers-color-scheme: dark) {
+            html:not([data-theme="light"]) .quick-nav {
+                background-color: rgba(18, 18, 18, 0.85);
+            }
+        }
+
+        .quick-nav a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.2rem;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .quick-nav a:hover, .quick-nav a.active {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .quick-nav a.active {
+            border-color: var(--accent-color);
+        }
+
+        /* Academic Print Optimization */
+        @media print {
+            body { background: #fff !important; color: #000 !important; font-size: 12pt; }
+            main { max-width: 100%; padding: 0; margin: 0; }
+            .profile-header { align-items: flex-start; margin-bottom: 2rem; }
+            .profile-img { width: 150px; height: 150px; box-shadow: none; border: 1px solid #ccc; }
+            .links-grid { flex-direction: column; gap: 0.2rem; }
+            .link-badge { border: none; background: transparent; padding: 0; display: block; color: #000 !important; }
+            .link-badge::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
+            .crypto-box, .theme-toggle-btn, .quick-nav, .bibtex-toggle { display: none !important; }
+            a { color: #000 !important; text-decoration: underline; }
+            section { page-break-inside: avoid; margin-bottom: 2rem; }
+            h1, h2, h3 { color: #000 !important; border-bottom-color: #000 !important; }
+            .entry-desc a[target="_blank"]::after, .pub-links a[target="_blank"]::after { content: ""; }
+        }
+
+        @media (max-width: 768px) {
             .profile-header {
                 flex-direction: column;
+                align-items: center;
                 text-align: center;
+                gap: 2rem;
+            }
+            .profile-img {
+                width: 260px;
+                height: 260px;
+            }
+            .links-grid {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .profile-img {
+                width: 220px;
+                height: 220px;
+            }
+            .theme-toggle-btn {
+                top: 1rem;
+                right: 1rem;
+                position: fixed;
             }
             .entry-header {
                 flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
             }
             .entry-meta {
                 text-align: left;
+            }
+            .entry-title {
+                padding-right: 0;
             }
         }
     </style>
 </head>
 <body>
 
+<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+
 <main>
     <header class="profile-header">
-        <img src="https://avatars.githubusercontent.com/u/102478867?v=4" alt="Portrait of Efe İzbudak" class="profile-img" loading="lazy">
+        <img src="profile.png" title="Efe İzbudak" alt="Efe İzbudak at the whiteboard" class="profile-img" loading="lazy">
         <div class="profile-info">
             <a href="https://ephemer4l.me/" style="text-decoration: none;">
                 <h1>Efe İzbudak</h1>
@@ -392,7 +637,14 @@
         </div>
     </header>
 
-    <section>
+    <nav class="quick-nav">
+        <a href="#education">↓ Education</a>
+        <a href="#publications">↓ Publications</a>
+        <a href="#talks">↓ Talks</a>
+        <a href="#projects">↓ Software</a>
+    </nav>
+
+    <section id="education">
         <h2>Education & Research</h2>
         <ul class="entry-list">
             <li class="entry-item">
@@ -402,7 +654,7 @@
                 </div>
                 <div class="entry-desc">
                     BSc in Mathematics (GPA: 4.00/4.00).<br>
-                    <strong><a href="https://ephemer4l.me/higherstructures/#about" target="_blank" rel="noopener noreferrer">Higher Structures Group</a>:</strong> Investigating shifted contact structures on derived stacks with Kadri İlker Berktav (Mar 2026 – Current).
+                    <strong><a href="https://ephemer4l.me/higherstructures/#about" target="_blank" rel="noopener noreferrer">Higher Structures Group</a>:</strong> Investigating shifted contact structures on derived stacks with Kadri İlker Berktav <span class="nowrap">(Mar 2026 – Current)</span>.
                 </div>
             </li>
 
@@ -413,38 +665,152 @@
                 </div>
                 <div class="entry-desc">
                     <strong>Cryptography and Information Security Group:</strong> Analysis of algebraic and approximation-theoretic techniques for homomorphic encryption scheme optimization. Exploring client-efficient fully homomorphic encryption paradigms. <br>
-                    <strong>PURE Program (Summers 2024, 2025):</strong> Developed accelerators for HE. Implemented CKKS bootstrapping, GPU-accelerated algorithms, and supervised undergraduate implementation of TFHE. Supervised by Erkay Savaş. 
+                    <strong>PURE Program <span class="nowrap">(Summers 2024, 2025)</span>:</strong> Developed accelerators for HE. Implemented CKKS bootstrapping, GPU-accelerated algorithms, and supervised undergraduate implementation of TFHE. Supervised by Erkay Savaş. 
                     (<a href="https://ephemer4l.me/reports/PURE_Final_Report_2024.pdf" target="_blank">2024 Report</a>, <a href="https://ephemer4l.me/reports/PURE_Final_Report_2025.pdf" target="_blank">2025 Report</a>)
                 </div>
             </li>
         </ul>
     </section>
 
-    <section>
+    <section id="publications">
         <h2>Publications & Preprints</h2>
         
         <div class="pub-item">
             <span class="pub-title">AKSZ Construction for Shifted Contact Structures</span>
             <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
             <span class="pub-links"><a href="https://arxiv.org/abs/2606.13866" target="_blank">arXiv:2606.13866 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+                <div class="bibtex-wrapper">
+                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
+<pre><code>@misc{i̇zbudak2026akszconstructionshiftedcontact,
+      title={AKSZ Construction for Shifted Contact Structures}, 
+      author={Efe İzbudak and Kadri İlker Berktav},
+      year={2026},
+      eprint={2606.13866},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2606.13866}, 
+}</code></pre>
+                </div>
+            </details>
         </div>
 
         <div class="pub-item">
             <span class="pub-title">Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences</span>
             <span class="pub-authors">Efe İzbudak (2026)</span>
             <span class="pub-links"><a href="https://arxiv.org/abs/2606.11179" target="_blank">arXiv:2606.11179 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+                <div class="bibtex-wrapper">
+                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
+<pre><code>@misc{i̇zbudak2026equivariantcontactdarbouxquotients,
+      title={Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences}, 
+      author={Efe İzbudak},
+      year={2026},
+      eprint={2606.11179},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2606.11179}, 
+}</code></pre>
+                </div>
+            </details>
         </div>
 
         <div class="pub-item">
             <span class="pub-title">Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem</span>
             <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
             <span class="pub-links"><a href="https://arxiv.org/abs/2605.08394" target="_blank">arXiv:2605.08394 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+                <div class="bibtex-wrapper">
+                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
+<pre><code>@misc{izbudak2026equivariantquotientsderivedsymplectic,
+      title={Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem}, 
+      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
+      year={2026},
+      eprint={2605.08394},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2605.08394}, 
+}</code></pre>
+                </div>
+            </details>
         </div>
 
         <div class="pub-item">
             <span class="pub-title">A Derived Legendrian Category for Shifted Contact Stacks</span>
             <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
             <span class="pub-links"><a href="https://arxiv.org/abs/2605.13792" target="_blank">arXiv:2605.13792 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+                <div class="bibtex-wrapper">
+                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
+<pre><code>@misc{izbudak2026derivedlegendriancategoryshifted,
+      title={A Derived Legendrian Category for Shifted Contact Stacks}, 
+      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
+      year={2026},
+      eprint={2605.13792},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2605.13792}, 
+}</code></pre>
+                </div>
+            </details>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences</span>
+            <span class="pub-authors">Efe İzbudak (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2606.11179" target="_blank">arXiv:2606.11179 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+<pre><code>@misc{i̇zbudak2026equivariantcontactdarbouxquotients,
+      title={Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences}, 
+      author={Efe İzbudak},
+      year={2026},
+      eprint={2606.11179},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2606.11179}, 
+}</code></pre>
+            </details>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem</span>
+            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2605.08394" target="_blank">arXiv:2605.08394 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+<pre><code>@misc{izbudak2026equivariantquotientsderivedsymplectic,
+      title={Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem}, 
+      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
+      year={2026},
+      eprint={2605.08394},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2605.08394}, 
+}</code></pre>
+            </details>
+        </div>
+
+        <div class="pub-item">
+            <span class="pub-title">A Derived Legendrian Category for Shifted Contact Stacks</span>
+            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2605.13792" target="_blank">arXiv:2605.13792 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+<pre><code>@misc{izbudak2026derivedlegendriancategoryshifted,
+      title={A Derived Legendrian Category for Shifted Contact Stacks}, 
+      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
+      year={2026},
+      eprint={2605.13792},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2605.13792}, 
+}</code></pre>
+            </details>
         </div>
 
         <div class="pub-item">
@@ -466,7 +832,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="talks">
         <h2>Selected Talks</h2>
         <ul class="entry-list">
             <li class="entry-item">
@@ -515,7 +881,7 @@
                 </div>
                 <div class="entry-desc">
                     Selected topics covering Ciphertext-Ciphertext Matrix Multiplication, HERMES Ring Packing, Cryptanalysis of PLWE, Lattice-Based Foundations of HE, and Sparse Packing for CKKS.<br>
-                    <em>(See <a href="cv.pdf">CV</a> for comprehensive slide links)</em>
+                    <em>(See <a href="cv.pdf" target="_blank">CV</a> for comprehensive slide links)</em>
                 </div>
             </li>
         </ul>
@@ -553,14 +919,129 @@
 <footer>
     <div class="crypto-box">
         <strong>Support / Donations:</strong><br>
-        <div style="margin-top: 0.5rem; word-break: break-all;">
+        <div style="margin-top: 0.5rem; display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
             <!-- Using simple unicode icons to avoid external SVG dependencies if they break, though you can replace with your own SVGs -->
-            <span style="color: #f26822; font-weight: bold;">ɱ</span> Monero (<a href="xmr-qr.png" style="text-decoration:underline;">QR</a>):<br>
-            <code>89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code>
+            <span style="white-space: nowrap;"><span style="color: #f26822; font-weight: bold;">ɱ</span> Monero (<a href="xmr-qr.png" style="text-decoration:underline;">QR</a>):</span>
+            <code id="monero-addr" style="word-break: break-all; flex: 1; min-width: 200px;">89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code>
+            <button class="copy-btn" onclick="copyCrypto()" aria-label="Copy Monero Address">📋 Copy</button>
         </div>
     </div>
-    <p style="margin-top: 2rem;">&copy; 2026 Efe İzbudak. All rights reserved.</p>
+    <p style="margin-top: 2rem;">&copy; <span id="current-year">2026</span> Efe İzbudak. All rights reserved.</p>
 </footer>
+
+<script>
+    // Dynamically set current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Theme Toggle Logic
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        // Check current computed theme via background color check
+        const isDark = getComputedStyle(html).getPropertyValue('--bg-color').trim() === '#121212';
+        
+        if (isDark) {
+            html.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Clipboard copy functionality
+    function copyCrypto() {
+        const addr = document.getElementById('monero-addr').innerText;
+        const btn = document.querySelector('.copy-btn');
+        
+        // Creating a temporary textarea to ensure clipboard compatibility across all browser security environments
+        const textArea = document.createElement("textarea");
+        textArea.value = addr;
+        
+        // Move outside of viewport
+        textArea.style.position = "absolute";
+        textArea.style.left = "-999999px";
+        
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            document.execCommand('copy');
+            const originalText = btn.innerText;
+            btn.innerText = '✅ Copied';
+            btn.style.borderColor = '#28a745';
+            btn.style.color = '#28a745';
+            
+            setTimeout(() => {
+                btn.innerText = '📋 Copy';
+                btn.style.borderColor = '';
+                btn.style.color = '';
+            }, 2000);
+        } catch (err) {
+            console.error('Unable to copy', err);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+    
+    // BibTeX Copy Functionality
+    window.copyBibtex = function(btn) {
+        const pre = btn.nextElementSibling;
+        const code = pre.textContent;
+        
+        const textArea = document.createElement("textarea");
+        textArea.value = code;
+        textArea.style.position = "absolute";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            document.execCommand('copy');
+            const originalText = btn.innerText;
+            btn.innerText = 'Copied!';
+            btn.style.color = '#28a745';
+            btn.style.borderColor = '#28a745';
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.color = '';
+                btn.style.borderColor = '';
+            }, 2000);
+        } catch (err) {
+            console.error('Unable to copy', err);
+        }
+        document.body.removeChild(textArea);
+    };
+
+    // ScrollSpy Navigation Highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.quick-nav a');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
