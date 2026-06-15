@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Higher Structures Research Group at Middle East Technical University (METU), Dept. of Mathematics.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Higher Structures Research Group at Middle East Technical University (METU), Dept. of Mathematics. Focusing on derived algebraic geometry, shifted contact structures, and symplectic geometry.">
+    <meta name="keywords" content="Higher Structures, Mathematics, METU, Derived Algebraic Geometry, Symplectic Geometry, Contact Geometry, Category Theory, Homotopy">
+    <meta name="author" content="Higher Structures Research Group">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Higher Structures Group | METU">
+    <meta property="og:description" content="Research group at Middle East Technical University focusing on higher categorical constructions in geometry, topology, and physics.">
+    <meta property="og:type" content="website">
+    <!-- Replace with your actual deployed URL when live -->
+    <meta property="og:url" content="https://math.metu.edu.tr/higher-structures/"> 
+    <meta property="og:image" content="logo.png">
+    
     <title>Higher Structures Group | METU</title>
+    
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchOrganization",
+      "name": "Higher Structures Research Group",
+      "url": "https://math.metu.edu.tr/higher-structures/",
+      "logo": "logo.png",
+      "description": "In the setting of derived algebraic geometry, one can investigate well-known geometric structures presented in more generalized forms.",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "Middle East Technical University (METU)",
+        "department": "Department of Mathematics"
+      }
+    }
+    </script>
     
     <!-- FontAwesome Integration for Professional Iconography -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -893,7 +924,7 @@
     <div class="document-container">
         <!-- Header -->
         <header class="header-layout">
-            <img src="logo.png" alt="Group Logo" class="group-logo" id="group-logo">
+            <img src="logo.png" alt="Higher Structures Research Group Logo" class="group-logo" id="group-logo">
             <div class="header-content">
                 <div class="header-text">
                     <h1>Higher Structures Research Group</h1>
@@ -1897,10 +1928,17 @@
                 }
             });
 
-            // --- TAB PERSISTENCE INITIALIZATION ---
-            const savedTab = localStorage.getItem('activeGroupTab');
-            if (savedTab && document.getElementById(savedTab)) {
-                openTab(null, savedTab);
+            // --- TAB PERSISTENCE INITIALIZATION (Hash & LocalStorage) ---
+            const urlHash = window.location.hash.substring(1);
+            const validTabs = ['about', 'members', 'activities', 'resources', 'projects', 'publications'];
+            
+            if (urlHash && validTabs.includes(urlHash)) {
+                openTab(null, urlHash);
+            } else {
+                const savedTab = localStorage.getItem('activeGroupTab');
+                if (savedTab && document.getElementById(savedTab)) {
+                    openTab(null, savedTab);
+                }
             }
         });
 
@@ -1928,6 +1966,13 @@
 
             // Store active tab locally
             localStorage.setItem('activeGroupTab', tabId);
+            
+            // Update URL hash for better sharing and deep-linking indexing
+            if(history.pushState) {
+                history.pushState(null, null, '#' + tabId);
+            } else {
+                location.hash = '#' + tabId;
+            }
         }
 
         window.filterFromMember = function(event, category) {
