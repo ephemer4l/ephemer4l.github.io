@@ -7,7 +7,54 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ephemer4l.me/">
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Efe İzbudak | Mathematics and Cryptography Researcher">
+    <meta property="og:description" content="BSc Student in Mathematics at METU. Interests: Higher structures, derived geometry, lattice-based cryptography, and homomorphic encryption.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://ephemer4l.me/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/102478867?v=4">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Efe İzbudak">
+    <meta name="twitter:description" content="Mathematics and Cryptography Researcher at METU.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/102478867?v=4">
+
+    <!-- Favicon (FontAwesome Infinity Icon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%230366d6' d='M67.2 173.2C26.1 202.9 0 252 0 304c0 88.4 71.6 160 160 160c59.3 0 111-32.2 139.5-81.6l8.5-14.7 8.5 14.7C345 431.8 396.7 464 456 464c88.4 0 160-71.6 160-160c0-52-26.1-101.1-67.2-130.8C507.7 143.5 453.3 128 400 128c-52 0-101.1 26.1-130.8 67.2l-21.2 29.5-21.2-29.5C197.1 154.1 148 128 96 128c-53.3 0-107.7 15.5-148.8 45.2zM400 192c32.4 0 65 10.5 90.6 29.4C516.3 240.2 536 271.4 536 304c0 44.2-35.8 80-80 80c-26.7 0-51-13.1-65.7-34.8L350.5 280.4c-16.7-24.6-45.7-39.4-75.7-39.4c-4.2 0-8.4 .3-12.6 .9L311.4 173.6c27-29.7 65.6-45.6 104.6-45.6zM151.7 172.9c16.7 24.6 45.7 39.4 75.7 39.4c4.2 0 8.4-.3 12.6-.9l-49.2 68.3c-27 29.7-65.6 45.6-104.6 45.6c-32.4 0-65-10.5-90.6-29.4C19.7 267.8 0 236.6 0 204c0-44.2 35.8-80 80-80c26.7 0 51 13.1 65.7 34.8L185.5 231.6l-33.8-58.7z'/></svg>">
+
     <title>Efe İzbudak | ephemer4l</title>
+
+    <!-- Schema.org JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Efe İzbudak",
+      "alternateName": "ephemer4l",
+      "url": "https://ephemer4l.me/",
+      "image": "https://avatars.githubusercontent.com/u/102478867?v=4",
+      "jobTitle": "Mathematics and Cryptography Researcher",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Middle East Technical University"
+      },
+      "affiliation": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Sabanci University"
+        },
+        {
+          "@type": "Organization",
+          "name": "enCRYPTON Labs"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/ephemer4l",
+        "https://pixelfed.social/@ephemer4l"
+      ]
+    }
+    </script>
 
     <script>
         window.MathJax = {
@@ -20,14 +67,17 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" async></script>
 
+    <!-- Privacy-friendly analytics (Plausible) -->
+    <script defer data-domain="ephemer4l.me" src="https://plausible.io/js/script.js"></script>
+
     <style>
         :root {
             /* Light Theme */
             --bg-color: #fdfdfc;
             --text-main: #222222;
             --text-muted: #555555;
-            --accent-color: #990000;
-            --accent-hover: #cc0000;
+            --accent-color: #0366d6;
+            --accent-hover: #005cc5;
             --border-color: #e0e0e0;
             --code-bg: #f4f4f4;
             --card-bg: #ffffff;
@@ -39,8 +89,8 @@
                 --bg-color: #121212;
                 --text-main: #e0e0e0;
                 --text-muted: #999999;
-                --accent-color: #ff6b6b;
-                --accent-hover: #ff8787;
+                --accent-color: #58a6ff;
+                --accent-hover: #79c0ff;
                 --border-color: #333333;
                 --code-bg: #1e1e1e;
                 --card-bg: #1a1a1a;
@@ -49,6 +99,10 @@
 
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -319,7 +373,7 @@
 
 <main>
     <header class="profile-header">
-        <img src="https://avatars.githubusercontent.com/u/102478867?v=4" alt="Efe İzbudak" class="profile-img">
+        <img src="https://avatars.githubusercontent.com/u/102478867?v=4" alt="Portrait of Efe İzbudak" class="profile-img" loading="lazy">
         <div class="profile-info">
             <a href="https://ephemer4l.me/" style="text-decoration: none;">
                 <h1>Efe İzbudak</h1>
@@ -330,10 +384,10 @@
             </p>
             
             <div class="links-grid">
-                <a href="cv.pdf" class="link-badge">📜 Curriculum Vitae</a>
-                <a href="mailto:efe@liberior.org" class="link-badge">📧 efe@liberior.org</a>
-                <a href="https://github.com/ephemer4l" class="link-badge" target="_blank" rel="noopener">💻 GitHub</a>
-                <a href="https://pixelfed.social/@ephemer4l" class="link-badge" target="_blank" rel="noopener">📷 Pixelfed</a>
+                <a href="cv.pdf" class="link-badge" aria-label="Download Curriculum Vitae">📜 Curriculum Vitae</a>
+                <a href="mailto:efe@liberior.org" class="link-badge" aria-label="Send an email to Efe">📧 efe@liberior.org</a>
+                <a href="https://github.com/ephemer4l" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub Profile">💻 GitHub</a>
+                <a href="https://pixelfed.social/@ephemer4l" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="Visit Pixelfed Profile">📷 Pixelfed</a>
             </div>
         </div>
     </header>
@@ -473,22 +527,22 @@
         <p>I have maintained packages on Gentoo Linux as a Proxied Maintainer (e.g., <code>sc-im</code>, <code>mutt-wizard</code>) and operate a Tor relay to support global internet freedom. Here are a few active software projects:</p>
 
         <div class="project-grid">
-            <a href="https://github.com/ephemer4l/pm" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+            <a href="https://github.com/ephemer4l/pm" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
                 <h3>🔑 pm</h3>
                 <p>Tiny shell script to manage your passwords securely.</p>
             </a>
             
-            <a href="https://github.com/ephemer4l/gp" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+            <a href="https://github.com/ephemer4l/gp" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
                 <h3>🛡️ gp</h3>
                 <p>Tiny shell script to generate strong, secure passwords.</p>
             </a>
 
-            <a href="https://packages.gentoo.org/maintainer/efe.izbudak@metu.edu.tr" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+            <a href="https://packages.gentoo.org/maintainer/efe.izbudak@metu.edu.tr" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
                 <h3>🐧 Gentoo Packages</h3>
                 <p>Packages I maintain on the ::gentoo repository.</p>
             </a>
             
-            <a href="https://github.com/ephemer4l" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
+            <a href="https://github.com/ephemer4l" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
                 <h3>💻 GitHub</h3>
                 <p>Other scripts, dotfiles, and open source contributions.</p>
             </a>
