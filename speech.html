@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Silenced Valedictory Address by Efe İzbudak - METU Class of 2026">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="The Silenced Address | Efe İzbudak">
+    <meta property="og:description" content="The valedictory speech censored by the administration, delivered in spirit. METU Class of 2026.">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Silenced Address | Efe İzbudak">
+    <meta name="twitter:description" content="The valedictory speech censored by the administration. Read the words they feared.">
+
+    <title>The Silenced Address | Efe İzbudak</title>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <style>
+        :root {
+            /* Light Theme */
+            --bg-color: #fdfdfc;
+            --text-main: #222222;
+            --text-muted: #555555;
+            --accent-color: #0366d6;
+            --accent-hover: #005cc5;
+            --border-color: #e0e0e0;
+            --code-bg: #f4f4f4;
+            --card-bg: #ffffff;
+        }
+
+        html[data-theme="dark"] {
+            /* Dark Theme */
+            --bg-color: #121212;
+            --text-main: #e0e0e0;
+            --text-muted: #aaaaaa;
+            --accent-color: #58a6ff;
+            --accent-hover: #79c0ff;
+            --border-color: #333333;
+            --code-bg: #1e1e1e;
+            --card-bg: #1a1a1a;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            html:not([data-theme="light"]) {
+                --bg-color: #121212;
+                --text-main: #e0e0e0;
+                --text-muted: #aaaaaa;
+                --accent-color: #58a6ff;
+                --accent-hover: #79c0ff;
+                --border-color: #333333;
+                --code-bg: #1e1e1e;
+                --card-bg: #1a1a1a;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-wrap: break-word;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
+            font-weight: normal;
+            color: var(--text-main);
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 0.2rem;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .theme-toggle-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.6rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--code-bg);
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .controls-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-color);
+            background: var(--code-bg);
+        }
+
+        .lang-btn.active {
+            background: var(--code-bg);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            box-shadow: inset 0 0 0 1px var(--accent-color);
+        }
+
+        .speech-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .speech-content.active {
+            display: block;
+        }
+
+        .speech-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        @media print {
+            body { background: #fff !important; color: #000 !important; font-size: 12pt; }
+            .theme-toggle-btn, .controls-container { display: none !important; }
+            main { padding: 2rem 0; }
+            .speech-content { display: block !important; font-size: 12pt; line-height: 1.5; }
+            /* Only show English on print to avoid double printing unless handled, hiding TR by default */
+            #speech-tr { display: none !important; }
+        }
+
+        @media (max-width: 600px) {
+            .theme-toggle-btn {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+
+<main>
+    <header>
+        <a href="https://ephemer4l.me/" style="text-decoration: none;">
+            <h1>Efe İzbudak</h1>
+        </a>
+        <div class="subtitle">The Silenced Address &mdash; July 2026</div>
+    </header>
+
+    <div class="controls-container">
+        <button class="lang-btn active" onclick="switchLanguage('en')" id="btn-en">English</button>
+        <button class="lang-btn" onclick="switchLanguage('tr')" id="btn-tr">Türkçe</button>
+    </div>
+
+    <article id="speech-en" class="speech-content active" lang="en">
+        <p>Fellow graduates, esteemed faculty, families, and friends--welcome, and congratulations to the Class of 2026.</p>
+
+        <p>Standing here today, my first instinct isn't to talk about my own hard work, but about the people who made it possible. A university journey is rarely survived alone. That starts, of course, with my family, who gave me their everything. I owe it all to them.</p>
+
+        <p>I have also been extraordinarily lucky to have mentors who took my ambitions seriously and showed me how to do the actual work.</p>
+
+        <p>Professor Kişisel, thank you for dedicating hours of your time to guide me through the realities of academia.</p>
+
+        <p>Professor Berktav, you took me and raised me to become a mathematician when I knew next to nothing about algebraic geometry.</p>
+
+        <p>And to Professor Savaş, who taught me not just how to research, but how to conduct myself professionally.</p>
+
+        <p>It is mentors like them--and peers like all of you--that kept us going. Because, let’s just be honest with ourselves today: over the last four years, we haven't just watched METU lose its spirit. We have watched it be hollowed out. We may be facing an understanding that dismantles our culture and ignores our voices. In fact, it is easy to look at the state of things and wonder why this place is still held in such high regard.</p>
+
+        <p>The secret is that the buildings don't make this university. The administration certainly doesn't.</p>
+
+        <p>We do. We are what makes METU, METU.</p>
+
+        <p>But before we applaud ourselves, we need to look in the mirror and accept what that truly means. If we claim to be the pulse of this campus, then we don't just own the greatness. We own the bad, too. We cannot blindly congratulate ourselves today without taking responsibility for the environment we allowed to take hold.</p>
+
+        <p>Yes, they may have done everything to break this campus. But if the spirit of METU is fading, it is also because we let our own spirits fade. We have retreated into survival mode instead of fighting.</p>
+
+        <p>And maybe that is the most honest lesson METU has given us. We have immense power to shape our environment. True pride comes from owning our entire reality and recognizing what comes next.</p>
+
+        <p>As Professor Savaş reminds me time and again: do not see your accomplishment as a reward, but as a responsibility. A responsibility to make a difference.</p>
+
+        <p>As we hold these diplomas, we aren't just taking the legacy of METU into the world; we are taking the knowledge that we are the architects of our culture. We have a responsibility to refuse to let our spirits fade, to refuse to just "survive," and to build healthier, more resilient, and more defiant communities wherever we go next.</p>
+
+        <p>This diploma is not just a receipt for surviving a broken system. It is a demand that we do better.</p>
+
+        <p>Thank you. Congratulations.</p>
+    </article>
+
+    <article id="speech-tr" class="speech-content" lang="tr">
+        <p>Herkese merhaba. Bugün karşınızda dururken ilk içgüdüm kendi çabam yerine bunu mümkün kılan insanlardan bahsetmek. Elbette bana her şeylerini veren ailemle başlamalıyım. Tüm süreci size borçluyum. Emeğiniz için gerçekten minnettarım.</p>
+
+        <p>Ayrıca, beni ciddiye alan ve bana matematiğin nasıl yapılacağını gösteren hocalara sahip olduğum için de çok şanslıyım.</p>
+
+        <p>Özgür hocama bana saatlerce zaman ayırıp akademik dünyanın gerçekleriyle baş etmemi sağladığı için; İlker hocama, ben cebirsel geometri hakkında hiçbir şey bilmezken okuma seminerleri ve yönlendirmesi ile beni yetiştirdiği için; ve bugün burada olamasa da, Erkay hocama bana sadece nasıl araştırma yapılacağını değil, aynı zamanda profesyonel bir duruşun nasıl sergileneceğini öğrettiği için teşekkür ederim.</p>
+
+        <p>Bizi ayakta tutanlar işte böyle hocalarımız ve sizler gibi dönem arkadaşlarımız oldu.</p>
+
+        <p>Fakat bugün burada açık konuşalım. Son dört yılda ODTÜ'nün sadece ruhunu kaybetmesini izlemedik. İçinin boşaltılmasına tanık olduk. Kültürümüzü parçalayan ve sesimizi duymazdan gelen bir anlayışla karşı karşıya kalmış olabiliriz. Öyle ki, işlerin şu anki haline bakıp okulumuzun neden hâlâ bu kadar saygı gördüğünü merak etmek çok kolay.</p>
+
+        <p>İşin sırrı şu. Bu üniversiteyi binalar var etmiyor. Yönetim hiç etmiyor.</p>
+
+        <p>Biz var ediyoruz. ODTÜ'yü ODTÜ yapan biziz.</p>
+
+        <p>Ancak kendimizi alkışlamadan önce aynaya bakmalı ve bunun ne anlama geldiğini kabul etmeliyiz. Eğer bu kampüsün nabzı olduğumuzu iddia ediyorsak, sadece başarıları sahiplenemeyiz. Kök salmasına izin verdiğimiz bu ortamın sorumluluğunu almadan, körü körüne kendimizi tebrik de edemeyiz.</p>
+
+        <p>Evet, bu kampüsü kırmak için her şey yapılmış olabilir. Ancak ODTÜ'nün ruhu solduysa, mücadele etmek yerine hayatta kalma moduna geçip bizi biz yapan ateşi kendi ellerimizle sahipsiz bıraktığımız için.</p>
+
+        <p>Belki de bu, ODTÜ'nün bize verdiği en dürüst ders. Çevremizi şekillendirmek için mutlak bir güce sahibiz. Ve asıl gurur, tüm gerçekliğimizi sahiplenmekten, sırada ne olduğunu idrak edebilmekten gelmeli.</p>
+
+        <p>Erkay hocamın bana defalarca hatırlattığı gibi: başarınızı bir ödül olarak değil, bir sorumluluk olarak görmenizi diliyorum. Fark yaratma sorumluluğu.</p>
+
+        <p>Diplomamızla sadece ODTÜ'nün mirasını dünyaya taşımıyoruz. Kültürümüzün mimarları olduğumuz gerçeğini de taşıyoruz. Bundan sonra gideceğimiz her yerde daha sağlıklı, daha dirençli ve daha başkaldıran topluluklar inşa etmekle yükümlüyüz.</p>
+
+        <p>Bu diploma sadece bozuk bir sistemden sağ çıkmanın fişi değil. Daha iyisini yapmamız için bir talep.</p>
+
+        <p>Teşekkür ederim. Tebrikler.</p>
+    </article>
+</main>
+
+<footer>
+    <p><a href="https://ephemer4l.me/">← Return to ephemer4l.me</a></p>
+</footer>
+
+<script>
+    // Theme Toggle Logic
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const isDark = getComputedStyle(html).getPropertyValue('--bg-color').trim() === '#121212';
+        
+        if (isDark) {
+            html.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Language Switcher Logic
+    function switchLanguage(lang) {
+        // Update Buttons
+        document.getElementById('btn-en').classList.remove('active');
+        document.getElementById('btn-tr').classList.remove('active');
+        document.getElementById(`btn-${lang}`).classList.add('active');
+
+        // Update Content
+        document.getElementById('speech-en').classList.remove('active');
+        document.getElementById('speech-tr').classList.remove('active');
+        document.getElementById(`speech-${lang}`).classList.add('active');
+        
+        // Update document lang attribute for accessibility
+        document.documentElement.lang = lang;
+    }
+</script>
+
+</body>
+</html>
