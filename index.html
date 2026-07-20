@@ -236,6 +236,17 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Notice banner specifically for the speech update */
+        .speech-notice {
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.2rem;
+            border-left: 3px solid var(--accent-color);
+            background: var(--code-bg);
+            border-radius: 6px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
         .links-grid {
             display: flex;
             gap: 1rem;
@@ -563,7 +574,7 @@
             .links-grid { flex-direction: column; gap: 0.2rem; }
             .link-badge { border: none; background: transparent; padding: 0; display: block; color: #000 !important; }
             .link-badge::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
-            .crypto-box, .theme-toggle-btn, .quick-nav, .bibtex-toggle { display: none !important; }
+            .crypto-box, .theme-toggle-btn, .quick-nav, .bibtex-toggle, .speech-notice { display: none !important; }
             a { color: #000 !important; text-decoration: underline; }
             section { page-break-inside: avoid; margin-bottom: 2rem; }
             h1, h2, h3 { color: #000 !important; border-bottom-color: #000 !important; }
@@ -583,6 +594,9 @@
             }
             .links-grid {
                 justify-content: center;
+            }
+            .speech-notice {
+                text-align: left;
             }
         }
 
@@ -624,9 +638,14 @@
                 <h1>Efe İzbudak</h1>
             </a>
             <p class="lead-text">
-                BSc Student in Mathematics at Middle East Technical University.<br>
+                MSc Student in Mathematics at Universität Regensburg.<br>
+                Supervisor: Denis-Charles Cisinski<br><br>
                 <strong>Interests:</strong> Higher structures, derived geometry, lattice-based cryptography, and homomorphic encryption.
             </p>
+            
+            <div class="speech-notice">
+                <strong>Read my silenced valedictory address</strong> to the METU Class of 2026 <a href="https://ephemer4l.me/speech.html">here</a>.
+            </div>
             
             <div class="links-grid">
                 <a href="cv.pdf" class="link-badge" aria-label="Download Curriculum Vitae">📜 Curriculum Vitae</a>
@@ -649,7 +668,18 @@
         <ul class="entry-list">
             <li class="entry-item">
                 <div class="entry-header">
-                    <span class="entry-title"><a href="https://metu.edu.tr" target="_blank">Middle East Technical University</a></span>
+                    <span class="entry-title"><a href="https://www.uni-regensburg.de/en/mathematics" target="_blank">Universität Regensburg</a></span>
+                    <span class="entry-meta">Oct 2026 – Sep 2028 | Ankara, TR</span>
+                </div>
+                <div class="entry-desc">
+                    MSc in Mathematics.<br>
+                    Master's thesis under the supervision of Denis-Charles Cisinski with focus on Higher Zariski Geometry.
+                </div>
+            </li>
+
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title"><a href="https://math.metu.edu.tr" target="_blank">Middle East Technical University</a></span>
                     <span class="entry-meta">Aug 2022 – Jul 2026 | Ankara, TR</span>
                 </div>
                 <div class="entry-desc">
@@ -887,7 +917,6 @@
     <div class="crypto-box">
         <strong>Support / Donations:</strong><br>
         <div style="margin-top: 0.5rem; display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
-            <!-- Using simple unicode icons to avoid external SVG dependencies if they break, though you can replace with your own SVGs -->
             <span style="white-space: nowrap;"><span style="color: #f26822; font-weight: bold;">ɱ</span> Monero (<a href="xmr-qr.png" style="text-decoration:underline;">QR</a>):</span>
             <code id="monero-addr" style="word-break: break-all; flex: 1; min-width: 200px;">89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code>
             <button class="copy-btn" onclick="copyCrypto()" aria-label="Copy Monero Address">📋 Copy</button>
