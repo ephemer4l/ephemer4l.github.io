@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Digital Shackles of Proprietary Bloatware: Why Confluence is an Insult to Our Cryptographic Mission">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ephemer4l.me/blog/confluence-bloatware.html">
+    
+    <!-- Favicon (FontAwesome Infinity Icon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%230366d6' d='M67.2 173.2C26.1 202.9 0 252 0 304c0 88.4 71.6 160 160 160c59.3 0 111-32.2 139.5-81.6l8.5-14.7 8.5 14.7C345 431.8 396.7 464 456 464c88.4 0 160-71.6 160-160c0-52-26.1-101.1-67.2-130.8C507.7 143.5 453.3 128 400 128c-52 0-101.1 26.1-130.8 67.2l-21.2 29.5-21.2-29.5C197.1 154.1 148 128 96 128c-53.3 0-107.7 15.5-148.8 45.2zM400 192c32.4 0 65 10.5 90.6 29.4C516.3 240.2 536 271.4 536 304c0 44.2-35.8 80-80 80c-26.7 0-51-13.1-65.7-34.8L350.5 280.4c-16.7-24.6-45.7-39.4-75.7-39.4c-4.2 0-8.4 .3-12.6 .9L311.4 173.6c27-29.7 65.6-45.6 104.6-45.6zM151.7 172.9c16.7 24.6 45.7 39.4 75.7 39.4c4.2 0 8.4-.3 12.6-.9l-49.2 68.3c-27 29.7-65.6 45.6-104.6 45.6c-32.4 0-65-10.5-90.6-29.4C19.7 267.8 0 236.6 0 204c0-44.2 35.8-80 80-80c26.7 0 51 13.1 65.7 34.8L185.5 231.6l-33.8-58.7z'/></svg>">
+
+    <title>The Digital Shackles of Proprietary Bloatware | Efe İzbudak</title>
+
+    <!-- Prevent Dark Mode FOUC -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <style>
+        :root {
+            /* Light Theme */
+            --bg-color: #fdfdfc;
+            --text-main: #222222;
+            --text-muted: #555555;
+            --accent-color: #0366d6;
+            --accent-hover: #005cc5;
+            --border-color: #e0e0e0;
+            --code-bg: #f4f4f4;
+            --card-bg: #ffffff;
+        }
+
+        html[data-theme="dark"] {
+            /* Dark Theme */
+            --bg-color: #121212;
+            --text-main: #e0e0e0;
+            --text-muted: #aaaaaa;
+            --accent-color: #58a6ff;
+            --accent-hover: #79c0ff;
+            --border-color: #333333;
+            --code-bg: #1e1e1e;
+            --card-bg: #1a1a1a;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            html:not([data-theme="light"]) {
+                --bg-color: #121212;
+                --text-main: #e0e0e0;
+                --text-muted: #aaaaaa;
+                --accent-color: #58a6ff;
+                --accent-hover: #79c0ff;
+                --border-color: #333333;
+                --code-bg: #1e1e1e;
+                --card-bg: #1a1a1a;
+            }
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.75;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            font-size: 19px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Top Navigation Bar */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(253, 253, 252, 0.85); /* Light mode frosted glass */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s;
+        }
+
+        html[data-theme="dark"] .top-bar {
+            background-color: rgba(18, 18, 18, 0.85);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            html:not([data-theme="light"]) .top-bar {
+                background-color: rgba(18, 18, 18, 0.85);
+            }
+        }
+
+        .top-bar-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none !important;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+            transform: translateX(-3px);
+        }
+
+        .theme-toggle-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--code-bg);
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem 1.5rem;
+        }
+
+        h1, h2, h3 {
+            font-family: Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
+            font-weight: normal;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-meta {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        
+        .article-content em {
+            font-style: italic;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="top-bar">
+    <div class="top-bar-content">
+        <a href="index.html" class="back-link" aria-label="Back to Blog Index">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Blog Index
+        </a>
+        
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+</nav>
+
+<main>
+    <article>
+        <h1>The Digital Shackles of Proprietary Bloatware: Why Confluence is an Insult to Our Cryptographic Mission</h1>
+        <div class="post-meta">
+            Published July 2026 • by Efe İzbudak
+        </div>
+
+        <div class="article-content">
+            <p>By adopting standard enterprise platforms like Atlassian Confluence, we had unwittingly surrendered our engineering freedom to a bloated, proprietary walled garden. Confluence is a sluggish, JavaScript-infested monolith designed for bureaucratic paper-pushing, not serious scientific engineering. It actively impeded the rigorous mathematical demands of our work. The fault lies entirely in the nature of proprietary web-apps (SaaSS--Service as a Software Substitute) that prioritize vendor lock-in, cloud dependency, and visual bloat over actual user capability.</p>
+
+            <p>The fundamental tools of computer science--typesetting mathematics, formalizing algorithms, and rendering precise TikZ diagrams--are completely alien to this platform. Confluence forced us to abandon the elegant, lightning-fast, locally compiled standard of TeX. In its place, we were chained to a dumbed-down browser text box that suffocated our daily workflows behind useless layers of abstraction.</p>
+
+            <p>Even at a navigational level, the platform is fundamentally broken. It is a "knowledge base" that cannot even provide a map of sections or a functional Table of Contents upon opening a file. We were forced to navigate our own documentation blind, wasting time scrolling through endless, unlinked pages. A basic document structure is not a luxury; it is a fundamental prerequisite for any platform claiming to manage knowledge.</p>
+
+            <p>Consider the staggering operational loss and outright theft of engineering time this software creates. Take a recent algorithmic specification I authored as a primary example. A scientific document that took me a mere two hours to draft utilizing standard, free engineering tools demanded twenty hours of grueling manual labor just to bypass Confluence’s broken, incompetent formatting constraints. That was an unacceptable 6,000 liras of wasted engineering time for a single document, burned entirely to fight the software.</p>
+
+            <p>To stop this hemorrhage of company resources, I engineered an automated API pipeline. However, even this mitigation cost 9 hours of development time. That was 3,000 liras paid to me for absolutely nothing but wrestling with a closed, undocumented, proprietary backend. I built this automation because I valued our shared goals and wanted our team to succeed without friction. But if I did not care about the bottom line, I could have easily billed the full 6,000 liras. This was a proprietary tax our company was bleeding out solely to subsidize bad software.</p>
+
+            <p>Even the third-party "solutions" are an absolute mockery of modern computing. The "Easy Math" macro is a prime example: it took up to forty-nine seconds after opening a note simply to render the mathematics on the screen. Waiting nearly a minute for a browser to execute basic rendering is not an inconvenience; it is software regression. It is an insult to the hardware it runs on.</p>
+
+            <p>Beyond the technical bottlenecks, we were facing an ideological failure. We were a <em>cryptography</em> firm. Our entire ethos was built on trustless systems, mathematical absolutes, and data sovereignty. It was structurally absurd for us to surrender our most sensitive intellectual property--our foundational algorithms and specifications--to Atlassian's proprietary server farms. If our own employees could not trust our internal knowledge base to reside securely on our own iron, we were failing to practice the very sovereignty we sold to our users. We were treating our core cryptography like a trivial web-dev side project.</p>
+
+            <p>We could have severed these digital shackles immediately. We did not have to sacrifice modern usability to retain our computing freedom, our engineering speed, and our financial resources.</p>
+
+            <p>We had to migrate our collective intelligence to modern knowledge bases that actually respected our workflows, our threat models, and user freedom. Systems like Docmost provide intuitive workspaces hosted directly on our own infrastructure. It lacks absolutely nothing that Confluence offers--even providing native Kanban boards--but entirely without the sluggish overhead. More importantly, Docmost guarantees true interoperability and data liberation. It allows us to import data freely from Markdown, HTML, Notion, DOCX, and Confluence itself, and respects our right to exit by exporting natively to PDF, Markdown, or HTML.</p>
+
+            <p>At the time, our server only held a handful of files. Did we really want to commit our company's future to this closed garbage? The switching cost would never be lower than it was then. We could have extracted our early data from Atlassian's walled garden seamlessly and severed our reliance on their proprietary servers overnight, before the roots of vendor lock-in took hold.</p>
+
+            <p>Alternatively, SiYuan offers a local-first, structurally sound environment that natively respects mathematical typesetting without punishing the user, while platforms like AFFiNE provide a privacy-first experience with a polished interface, entirely without the proprietary vendor lock-in.</p>
+
+            <p>These tools keep our data in standard, version-controllable, plain-text formats residing securely on our own servers. It was time to drop the dead weight of bloated, proprietary crapware and adopt tools that respected our engineers' intelligence, our security architecture, and our company's ethical mission.</p>
+        </div>
+    </article>
+</main>
+
+<script>
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const isDark = getComputedStyle(html).getPropertyValue('--bg-color').trim() === '#121212';
+        
+        if (isDark) {
+            html.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+</script>
+</body>
+</html>
