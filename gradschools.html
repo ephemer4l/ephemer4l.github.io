@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="en" class="smooth-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Guide to Graduate Programs in Mathematics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .view { display: none; }
+        .view.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .nav-link.active { color: #c2410c; border-bottom-color: #c2410c; font-weight: 600; }
+        .filter-btn.active { background-color: #1e3a8a; color: white; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); }
+        .modal { background-color: rgba(0,0,0,0.6); }
+        .chart-container { position: relative; width: 100%; max-width: 900px; margin-left: auto; margin-right: auto; height: 450px; max-height: 60vh; }
+        .accordion-toggle svg { transition: transform 0.3s ease; }
+        .accordion-toggle.open svg { transform: rotate(180deg); }
+        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #e2e8f0; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #64748b; }
+        .sortable-th { cursor: pointer; user-select: none; }
+        .sortable-th:hover { background-color: #f1f5f9; }
+        .sort-asc::after { content: ' ▲'; font-size: 0.8em; }
+        .sort-desc::after { content: ' ▼'; font-size: 0.8em; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-40 shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-slate-900">Grad Program Navigator</h1>
+                </div>
+                <div class="hidden md:flex items-baseline space-x-4">
+                    <a href="#dashboard" data-view="dashboard" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 hover:text-orange-800 border-b-2 border-transparent">Dashboard</a>
+                    <a href="#german-msc" data-view="german-msc" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 hover:text-orange-800 border-b-2 border-transparent">German M.Sc. Programs</a>
+                    <a href="#france-m2" data-view="france-m2" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 hover:text-orange-800 border-b-2 border-transparent">French M2 Programs</a>
+                    <a href="#us-phd" data-view="us-phd" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 hover:text-orange-800 border-b-2 border-transparent">U.S. PhD Programs</a>
+                    <a href="#app-hub" data-view="app-hub" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 hover:text-orange-800 border-b-2 border-transparent">Application Hub</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-slate-500 hover:bg-slate-100">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-3 space-y-1">
+                <a href="#dashboard" data-view="dashboard" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Dashboard</a>
+                <a href="#german-msc" data-view="german-msc" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">German M.Sc. Programs</a>
+                <a href="#france-m2" data-view="france-m2" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">French M2 Programs</a>
+                <a href="#us-phd" data-view="us-phd" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">U.S. PhD Programs</a>
+                <a href="#app-hub" data-view="app-hub" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Application Hub</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <section id="dashboard-view" class="view">
+            <div class="text-center py-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900">Your Unified Guide to Advanced Mathematics Programs</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">This interactive dashboard synthesizes detailed reports on graduate programs in Germany, France, and the U.S. Navigate the academic landscape, compare institutions, and build your application strategy.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-green-800">Explore German M.Sc. Programs</h3>
+                    <p class="mt-2 text-slate-600">A detailed tracker for top German Master's programs in pure mathematics. Compare universities by requirements, deadlines, and key faculty.</p>
+                    <button data-view="german-msc" class="nav-btn mt-4 font-semibold text-green-700 hover:text-green-900">Explore M.Sc. Programs →</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-blue-800">Explore French M2 Programs</h3>
+                    <p class="mt-2 text-slate-600">An in-depth look at top French Master's programs in pure mathematics and cryptography. Compare universities by prestige, cost of living, and research focus.</p>
+                    <button data-view="france-m2" class="nav-btn mt-4 font-semibold text-blue-700 hover:text-blue-900">Explore M2 Programs →</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-orange-800">Explore U.S. PhD Programs</h3>
+                    <p class="mt-2 text-slate-600">A detailed analysis of premier U.S. doctoral programs in Higher Structures and Theoretical Cryptography. Filter by research synergy, tier, and faculty.</p>
+                    <button data-view="us-phd" class="nav-btn mt-4 font-semibold text-orange-700 hover:text-orange-900">Explore PhD Programs →</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-700">Plan Your Application</h3>
+                    <p class="mt-2 text-slate-600">Access strategic advice, crucial timelines, and a breakdown of examination fees to prepare a successful and timely application.</p>
+                    <button data-view="app-hub" class="nav-btn mt-4 font-semibold text-slate-600 hover:text-slate-800">Go to Application Hub →</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="german-msc-view" class="view">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900">German M.Sc. Programs in Mathematics</h2>
+                <p class="mt-2 text-slate-600">Filter and explore top universities for research-oriented Master's programs in higher structures.</p>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-md mb-8 sticky top-16 z-30">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="de-search-name" class="block text-sm font-medium text-slate-700">Search by Name or Faculty</label>
+                        <input type="text" id="de-search-name" placeholder="e.g., Bonn, Stroppel" class="mt-1 block w-full p-2 border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label for="de-sort-deadline" class="block text-sm font-medium text-slate-700">Sort by Deadline</label>
+                        <select id="de-sort-deadline" class="mt-1 block w-full p-2 border-gray-300 rounded-md">
+                            <option value="default">Default Order</option>
+                            <option value="asc">Earliest to Latest</option>
+                            <option value="desc">Latest to Earliest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="de-university-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+        <section id="france-m2-view" class="view">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900">French M2 Programs in Mathematics</h2>
+                <p class="mt-2 text-slate-600">Filter and explore top universities for research-oriented Master's programs.</p>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-md mb-8 sticky top-16 z-30">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="fr-filter-region" class="block text-sm font-medium text-slate-700">Region</label>
+                        <select id="fr-filter-region" class="mt-1 block w-full p-2 border-gray-300 rounded-md">
+                            <option value="all">All Regions</option>
+                            <option value="Paris">Paris Area</option>
+                            <option value="Autre">Other Cities</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="fr-filter-research" class="block text-sm font-medium text-slate-700">Primary Research Area</label>
+                        <select id="fr-filter-research" class="mt-1 block w-full p-2 border-gray-300 rounded-md">
+                            <option value="all">All Areas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="fr-sort-cost" class="block text-sm font-medium text-slate-700">Sort by Cost of Living</label>
+                        <select id="fr-sort-cost" class="mt-1 block w-full p-2 border-gray-300 rounded-md">
+                            <option value="default">Default</option>
+                            <option value="asc">Lowest to Highest</option>
+                            <option value="desc">Highest to Lowest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="fr-university-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-center text-slate-900 mb-6">Comparative Visualizations</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-center mb-4">Prestige vs. Cost of Living</h4>
+                        <div class="chart-container"><canvas id="fr-prestige-chart"></canvas></div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-center mb-4">Monthly Cost of Living Comparison</h4>
+                        <div class="chart-container"><canvas id="fr-cost-chart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="us-phd-view" class="view">
+             <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900">U.S. PhD Programs in Higher Structures & Cryptography</h2>
+                <p class="mt-2 text-slate-600">Explore leading doctoral programs at the intersection of pure mathematics and theoretical computer science.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-sm self-start sticky top-24">
+                    <h3 class="font-bold text-lg mb-4 text-slate-900">Filters & Controls</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="us-search" class="block text-sm font-medium text-slate-700 mb-1">Search Name/Faculty</label>
+                            <input type="text" id="us-search" placeholder="e.g., Harvard, Lurie, Sahai" class="w-full p-2 border border-slate-300 rounded-md">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Filter by Tier (Higher Structures)</label>
+                            <div id="us-tier-filters" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Filter by Synergy (Crypto)</label>
+                            <div id="us-synergy-filters" class="flex flex-wrap gap-2"></div>
+                        </div>
+                         <div>
+                            <label for="us-sort" class="block text-sm font-medium text-slate-700 mb-1">Sort By</label>
+                            <select id="us-sort" class="w-full p-2 border border-slate-300 rounded-md">
+                                <option value="name">University Name (A-Z)</option>
+                                <option value="stipend_desc">Stipend (High-Low)</option>
+                                <option value="stipend_asc">Stipend (Low-High)</option>
+                                <option value="deadline">Application Deadline</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="us-university-list" class="lg:col-span-4 h-[75vh] overflow-y-auto pr-2 custom-scrollbar"></div>
+                <div id="us-university-details" class="lg:col-span-5 bg-white p-6 rounded-xl shadow-sm self-start sticky top-24 h-[75vh] overflow-y-auto custom-scrollbar"></div>
+            </div>
+        </section>
+
+        <section id="app-hub-view" class="view">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900">Application Strategy & Resources</h2>
+                <p class="mt-2 text-slate-600">Consolidated advice and key data to guide your application process.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-4">Strategic Advice</h3>
+                    <div id="strategy-accordion" class="space-y-3"></div>
+                </div>
+                
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-bold mb-4">TEV-DAAD Germany Scholarship</h3>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Eligibility Criteria</h4>
+                                <ul class="list-disc list-inside text-slate-600">
+                                    <li>T.C. citizen and under 35 years old.</li>
+                                    <li>Min. GPA: 3.0/4.0 or 76.5/100.</li>
+                                    <li>Degree from a YÖK-affiliated university in Turkey.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Language Requirement</h4>
+                                <p class="text-slate-600"><strong>English:</strong> TOEFL IBT (79-93) or IELTS Academic (6.5).<br>
+                                <strong>Exemption:</strong> No test needed if your Bachelor's was 100% in English and you are applying to an English Master's program (must also be accepted by the university).</p>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-slate-800">Required Documents</h4>
+                                <ul class="list-disc list-inside text-slate-600">
+                                    <li>TEV and DAAD Application Forms</li>
+                                    <li>CV (English, 1 page preferred)</li>
+                                    <li>English Transcript</li>
+                                    <li>Two (2) Letters of Recommendation (English)</li>
+                                    <li>Family financial documents from e-Devlet</li>
+                                    <li>Vukuatlı Nüfus Kayıt Örneği & ID Card Copy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="space-y-8">
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-bold mb-4">German M.Sc. Timelines</h3>
+                            <div class="mb-6">
+                                <h4 class="font-semibold text-slate-800 mb-2">Standard Timeline</h4>
+                                <div id="de-timeline-standard"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 mb-2">VPD Applicant Timeline (e.g., for FU Berlin)</h4>
+                                 <div id="de-timeline-vpd"></div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-bold mb-4">Examination Fees for Turkish Students</h3>
+                            <p class="text-sm text-slate-600 mb-4">Costs as of June 2025. Exchange rates are approximate.</p>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-slate-200">
+                                    <thead class="bg-slate-50">
+                                        <tr>
+                                            <th class="px-4 py-2 text-left text-xs font-medium text-slate-500 uppercase">Test</th>
+                                            <th class="px-4 py-2 text-left text-xs font-medium text-slate-500 uppercase">Cost (USD)</th>
+                                            <th class="px-4 py-2 text-left text-xs font-medium text-slate-500 uppercase">Cost (TRY)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-slate-200">
+                                        <tr><td class="px-4 py-2 text-sm">GRE General Test</td><td class="px-4 py-2 text-sm">$220</td><td class="px-4 py-2 text-sm">~ 7,240</td></tr>
+                                        <tr><td class="px-4 py-2 text-sm">GRE Mathematics Subject Test</td><td class="px-4 py-2 text-sm">$150</td><td class="px-4 py-2 text-sm">~ 4,935</td></tr>
+                                        <tr><td class="px-4 py-2 text-sm">IELTS Academic</td><td class="px-4 py-2 text-sm">-</td><td class="px-4 py-2 text-sm">9,500</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12">
+        <div class="container mx-auto py-6 px-4 text-center text-slate-500 text-sm">
+            <p>This interactive guide was synthesized from multiple data sources to aid prospective graduate students.</p>
+            <p>All data is for informational purposes and should be verified with official university sources.</p>
+        </div>
+    </footer>
+
+    <div id="universal-modal" class="modal hidden fixed inset-0 z-50 items-center justify-center p-4">
+        <div class="bg-slate-50 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative custom-scrollbar">
+            <button id="close-modal-btn" class="absolute top-3 right-4 text-slate-500 hover:text-slate-800 text-3xl font-bold">&times;</button>
+            <div id="modal-content" class="p-6 md:p-8"></div>
+        </div>
+    </div>
+
+    <script>
+    const masterData = {
+    germanMSc: [
+        {
+            id: 'bonn',
+            name: 'University of Bonn',
+            city: 'Bonn',
+            tier: 1,
+            deadline: '2026-05-15',
+            labs: [
+                { name: 'Hausdorff Center for Mathematics (HCM)', description: 'A DFG-funded Cluster of Excellence and a powerful, integrated research hub.' },
+                { name: 'Max Planck Institute for Mathematics (MPIM)', description: 'A globally renowned institute that functions as a magnet for international mathematical talent.' }
+            ],
+            faculty: [
+                { name: 'C. Stroppel', focus: 'Representation theory, low-dimensional topology, higher categorical structures.' },
+                { name: 'G. Jasso', focus: 'Homological and homotopical algebra, higher category theory.' }
+            ],
+            application: {
+                platform_url: 'https://masterapplication.uni-bonn.de/movein/hosted/online/move/movein/portal/studyportal.php?_language=en',
+                docs: [
+                    "Bachelor's Degree Certificate",
+                    "Transcript of Records",
+                    "Module/Course Descriptions (especially important)",
+                    "Letter of Motivation",
+                    "Curriculum Vitae (CV)",
+                    "Letter(s) of Recommendation (Required for int'l applicants)",
+                    "Academic Papers (e.g., Bachelor's Thesis)",
+                    "Copy of Passport",
+                    "GRE Subject Test: Mathematics (Recommended for non-EU degrees)"
+                ],
+                english_req: "<strong>Accepted:</strong> TOEFL iBT (80), IELTS (6.0). <strong>Exemption:</strong> A previous degree taught <em>entirely</em> in English is accepted. A letter from the university confirming this is required."
+            }
+        },
+        {
+            id: 'hamburg',
+            name: 'University of Hamburg',
+            city: 'Hamburg',
+            tier: 1,
+            note: "Elevated to personal Tier 1 based on direct communication with Prof. Dyckerhoff confirming application support.",
+            deadline: '2026-06-15',
+            labs: [
+                { name: 'Center for Mathematical Physics (ZMP)', description: 'Institutionalizes the connection between pure mathematics and theoretical physics.'},
+                { name: 'CRC 1624 "Higher Structures, Moduli Spaces and Integrability"', description: 'A DFG-funded initiative indicating a long-term investment in higher structures.'}
+            ],
+            faculty: [
+                { name: 'T. Dyckerhoff', focus: 'Higher category theory, offering graduate courses on the subject based on Lurie\'s foundational texts.' }
+            ],
+            application: {
+                platform_url: 'https://www-cndsf.stine.uni-hamburg.de/IdentityServer/Account/Login',
+                docs: [
+                    "Degree Certificate / Transcript (Provisional ToR is acceptable)",
+                    "Current Transcript with CGPA",
+                    "Personal Statement (50-500 words)",
+                    "Curriculum Vitae (CV)",
+                    "Further Qualifications (Optional: Work experience, etc.)",
+                    "Copy of Passport"
+                ],
+                english_req: "<strong>Accepted (B2 Level):</strong> TOEFL iBT (72), IELTS (5.5), Cambridge FCE. <strong>Exemption:</strong> A Bachelor's degree taught in English is accepted. The transcript must clearly state English was the language of instruction."
+            }
+        },
+        {
+            id: 'regensburg',
+            name: 'University of Regensburg',
+            city: 'Regensburg',
+            tier: 1,
+            deadline: '2026-06-01',
+            labs: [
+                { name: 'SFB 1085 "Higher Invariants"', description: 'A DFG-funded Collaborative Research Centre focused on using higher category theory, motivic homotopy theory, and derived algebraic geometry.' }
+            ],
+            faculty: [
+                { name: 'D.-C. Cisinski', focus: 'World-leading authority on higher category theory, higher topoi, and derived algebraic geometry.' },
+                { name: 'M. Hoyois', focus: 'Expert in motivic homotopy theory and algebraic K-theory.' }
+            ],
+            application: {
+                platform_url: 'https://spur.uni-regensburg.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces',
+                docs: [
+                    "Bachelor's Degree Certificate (Or proof of 140 ECTS credits)",
+                    "Transcript of Records",
+                    "Module Catalog / Syllabus (Crucial for application)",
+                    "Letter of Motivation (Highlight SFB 1085 alignment)",
+                    "Curriculum Vitae (CV)",
+                    "School Leaving Certificate",
+                    "Proof of Further Qualifications (Optional)",
+                    "Copy of Passport",
+                    "APS Certificate (If degree from China, India, Vietnam)"
+                ],
+                english_req: "Awaiting confirmation via email."
+            }
+        },
+        {
+            id: 'bielefeld',
+            name: 'Bielefeld University',
+            city: 'Bielefeld',
+            tier: 2,
+            deadline: '2026-07-15',
+            labs: [
+                { name: 'Algebra & Topology Group', description: 'Participates in major DFG-funded projects and the North German Algebraic Geometry Seminar (NoGAGS).' }
+            ],
+            faculty: [
+                { name: 'F. Hebestreit', focus: 'Algebraic and geometric topology, using higher categories to study diffeomorphism groups and algebraic K-theory.' }
+            ],
+            application: {
+                platform_url: 'https://campus.uni-bielefeld.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces?chco=y',
+                docs: [
+                    "Bachelor's Degree Certificate",
+                    "Transcript of Records",
+                    "Module Handbook / Descriptions (Explicitly required)",
+                    "Curriculum Vitae (CV)",
+                    "Letter of Motivation (Optional, but recommended)"
+                ],
+                english_req: "<strong>B2 Level required.</strong> <strong>Accepted:</strong> TOEFL iBT (87+), IELTS (5.5+). <strong>Exemption:</strong> A degree from specific countries (UK, IRL, USA, CAN, AUS, NZ) waives the need for a test. For other countries, a degree taught in English is <strong>NOT</strong> an automatic waiver; your certificate must <em>explicitly state</em> B2 proficiency."
+            }
+        },
+        {
+            id: 'fu-berlin',
+            name: 'Freie Universität Berlin',
+            city: 'Berlin',
+            tier: 2,
+            deadline: '2026-05-31',
+            labs: [
+                { name: 'Berlin Mathematical School (BMS)', description: 'A joint graduate school of the three major Berlin universities, pooling faculty, courses, and resources.'},
+                { name: 'MATH+ Cluster of Excellence', description: 'A major DFG-funded research center that forms the umbrella for the BMS.'}
+            ],
+            faculty: [
+                { name: 'H. Reich', focus: 'Algebraic Topology' },
+                { name: 'A. Schmitt', focus: 'Algebraic Geometry' }
+            ],
+            application: {
+                platform_url: 'https://www.uni-assist.de/en/',
+                note: 'Requires a <a href="https://www.uni-assist.de/en/how-to-apply/plan-your-application/vpd/" target="_blank" class="text-blue-600 hover:underline">preliminary review documentation (VPD) via uni-assist</a> BEFORE applying to the university. The VPD process takes 4-6 weeks, so apply for it as early as possible. See the adjusted timeline in the Application Hub.',
+                docs: [
+                    "Bachelor's Degree Certificate",
+                    "Transcript of Records",
+                    "Curriculum Vitae (CV)",
+                    "Copy of Passport",
+                    "APS Certificate (If degree from China, India, Vietnam)"
+                ],
+                english_req: "<strong>B2 Level required.</strong> <strong>Accepted:</strong> TOEFL iBT (80+), IELTS (5.0+). <strong>Exemption:</strong> The requirement for a test is waived if your initial degree was earned from a university where the language of instruction was English."
+            }
+        },
+        {
+            id: 'tum',
+            name: 'Technical University of Munich (TUM)',
+            city: 'Munich',
+            tier: 2,
+            deadline: '2026-05-31',
+            labs: [
+                { name: 'Topology Research Group', description: 'Studies topics at the intersection of higher category theory and functorial field theories.' },
+                { name: 'Collaborations', description: 'Principal Investigator in Regensburg\'s SFB 1085 and Hamburg\'s CRC 1624, indicating strong national connections.' }
+            ],
+            faculty: [
+                { name: 'Claudia Scheimbauer', focus: 'Algebraic topology, mathematical physics, higher category theory, and derived algebraic geometry.' }
+            ],
+            application: {
+                platform_url: 'https://campus.tum.de/tumonline/',
+                docs: [
+                    "Degree Certificate and Diploma (or up-to-date Transcript)",
+                    "Letter of Motivation (in English)",
+                    "Complete and Current Résumé (CV)",
+                    "Module Descriptions (Curriculum)",
+                    "Passport",
+                    "Preliminary Documentation (VPD) via uni-assist (for non-German degrees)",
+                    "Form for Grade Calculation"
+                ],
+                english_req: "<strong>Accepted:</strong> TOEFL iBT (88+), IELTS Academic (6.5+). <strong>Exemption:</strong> Waived if your Bachelor's program was taught entirely in English. This must be verifiable from your transcript or a separate official university confirmation."
+            }
+        }
+    ],
+    franceM2: [
+        {
+            id: 'paris-saclay',
+            name: 'Université Paris-Saclay',
+            city: 'Orsay',
+            region: 'Paris',
+            pole: 'Parisien',
+            tier: 1,
+            cost: { min: 815, max: 1480, avg: 1148 },
+            costBreakdown: { "Logement": 650, "Nourriture": 250, "Transport": 40, "Autres": 208 },
+            coords: { top: '42%', left: '48%' },
+            labs: [
+                { name: 'Laboratoire de Mathématiques d\'Orsay (LMO)', team: 'CRYPTO', description: "Un pôle mondial organisé sous la Graduate School Mathématiques, fédérant 13 laboratoires. Le LMO est au cœur de la recherche fondamentale, soutenu par la prestigieuse Fondation Mathématique Jacques Hadamard (FMJH)." },
+                { name: 'Laboratoire de Mathématiques de Versailles (LMV)', team: 'CRYPTO', description: "L'équipe CRYPTO couvre un large spectre : conception de schémas asymétriques, preuves de sécurité, cryptanalyse de primitives symétriques et attaques par canaux auxiliaires." }
+            ],
+            faculty: [
+                { name: "Johannes Anschuetz", title: "Faculty", focus: "Géométrie p-adique, espaces perfectoïdes, programme de Langlands." },
+                { name: "Jean-Benoît Bost", title: "Faculty", focus: "Géométrie d'Arakelov, géométrie diophantienne, géométrie algébrique et complexe." },
+                { name: "Christophe Breuil", title: "Faculty", focus: "Programme de Langlands p-adique, théorie de Hodge p-adique, représentations galoisiennes." },
+                { name: "Frédéric Bourgeois", title: "Faculty", focus: "Topologie symplectique et de contact, homologie de Floer." },
+                { name: 'Ana-Maria Castravet', title: 'Responsable M1 Algèbre Appliquée', focus: 'Géométrie algébrique, Espaces de modules, Géométrie birationnelle' }
+            ],
+            masters: [
+                { name: "M2 Analysis, Arithmetic, Geometry (AAG)", program: "M2 Analysis, Arithmetic, Geometry (AAG)", description: 'Cursus phare pour la cryptographie mathématique, formant des experts en algèbre et géométrie pour la recherche et l\'industrie.' }
+            ],
+            strengths: ['Algebraic Geometry & Number Theory', 'Analysis & PDEs', 'Probability & Statistics', 'Geometry & Topology', 'algèbre', 'schémas asymétriques', 'preuves de sécurité', 'cryptanalyse', 'canaux auxiliaires'],
+            narrative: {
+                main: "Pôle d'excellence majeur, Paris-Saclay se distingue par sa forte concentration de compétences en mathématiques appliquées à la cryptographie, avec une approche valorisant la modélisation algébrique.",
+                environment: "L'environnement est vaste et décentralisé, avec des liens étroits avec l'École Polytechnique. La faculté a remporté de nombreuses récompenses de premier plan, dont 4 médailles Fields et 3 prix Abel."
+            },
+            application: {
+                platform: 'Portail en ligne INCEPTION',
+                timeline: 'Novembre 2026 – Mai 2027 (mi-avril pour les bourses IDEX)',
+                prereq: "Master 1 (M1) en mathématiques ou équivalent.",
+                docs: "Diplômes, relevés de notes, 2 lettres de recommandation, CV, lettre de motivation.",
+                notes: "Applies to standard national programs; high-fee international tracks exist.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'sorbonne-universite',
+            name: 'Sorbonne Université',
+            city: 'Paris',
+            region: 'Paris',
+            pole: 'Parisien',
+            tier: 1,
+            cost: { min: 1200, max: 1800, avg: 1500 },
+            costBreakdown: { "Logement": 900, "Nourriture": 250, "Transport": 75, "Autres": 275 },
+            coords: { top: '40%', left: '49%' },
+            labs: [
+                { name: "Institut de Mathématiques de Jussieu – Paris Rive Gauche (IMJ-PRG)", team: 'Théorie des Nombres', description: "L'IMJ-PRG est le plus grand centre de mathématiques fondamentales de France, géré conjointement avec le CNRS et l'Université Paris Cité. Il abrite une communauté dense et dynamique de chercheurs de renommée mondiale." },
+                 { name: 'Institut de Recherche en Informatique Fondamentale (IRIF)', team: 'Algèbre et Calcul', description: "Laboratoire de premier plan en informatique théorique, avec une activité de niveau international en cryptographie et post-quantique." },
+                { name: 'Laboratoire d\'Informatique de Paris 6 (LIP6)', team: '', description: "Grand laboratoire d'informatique hébergeant l'équipe du master CCA." }
+            ],
+            faculty: [
+                { name: "Yonatan Harpaz", title: "Faculty", focus: "Théorie de l'homotopie, théorie des catégories supérieures, K-théorie." },
+                { name: "Najib Idrissi", title: "Faculty", focus: "Topologie algébrique, calcul des plongements, opérades, espaces de configuration." },
+                { name: "Claire Voisin", title: "Faculty", focus: "Géométrie algébrique, théorie de Hodge, cycles algébriques. (Médaille d'or CNRS)" },
+                { name: 'Mireille Fouquet', title: 'Responsable Master MIC', focus: 'Théorie algorithmique des nombres, Courbes elliptiques, Comptage de points' },
+                { name: 'Vincent Neiger', title: 'Co-Responsable Master CCA', focus: 'Calcul formel, Algorithmes rapides, Matrices polynomiales' },
+            ],
+            masters: [
+                { name: "M2 Mathématiques Fondamentales", program: "M2 Mathématiques Fondamentales", description: 'Les cours couvrent Analyse Algébrique, Analyse Complexe, Géométrie, Formes Automorphes, etc.'},
+                { name: 'Master MIC (Maths, Info, Crypto)', program: 'Master MIC (Maths, Info, Crypto)', description: "Parcours emblématique de l'approche interdisciplinaire, offrant une double compétence en mathématiques et informatique." },
+                { name: 'Master CCA (Crypto, Calcul, Algorithmique)', program: 'Master CCA (Crypto, Calcul, Algorithmique)', description: "Axé sur la cryptologie, le calcul formel et le calcul haute-performance." }
+            ],
+            strengths: ['théorie des nombres', 'géométrie algébrique', 'informatique théorique', 'calcul formel', 'cryptographie quantique', 'Analysis & PDEs', 'Geometry & Topology'],
+            narrative: {
+                main: "Un écosystème parisien intégré et complexe où Sorbonne Université et Université Paris Cité partagent des laboratoires de renommée mondiale. La recherche y est extrêmement large, du plus théorique au plus appliqué.",
+                environment: "L'environnement est centralisé et très collaboratif sur le campus central de Jussieu."
+            },
+            application: {
+                platform: 'Plateforme eCandidat Sorbonne Université',
+                timeline: 'Fin mars à mi-juin 2027 (Nov. 2026 à Fév. 2027 pour les bourses PGSM)',
+                prereq: "M1 validé en mathématiques ou équivalent.",
+                docs: "Dossier académique complet.",
+                notes: "Applies to core Faculty of Science programs; high-fee specialized degrees exist.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-paris-cite',
+            name: 'Université Paris Cité',
+            city: 'Paris',
+            region: 'Paris',
+            pole: 'Parisien',
+            tier: 1,
+            cost: { min: 1200, max: 1800, avg: 1500 },
+            costBreakdown: { "Logement": 900, "Nourriture": 250, "Transport": 75, "Autres": 275 },
+            labs: [
+                { name: "Institut de Mathématiques de Jussieu – Paris Rive Gauche (IMJ-PRG)", team: "Logique", description: "La force de l'université en mathématiques fondamentales est intégrée à l'IMJ-PRG." },
+                { name: 'Institut de Recherche en Informatique Fondamentale (IRIF)', team: 'Algèbre et Calcul', description: "Laboratoire de premier plan en informatique théorique, avec une activité de niveau international en cryptographie et post-quantique." }
+            ],
+            faculty: [
+                { name: "Boban Velickovic", title: "Faculty", focus: "Théorie des ensembles, Logique" },
+                { name: "Antonio Bucciarelli", title: "Faculty", focus: "Logique, Sémantique" },
+                { name: "Alexis Saurin", title: "Faculty", focus: "Théorie de la démonstration, Logique" },
+                { name: "Tomás Ibarlucía", title: "Faculty", focus: "Théorie des modèles, Logique" },
+                { name: 'Mireille Fouquet', title: 'Responsable Master MIC', focus: 'Théorie algorithmique des nombres, Courbes elliptiques, Comptage de points' }
+            ],
+            masters: [
+                { name: 'M2 Logique Mathématique (LMFI)', program: 'M2 Logique Mathématique (LMFI)', description: 'Le programme LMFI est unique en France, se concentrant exclusivement sur la logique et ses fondements.' },
+                { name: 'Master MIC (Maths, Info, Crypto)', program: 'Master MIC (Maths, Info, Crypto)', description: "Parcours emblématique de l'approche interdisciplinaire, offrant une double compétence en mathématiques et informatique." }
+            ],
+            strengths: ['théorie des nombres', 'géométrie algébrique', 'informatique théorique', 'calcul formel', 'cryptographie quantique', 'Logique', 'Sémantique'],
+            narrative: {
+                main: "Un écosystème parisien intégré où Sorbonne Université et Université Paris Cité partagent des laboratoires de renommée mondiale. Sa force en mathématiques fondamentales est intégrée à l'IMJ-PRG, avec un programme de Logique unique en France.",
+                environment: "Offre un environnement de recherche très spécialisé et de haut niveau."
+            },
+            application: {
+                platform: "Plateforme eCandidat / Études en France pour les non-UE.",
+                timeline: "Mai 2027 – Septembre 2027",
+                prereq: "M1 en mathématiques, informatique ou logique.",
+                docs: "Dossier académique, lettre de motivation.",
+                notes: "Clear and official low-fee policy for all national programs.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'ens-ulm',
+            name: 'École Normale Supérieure (Ulm)',
+            city: 'Paris',
+            region: 'Paris',
+            pole: 'Parisien',
+            tier: 1,
+            cost: { min: 1200, max: 1800, avg: 1500 },
+            costBreakdown: { "Logement": 900, "Nourriture": 250, "Transport": 75, "Autres": 275 },
+            coords: { top: '41%', left: '48.5%' },
+            labs: [{ name: "Département de mathématiques et applications (DMA)", team: "Algèbre et géométrie", description: "L'un des départements de mathématiques les plus prestigieux au monde." }],
+            faculty: [
+                { name: "Muriel Livernet", title: "Faculty", focus: "Opérades, algèbre homotopique, algèbre non commutative." },
+                { name: "François Charles", title: "Faculty", focus: "Géométrie arithmétique et algébrique, théorie de Hodge p-adique, cycles algébriques." },
+                { name: "Emmanuel Giroux", title: "Faculty", focus: "Géométrie de contact et symplectique, topologie en basse dimension." },
+                { name: 'Andreea Iorga', title: 'Professeure invitée', focus: 'Théorie algébrique des nombres, Représentations galoisiennes, Formes modulaires' },
+                { name: 'Gaëtan Chenevier', title: 'Responsable équipe Algèbre et géométrie', focus: 'Théorie des nombres, Formes automorphes, Programme de Langlands' }
+            ],
+            masters: [{ name: 'Cursus du DMA & MPRI', program: 'Via les universités partenaires', description: "Formation d'excellence conçue pour mener au doctorat, avec une immersion rapide dans la recherche et une culture solide en algèbre, géométrie et théorie des nombres." }],
+            strengths: ['complexité algorithmique', 'zero-knowledge', 'cryptographie post-quantique', 'réseaux euclidiens', 'géométrie algébrique', 'Opérades', 'Homotopie'],
+            narrative: {
+                main: "Le sommet de la formation à la recherche par la recherche en France. La cryptographie y est abordée sous un angle résolument fondamental, à l'intersection des mathématiques pures et de l'informatique théorique.",
+                environment: "L'environnement est caractérisé par une concentration exceptionnelle de chercheurs de premier plan et des interactions intenses en petits groupes. Chaque étudiant se voit attribuer un tuteur personnel."
+            },
+            application: {
+                platform: "Plateformes des universités partenaires (Saclay, Sorbonne) pour le M2.",
+                timeline: "Variable",
+                prereq: "Admission à l'ENS (via concours ou dossier) et au M2 de l'université partenaire.",
+                docs: "Dossier de candidature très compétitif pour l'ENS.",
+                notes: "Elite institution with low fees; admission is the primary barrier.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-grenoble-alpes',
+            name: 'Université Grenoble Alpes',
+            city: 'Grenoble',
+            region: 'Autre',
+            pole: 'Ingénierie',
+            tier: 2,
+            cost: { min: 800, max: 1100, avg: 950 },
+            costBreakdown: { "Logement": 500, "Nourriture": 250, "Transport": 30, "Autres": 170 },
+            coords: { top: '65%', left: '62%' },
+            labs: [
+                { name: 'Institut Fourier', description: 'Laboratoire de recherche en mathématiques très respecté, avec des équipes solides en géométrie algébrique, géométrie complexe, topologie et théorie des nombres.' },
+                { name: 'Laboratoire Jean Kuntzmann (LJK)', description: 'Spécialisé en mathématiques appliquées et informatique.' },
+                { name: 'Verimag', description: 'Référence dans les systèmes embarqués critiques et la vérification formelle des protocoles.' }
+            ],
+            faculty: [
+                { name: "Claire Amiot", title: "Faculty", focus: "Algèbres amassées, catégories triangulées, théorie des représentations." },
+                { name: "Jean Fasel", title: "Faculty", focus: "K-théorie algébrique, théorie de l'homotopie A¹, formes quadratiques." },
+                { name: 'Léo Colisson', title: 'Responsable UE Advanced Cryptology', focus: 'Cryptographie quantique, Calcul quantique délégué, Preuves ZK' },
+                { name: 'Vanessa Vitse', title: 'Responsable UE Advanced Cryptology', focus: "Cryptanalyse algébrique, Logarithme discret (courbes elliptiques), Calcul d'indice" },
+                { name: 'Clément Pernet', title: 'Responsable UE Cryptographic engineering', focus: 'Calcul formel, Calcul haute performance, Multiplication de matrices' }
+            ],
+            masters: [
+                { name: 'M2R Fundamental Mathematics', program: 'M2R Fundamental Mathematics', description: 'Le programme est axé sur la recherche avec des cours dispensés en anglais pour les étudiants internationaux.' },
+                { name: 'Master Informatique, parcours Cybersecurity', program: 'Master Informatique, parcours Cybersecurity', description: "Parcours en anglais abordant des sujets de pointe comme le post-quantique et les preuves zero-knowledge." }
+            ],
+            strengths: ['ingénierie cryptographique', 'sécurité des systèmes', 'cryptanalyse', 'cryptographie post-quantique', 'arithmétique', 'Geometry & Topology', 'Algebraic Geometry & Number Theory', 'Analysis & PDEs'],
+            narrative: {
+                main: "Un pôle très puissant à l'interface des mathématiques appliquées, de l'informatique et de l'ingénierie. L'approche est à la fois fondamentale et très appliquée (sécurité des systèmes embarqués).",
+                environment: "Le programme de M2R est axé sur la recherche avec des cours dispensés en anglais pour les étudiants internationaux, garantissant une forte intégration dans les équipes de recherche."
+            },
+            application: {
+                platform: 'Serveur de candidature de l\'université (FSA).',
+                timeline: 'À partir de Février 2027',
+                prereq: "M1 en mathématiques ou équivalent.",
+                docs: "Dossier académique, lettre de motivation.",
+                notes: "Student must actively apply for exemption to avoid the €3,770 fee.",
+                tuition: "€254 / year (upon request)"
+            }
+        },
+        {
+            id: 'universite-de-strasbourg',
+            name: 'Université de Strasbourg',
+            city: 'Strasbourg',
+            region: 'Autre',
+            pole: 'Est',
+            tier: 2,
+            cost: { min: 800, max: 1200, avg: 1000 },
+            costBreakdown: { "Logement": 550, "Nourriture": 250, "Transport": 27, "Autres": 173 },
+            coords: { top: '43%', left: '72%' },
+            labs: [{ name: 'Institut de Recherche Mathématique Avancée (IRMA)', team: 'Arithmétique et géométrie algébrique', description: "Principal laboratoire de mathématiques de Strasbourg et grand centre de recherche avec environ 100 chercheurs." }],
+            faculty: [
+                { name: "Frédéric Chapoton", title: "Faculty", focus: "Opérades, algèbre combinatoire, algèbres amassées, associaèdres." },
+                { name: "Christine Vespa", title: "Faculty", focus: "Stabilité homologique, homologie des foncteurs, opérades." },
+                { name: 'Julien Haristoy', title: 'Responsable de cours', focus: 'Théorie des nombres, Équations diophantiennes, Cryptographie' }
+            ],
+            masters: [
+                { name: 'M2 Mathématiques Fondamentales', program: 'M2 Mathématiques Fondamentales', description: "Programme de M2 avec un thème annuel." },
+                { name: 'Cours "Arithmétique et cryptographie"', program: 'Cours "Arithmétique et cryptographie"', description: "Un enseignement complet allant des bases de l'arithmétique à RSA, AES et aux applications comme les cryptomonnaies." }
+            ],
+            strengths: ['arithmétique', 'géométrie algébrique', 'cryptomonnaies', 'Geometry & Topology', 'Analysis & PDEs'],
+            narrative: {
+                main: "La cryptographie y est principalement enseignée au sein de l'UFR de mathématique et d'informatique, avec une approche solidement ancrée dans l'arithmétique.",
+                environment: "L'IRMA a des équipes de recherche actives en géométrie algébrique et arithmétique. La faculté comprend des mathématiciens très respectés, dont plusieurs ont été conférenciers invités à l'ICM."
+            },
+            application: {
+                platform: 'Portail central de candidature de l\'université.',
+                timeline: 'Probablement au printemps 2027',
+                prereq: "M1 validé en mathématiques ou équivalent.",
+                docs: "Dossier académique, lettre de motivation.",
+                notes: "Policy appears to have shifted to applying the higher fee for new students.",
+                tuition: "€3,941 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'ens-de-lyon',
+            name: 'ENS de Lyon',
+            city: 'Lyon',
+            region: 'Autre',
+            pole: 'Post-Quantique',
+            tier: 2,
+            cost: { min: 900, max: 1200, avg: 1050 },
+            costBreakdown: { "Logement": 600, "Nourriture": 250, "Transport": 32, "Autres": 168 },
+            coords: { top: '60%', left: '57%' },
+            labs: [
+                { name: 'Unité de Mathématiques Pures et Appliquées (UMPA)', description: 'Héberge des recherches de pointe en cryptologie.' },
+                { name: 'Laboratoire de l\'Informatique du Parallélisme (LIP)', description: "Cœur de la recherche en cryptographie à l'ENS Lyon, avec une expertise reconnue sur les réseaux euclidiens." }
+            ],
+            faculty: [
+                { name: "Frédéric Déglise", title: "Faculty", focus: "Théorie de l'homotopie motivique, cycles algébriques, K-théorie." },
+                { name: "Sophie Morel", title: "Faculty", focus: "Programme de Langlands, géométrie et cohomologie des variétés de Shimura." },
+                { name: 'Damien Stehlé', title: 'Professeur/Chercheur', focus: 'Cryptographie post-quantique, Cryptographie à base de réseaux, Standardisation NIST' },
+                { name: 'Benjamin Wesolowski', title: 'Chargé de recherche CNRS', focus: "Cryptographie post-quantique, Cryptographie à base d'isogénies, Réseaux euclidiens" }
+            ],
+            masters: [
+                { name: 'M2 Advanced Mathematics', program: 'M2 Advanced Mathematics', description: "Enseignements de très haut niveau en algèbre et informatique théorique, bases indispensables pour la recherche en cryptographie." }
+            ],
+            strengths: ['cryptographie post-quantique', 'réseaux euclidiens', 'complexité algorithmique', 'chiffrement homomorphe', 'Geometry & Topology', 'Analysis & PDEs', 'Probability & Statistics', 'Algebraic Geometry & Number Theory'],
+            narrative: {
+                main: "Pôle d'excellence de niveau mondial, avec une expertise particulièrement reconnue en cryptographie post-quantique. Ses chercheurs sont des acteurs centraux de la standardisation (NIST) des futurs algorithmes.",
+                environment: "L'UMPA est un centre de recherche majeur en France. La filière 'Higher Algebra and Formalised Mathematics' est particulièrement pertinente, avec une faculté de premier plan."
+            },
+            application: {
+                platform: 'CADENS (ENS) / eCandidat (Univ. Lyon 1)',
+                timeline: 'Fin janvier 2027 (bourses Ampère/SFRI), Mai à mi-juin 2027 (direct)',
+                prereq: "M1 ou 240 ECTS",
+                docs: "Excellent dossier, Lettre de motivation, Deux lettres de référence. Niveau B2 en anglais ou français.",
+                notes: "Official university policy confirms low fees for all students.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-de-toulouse',
+            name: 'Université de Toulouse',
+            city: 'Toulouse',
+            region: 'Autre',
+            pole: 'Sud-Ouest',
+            tier: 2,
+            cost: { min: 800, max: 1000, avg: 900 },
+            costBreakdown: { "Logement": 500, "Nourriture": 250, "Transport": 15, "Autres": 135 },
+            coords: { top: '80%', left: '44%' },
+            labs: [{ name: 'Institut de Mathématiques de Toulouse (IMT)', team: 'Géométrie, Topologie, Algèbre', description: "Principal laboratoire de la région, avec une grande et très active équipe de 46 membres permanents." }],
+            faculty: [
+                { name: "Emily Burgunder", title: "Faculty", focus: "Topologie algébrique, opérades, homotopie des schémas." },
+                { name: "Bertrand Toën", title: "Faculty", focus: 'Géométrie algébrique dérivée, Théorie de l\'homotopie' },
+                { name: 'Philippe Moustrou', title: 'Responsable de cours', focus: 'Géométrie discrète, Empilements de sphères, Optimisation polynomiale' }
+            ],
+            masters: [
+                { name: 'Master Mathématiques et applications', program: 'Master Mathématiques et applications', description: "Programme de M2 avec des cours spécialisés." },
+                { name: 'Cours "Cryptographie et Codes correcteurs"', program: 'Cours "Cryptographie et Codes correcteurs"', description: "Enseignement de master visant à faire découvrir les applications concrètes des mathématiques à la sécurité de l'information." }
+            ],
+            strengths: ['codes correcteurs', 'géométrie algébrique', 'théorie des nombres', 'arithmétique', 'Probability & Statistics', 'Geometry & Topology', 'Analysis & PDEs'],
+            narrative: {
+                main: "L'écosystème toulousain est fédéré au sein de l'Institut de Mathématiques de Toulouse (IMT). La recherche y est souvent en lien étroit avec la théorie des codes correcteurs d'erreurs.",
+                environment: "L'équipe 'Géométrie, Topologie, Algèbre' comprend un solide contingent de professeurs et de chercheurs du CNRS, ce qui en fait un environnement de recherche stimulant."
+            },
+            application: {
+                platform: 'Portail de candidature de l\'université.',
+                timeline: 'Probablement au printemps 2027',
+                prereq: "M1 en mathématiques ou équivalent.",
+                docs: "Dossier académique standard.",
+                notes: "A key member university confirms the higher fee for 2025-2026.",
+                tuition: "€3,941 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-de-lille',
+            name: 'Université de Lille',
+            city: 'Lille',
+            region: 'Autre',
+            pole: 'Nord',
+            tier: 3,
+            cost: { min: 750, max: 1000, avg: 875 },
+            costBreakdown: { "Logement": 475, "Nourriture": 250, "Transport": 30, "Autres": 120 },
+            coords: { top: '25%', left: '52%' },
+            labs: [
+                { name: 'Laboratoire Paul Painlevé', team: 'Arithmétique et Géométrie Algébrique', description: 'Le pôle naturel pour la recherche fondamentale en cryptographie mathématique.' },
+                { name: 'CRIStAL', team: '', description: 'Grand laboratoire d\'informatique où la sécurité et la cryptographie sont des thèmes de recherche.' }
+            ],
+            faculty: [
+                { name: "Benoît Fresse", title: "Faculty", focus: "Théorie des opérades, algèbre homotopique et leurs applications." },
+                { name: "Antoine Touzé", title: "Faculty", focus: "Homologie des foncteurs, représentations des groupes algébriques, théorie de l'homotopie stable." },
+                { name: "Alexis Virelizier", title: "Faculty", focus: "Théorie des catégories supérieures, théories topologiques quantiques des champs." },
+                { name: 'Eric Wegrzynowski', title: 'Professeur agrégé', focus: 'Informatique théorique, Cryptanalyse de chiffrements à flot' },
+                { name: 'Arnaud Bodin', title: 'Enseignant-chercheur', focus: 'Géométrie algébrique, Arithmétique des polynômes, Théorie des singularités' }
+            ],
+            masters: [
+                { name: 'M2 Mathématiques - Recherche', program: 'M2 Mathématiques - Recherche', description: "Cadre dans lequel les enseignements de cryptographie sont dispensés, avec une approche basée sur l'arithmétique." }
+            ],
+            strengths: ['arithmétique', 'géométrie algébrique', 'sécurité', 'Geometry & Topology', 'Algebraic Geometry & Number Theory', 'Analysis & PDEs'],
+            narrative: {
+                main: "La recherche et l'enseignement en cryptographie sont intégrés au sein du département de mathématiques et du grand laboratoire d'informatique, le CRIStAL.",
+                environment: "Le laboratoire Paul Painlevé est une grande unité de recherche conjointe avec le CNRS et Inria. Il a une équipe de 'Géométrie et topologie' qui constitue un élément central."
+            },
+            application: {
+                platform: 'Plateforme eCandidat.',
+                timeline: 'Mai 2027 – Juin 2027',
+                prereq: "M1 en mathématiques ou équivalent.",
+                docs: "Dossier académique, lettre de motivation pour les candidats externes.",
+                notes: "Official university site confirms low fees, contradicting high third-party figures.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-de-montpellier',
+            name: 'Université de Montpellier',
+            city: 'Montpellier',
+            region: 'Autre',
+            pole: 'Sud',
+            tier: 3,
+            cost: { min: 750, max: 1100, avg: 925 },
+            costBreakdown: { "Logement": 525, "Nourriture": 250, "Transport": 25, "Autres": 125 },
+            coords: { top: '78%', left: '54%' },
+            labs: [{ name: 'Institut Montpelliérain Alexander Grothendieck (IMAG)', team: 'Géométrie, Topologie et Algèbre (GTA)', description: "Nommé d'après le légendaire médaillé Fields, l'IMAG maintient les archives de Grothendieck et possède une équipe active." }],
+            faculty: [
+                { name: "Damien Calaque", title: "Faculty", focus: "Géométrie algébrique dérivée, géométrie de Poisson, quantification par déformation." },
+                { name: "Gilles Halbout", title: "Faculty", focus: "Géométrie de Poisson, quantification par déformation, opérades." },
+                { name: "Hoël Queffelec", title: "Faculty", focus: "Topologie en basse dimension, catégorification, invariants quantiques." },
+                { name: 'Jorge Ramirez Alfonsin', title: 'Responsable Master MI', focus: 'Géométrie combinatoire, Mathématiques discrètes, Théorie des nœuds' },
+                { name: 'Pascal Giorgi', title: 'Responsable Master MSI', focus: 'Calcul formel, Algèbre linéaire exacte, Polynômes creux' }
+            ],
+            masters: [
+                { name: 'M2 Mathématiques Fondamentales', program: 'M2 Mathématiques Fondamentales', description: "Formation de master permettant d'acquérir une double compétence." },
+                { name: 'Master parcours Mathématiques-Informatique (MI)', program: 'Master parcours Mathématiques-Informatique (MI)', description: 'Formation commune aux départements de maths et info.'}
+            ],
+            strengths: ['mathématiques discrètes', 'géométrie', 'algèbre'],
+            narrative: {
+                main: "La recherche est regroupée au sein de l'IMAG. La cryptographie est abordée dans des formations larges à l'interface maths-info.",
+                environment: "L'IMAG est un lieu d'une importance historique et d'une pertinence actuelle, avec une équipe active 'Géométrie, Topologie et Algèbre'."
+            },
+            application: {
+                platform: 'eCandidat / Études en France.',
+                timeline: 'Probablement au printemps 2027',
+                prereq: "M1 en mathématiques fondamentales ou équivalent.",
+                docs: "Dossier académique standard.",
+                notes: "Clear and official low-fee policy for international students.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-de-bordeaux',
+            name: 'Université de Bordeaux',
+            city: 'Bordeaux',
+            region: 'Autre',
+            pole: 'Ingénierie',
+            tier: 3,
+            cost: { min: 850, max: 1200, avg: 1025 },
+            costBreakdown: { "Logement": 575, "Nourriture": 250, "Transport": 35, "Autres": 165 },
+            coords: { top: '68%', left: '35%' },
+            labs: [
+                { name: 'Institut de Mathématiques de Bordeaux (IMB)', team: 'Théorie des Nombres', description: "Regroupe explicitement des chercheurs en théorie des nombres, géométrie algébrique, codes et cryptographie." },
+                { name: 'Équipe-projet Inria CANARI', team: '', description: "Équipe commune IMB/Inria, axée sur l'analyse cryptographique et arithmétique." }
+            ],
+            faculty: [
+                { name: "Dajano Tossici", title: "Faculty", focus: "K-théorie algébrique, structure des modules galoisiens." },
+                { name: "Yohan Brunebarbe", title: "Faculty", focus: "Théorie de Hodge, géométrie des variétés de Shimura." },
+                { name: 'Guilhem Castagnos', title: 'Co-Responsable Master CSI', focus: 'Cryptographie asymétrique, Chiffrement homomorphe, Preuves ZK' },
+                { name: 'Abdou Guermouche', title: 'Co-Responsable Master CSI', focus: 'Calcul haute performance, Solveurs creux parallèles, Ordonnancement de tâches' },
+                { name: 'Xavier Caruso', title: 'Directeur adjoint IMB', focus: 'Théorie des nombres, Calcul formel, Analyse p-adique' }
+            ],
+            masters: [
+                { name: 'Master Cryptologie et Sécurité Informatique (CSI)', program: 'Master Cryptologie et Sécurité Informatique (CSI)', description: "Master phare à l'interface maths-info, formant des experts de haut niveau en cryptologie et sécurité." }
+            ],
+            strengths: ['théorie des nombres', 'géométrie algébrique', 'codes correcteurs', 'cryptanalyse'],
+            narrative: {
+                main: "Pôle d'excellence avec un écosystème bien structuré. Sa force réside dans son master dédié (CSI) et une équipe de recherche spécialisée au sein de l'IMB.",
+                environment: "L'IMB est une grande unité de recherche avec une équipe 'Géométrie' proéminente et bien dotée en personnel, offrant un environnement stable et expérimenté."
+            },
+            application: {
+                platform: 'Portail de candidature de l\'université.',
+                timeline: 'Probablement au printemps 2027',
+                prereq: "M1 en mathématiques ou équivalent.",
+                docs: "Dossier standard attendu.",
+                notes: "Consistently applies the higher national rate for non-EU students.",
+                tuition: "€3,770 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-de-rennes',
+            name: 'Université de Rennes',
+            city: 'Rennes',
+            region: 'Autre',
+            pole: 'Cyber-Défense',
+            tier: 3,
+            cost: { min: 750, max: 1000, avg: 875 },
+            costBreakdown: { "Logement": 475, "Nourriture": 250, "Transport": 30, "Autres": 120 },
+            coords: { top: '48%', left: '26%' },
+            labs: [
+                { name: 'Institut de Recherche Mathématique de Rennes (IRMAR)', team: 'Cryptographie', description: "Un des rares laboratoires en France avec une équipe officiellement dédiée à la cryptographie." },
+                { name: 'Institut de Recherche en Informatique et Systèmes Aléatoires (IRISA)', team: '', description: "Grand laboratoire d'informatique, très actif en sécurité." },
+                { name: 'DGA Maîtrise de l\'Information', team: '', description: 'Partenaire clé pour le développement d\'algorithmes pour le ministère des Armées.' }
+            ],
+            faculty: [
+                { name: "Niels Feld", title: "Faculty", focus: "Théorie de l'homotopie motivique, K-théorie algébrique." },
+                { name: "Matthieu Romagny", title: "Faculty", focus: "Champs algébriques, schémas en groupes, espaces de modules." },
+                { name: 'Sylvain Duquesne', title: 'Responsable Master & Séminaire Crypto', focus: 'Cryptographie, Théorie des nombres, Cryptographie à base de couplages' },
+                { name: 'Adeline Roux-Langlois', title: 'Chercheuse CNRS & IRISA', focus: 'Cryptographie post-quantique, Preuves de sécurité (réseaux), Problèmes LWE/SIS' },
+                { name: 'Pierre Loidreau', title: 'Chercheur DGA-MI & IRMAR', focus: 'Cryptographie post-quantique, Cryptographie à base de codes, Métrique rang' },
+                { name: 'Aurore Guillevic', title: 'Chercheuse Inria Rennes', focus: 'Cryptographie, Cryptographie à base de couplages, Problème du logarithme discret' },
+                { name: 'Christophe Ritzenthaler', title: 'Professeur', focus: 'Géométrie algébrique, Géométrie arithmétique, Espaces de modules' }
+            ],
+            masters: [
+                { name: "Master Maths de l'information, cryptographie", program: "Master Maths de l'information, cryptographie", description: "Formation phare de la CyberSchool, offrant une double compétence maths-info et bénéficiant du label SecNumEdu de l'ANSSI." }
+            ],
+            strengths: ['cybersécurité', 'défense', 'courbes elliptiques', 'théorie algorithmique des nombres', 'Géométrie'],
+            narrative: {
+                main: "L'un des pôles nationaux les plus importants en cybersécurité, structuré autour de la CyberSchool. Unique par ses liens étroits et institutionnalisés avec le secteur de la défense (DGA).",
+                environment: "L'IRMAR est le laboratoire de mathématiques central de la région de Rennes et un membre fondateur du Centre Henri Lebesgue. Les équipes de recherche comprennent 'Géométrie et Singularités' et 'Géométrie Algébrique et Énumérative'."
+            },
+            application: {
+                platform: 'Portail de candidature de l\'université.',
+                timeline: 'Probablement au printemps 2027',
+                prereq: "M1 en mathématiques ou équivalent.",
+                docs: "Dossier standard attendu.",
+                notes: "Cost depends on the constituent university; Rennes 1 applies the higher fee.",
+                tuition: "€3,770 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-cote-dazur',
+            name: 'Université Côte d\'Azur',
+            city: 'Nice',
+            region: 'Autre',
+            pole: 'Sud',
+            tier: 3,
+            cost: { min: 900, max: 1300, avg: 1100 },
+            costBreakdown: { "Logement": 650, "Nourriture": 250, "Transport": 30, "Autres": 170 },
+            coords: { top: '77%', left: '70%' },
+            labs: [
+                { name: 'Laboratoire Jean Alexandre Dieudonné (LJAD)', description: 'Centre de recherche important sur la Côte d\'Azur.' },
+                { name: 'Laboratoire d\'Informatique, Signaux et Systèmes de Sophia-Antipolis (I3S)', description: "Grand laboratoire d'informatique." }
+            ],
+            faculty: [
+                { name: "Christophe Ritzenthaler", title: "Faculty", focus: "Géométrie arithmétique et algébrique, courbes sur les corps finis." },
+                { name: 'Bruno Martin', title: 'Professeur, auteur', focus: 'Informatique théorique, Automates cellulaires, Calcul parallèle' },
+                { name: 'Maxime Ingremeau', title: 'Maître de conférences', focus: 'Physique mathématique, Théorie spectrale, Équations aux dérivées partielles' }
+            ],
+            masters: [
+                { name: 'M2 MPA - Mathématiques Fondamentales', program: 'M2 MPA - Mathématiques Fondamentales', description: 'Programme international qui prépare les étudiants à la recherche.' },
+                { name: 'Cours "Cryptographie et sécurité"', program: 'Cours "Cryptographie et sécurité"', description: "Enseignement illustrant l'utilisation des primitives cryptographiques." }
+            ],
+            strengths: ['sécurité des protocoles', 'théorie des codes', 'géométrie algébrique'],
+            narrative: {
+                main: "La recherche et l'enseignement sont portés par des chercheurs individuels avec une approche pragmatique.",
+                environment: "Le LJAD est un centre de recherche important sur la Côte d'Azur, avec des spécialisations en algèbre et géométrie, analyse et probabilités."
+            },
+            application: {
+                platform: 'Portail en ligne de l\'université.',
+                timeline: 'Mai 2027 – Juillet 2027',
+                prereq: "M1 complété ou équivalent.",
+                docs: "Dossier académique standard.",
+                notes: "Consistently applies the higher national rate for non-EU students.",
+                tuition: "€3,770 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'aix-marseille-universite',
+            name: 'Aix-Marseille Université',
+            city: 'Marseille',
+            region: 'Autre',
+            pole: 'Sud',
+            tier: 3,
+            cost: { min: 850, max: 1200, avg: 1025 },
+            costBreakdown: { "Logement": 575, "Nourriture": 250, "Transport": 35, "Autres": 165 },
+            coords: { top: '80%', left: '60%' },
+            labs: [{ name: 'Institut de Mathématiques de Marseille (I2M)', team: 'Arithmétique et Théorie de l\'Information (ATI)', description: "Équipe centrale pour la recherche en cryptographie, ses thèmes couvrent la théorie des nombres, la géométrie sur les corps finis, les codes et la cryptographie." }],
+            faculty: [
+                { name: "Jérôme Los", title: "Faculty", focus: "Topologie en basse dimension, groupes de classes d'applications." },
+                { name: "Luiza Paoluzzi", title: "Faculty", focus: "Topologie des variétés de dimension 3, invariants quantiques." },
+                { name: 'Stéphane Ballet', title: 'Co-organisateur AGCT', focus: 'Théorie algorithmique des nombres, Multiplication dans les corps finis, Algorithmes de Chudnovsky' },
+                { name: 'David Kohel', title: 'Co-organisateur AGCT', focus: "Théorie algorithmique des nombres, Arithmétique des courbes elliptiques, Cryptographie à base d'isogénies" }
+            ],
+            masters: [
+                { name: 'M2 Mathématiques Fondamentales', program: 'M2 Mathématiques Fondamentales', description: "Formation de haut niveau sur les interactions maths-info." },
+                { name: 'Master Informatique et Mathématiques Discrètes (IMD)', program: 'Master Informatique et Mathématiques Discrètes (IMD)', description: 'Inclut la cryptographie.'}
+            ],
+            strengths: ['arithmétique', 'géométrie algébrique', 'théorie de l\'information', 'codes'],
+            narrative: {
+                main: "Pôle bien établi centré sur l'I2M. L'expertise se situe à l'intersection de l'arithmétique, de la géométrie, de la théorie des nombres et de l'information.",
+                environment: "L'I2M a des groupes de recherche actifs, y compris 'Arithmétique, Géométrie, Logique et Représentations'."
+            },
+            application: {
+                platform: 'Portail \'Candidater\' de l\'université.',
+                timeline: 'Probablement au printemps 2027',
+                prereq: "Diplôme de mathématiques d'un 'niveau raisonnable'.",
+                docs: "Dossier académique standard.",
+                notes: "Exemption is applied automatically, making it highly accessible financially.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        },
+        {
+            id: 'universite-sorbonne-paris-nord',
+            name: 'Université Sorbonne Paris Nord',
+            city: 'Villetaneuse',
+            region: 'Paris',
+            pole: 'Parisien',
+            tier: 3,
+            cost: { min: 900, max: 1300, avg: 1100 },
+            costBreakdown: { "Logement": 600, "Nourriture": 250, "Transport": 75, "Autres": 175 },
+            coords: { top: '38%', left: '50%' },
+            labs: [{ name: 'Laboratoire Analyse, Géométrie et Applications (LAGA)', team: 'AGAA / AGC3', description: "Cœur de la recherche mathématique, ses thèmes incluent l'arithmétique, la géométrie algébrique et leurs applications à la cryptographie." }],
+            faculty: [
+                { name: "Christian Ausoni", title: "Faculty", focus: "K-théorie algébrique, homologie de Hochschild topologique (THH), théorie de l'homotopie stable." },
+                { name: "Gregory Ginot", title: "Faculty", focus: "Théorie des catégories supérieures, géométrie algébrique dérivée, théories topologiques des champs." },
+                { name: "Eric Hoffbeck", title: "Faculty", focus: "Algèbre homotopique, catégories de modèles, ensembles dendroïdaux." },
+                { name: "Bruno Vallette", title: "Faculty", focus: "Opérades, props, dualité de Koszul, théorie de la déformation." },
+                { name: 'Sihem Mesnager', title: 'Responsable Master ACC', focus: 'Cryptographie symétrique, Fonctions booléennes, Théorie du codage' }
+            ],
+            masters: [
+                { name: 'M2 Mathématiques Recherche', program: 'M2 Mathématiques Recherche', description: "Les étudiants sont intégrés dans la communauté de recherche mathématique parisienne plus large." },
+                { name: 'Master Arithmétique, Codage et Cryptologie (ACC)', program: 'Master Arithmétique, Codage et Cryptologie (ACC)', description: "Proposé avec Paris 8, ce master forme des spécialistes de haut niveau." }
+            ],
+            strengths: ['courbes elliptiques', 'géométrie algébrique', 'arithmétique', 'théorie des nombres', 'Algebraic Geometry & Number Theory', 'Analysis & PDEs', 'Applied Math & Modeling'],
+            narrative: {
+                main: "Expertise reconnue en mathématiques fondamentales avec des applications directes à la cryptographie, menée au sein du laboratoire LAGA.",
+                environment: "En tant que partenaire clé dans le programme de M2 Mathématiques Fondamentales avec la Sorbonne et Paris Cité, sa faculté et ses étudiants sont intégrés dans la communauté de recherche mathématique parisienne plus large."
+            },
+            application: {
+                platform: 'Site web de l\'Institut Galilée.',
+                timeline: 'Avril 2027 – Juin 2027',
+                prereq: "Master 1 en mathématiques ou équivalent.",
+                docs: "Dossier académique standard.",
+                notes: "Official sources point to low fees, but direct confirmation is advised.",
+                tuition: "€254 / year (+ €103 CVEC)"
+            }
+        }
+    ],
+    usPhD: [
+{
+            id: 'harvard',
+            name: 'Harvard University',
+            tier: 1,
+            rank: -1,
+            synergy: 'High',
+            departments: "CS/SEAS, Mathematics",
+            faculty: [
+                { name: 'Salil Vadhan', title: 'Prof. of CS & Applied Math', focus: 'Complexity, cryptography, randomness, and data privacy.' },
+                { name: 'Boaz Barak', title: 'Prof. of CS', focus: 'Complexity, algorithms, and foundations of machine learning.' },
+                { name: 'Noam Elkies', title: 'Prof. of Mathematics', focus: 'Number theory, elliptic curves (foundational for ECC).' },
+                { name: 'M. Hopkins', title: 'Faculty', focus: 'Alg. Topology, TMF'},
+                { name: 'D. Freed', title: 'Faculty', focus: 'Math Physics'},
+                { name: 'M. Wood', title: 'Faculty', focus: 'Number Theory'},
+                { name: 'J. Harris', title: 'Faculty', focus: 'AG'}
+            ],
+            strengths: ["Theory of Computation", "Data Privacy", "Differential Privacy", "Number Theory", "Alg. Topology", "TMF", "Math Physics", "AG"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Premier choice for a student whose interests are fundamentally grounded in stable homotopy theory and its applications.' },
+            financials: { stipend: 49000, col_value: 53550 },
+            narrative: {
+                main: "Historically, Harvard University has been an unparalleled global center for algebraic topology and its applications to geometry. Research is concentrated in the School of Engineering and Applied Sciences (SEAS) and its world-class Theory of Computation group.",
+                crypto: "The program has a distinct focus on the theoretical foundations of data privacy and the societal implications of computation, offering a unique flavor of research.",
+                higher_structures: "While the recent departures of Lurie and Gaitsgory have altered its profile, its primary strength has reconsolidated around profound expertise in stable homotopy theory and its deep connections to number theory and physics, as personified by Michael Hopkins.",
+                environment: "The Boston area constitutes one of the densest concentrations of mathematical activity in the world. The algebraic topology communities at Harvard and the nearby MIT are closely connected, with students and faculty frequently attending seminars at both institutions."
+            }
+        },
+        {
+            id: 'mit',
+            name: 'Massachusetts Institute of Technology (MIT)',
+            tier: 1,
+            rank: 1,
+            synergy: 'Very High',
+            departments: "EECS, Mathematics",
+            faculty: [
+                { name: 'Shafi Goldwasser', title: 'Prof. of Mathematics & EECS', focus: 'Turing Award laureate, zero-knowledge proofs, computational number theory.' },
+                { name: 'Ronald Rivest', title: 'Institute Prof., EECS', focus: '"R" in RSA, public-key systems, voting security.' },
+                { name: 'Vinod Vaikuntanathan', title: 'Prof., EECS', focus: 'Fully homomorphic encryption (FHE), lattice-based crypto.' },
+                { name: 'Silvio Micali', title: 'Faculty', focus: 'Turing Award laureate, foundational cryptography.'},
+                { name: 'D. Maulik', title: 'Faculty', focus: 'Geom. Rep. Theory'},
+                { name: 'J. Hahn', title: 'Faculty', focus: 'Alg. Topology'}
+            ],
+            strengths: ["Foundations", "Lattices/FHE", "Zero-Knowledge", "Complexity", "Geom. Rep. Theory", "Alg. Topology"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Extremely competitive. Research experience is critical.' },
+            financials: { stipend: 51200, col_value: 53550 },
+            narrative: {
+                main: 'A powerhouse known for its intense, problem-solving-oriented culture. It possesses formidable strength in both pure math and theoretical cryptography.',
+                crypto: "The cradle of modern public-key cryptography, MIT remains an unparalleled global center. The main graduate cryptography course is formally cross-listed between EECS and Mathematics, and the curriculum assumes a high degree of mathematical maturity from day one.",
+                higher_structures: "The MIT Department of Mathematics is a powerhouse known for its intense, problem-solving-oriented culture. It possesses formidable strength across a wide range of fields, with particular concentrations in combinatorics, number theory, representation theory, and algebraic geometry.",
+                environment: "The Boston area constitutes one of the densest concentrations of mathematical activity in the world. The algebraic topology communities at Harvard and the nearby MIT are closely connected, with students and faculty frequently attending seminars at both institutions."
+            }
+        },
+        {
+            id: 'stanford',
+            name: 'Stanford University',
+            tier: 3,
+            rank: 2,
+            synergy: 'High',
+            departments: "Computer Science, Mathematics",
+            faculty: [
+                { name: 'Dan Boneh', title: 'Prof., CS & EE', focus: 'Head of Applied Crypto Group, pairing-based crypto, web security, blockchain.' },
+                { name: 'Moses Charikar', title: 'Prof., CS (by courtesy, Math)', focus: 'Design and analysis of algorithms.' },
+                { name: 'R. Vakil', title: 'Faculty', focus: 'AG'},
+                { name: 'Y. Eliashberg', title: 'Faculty', focus: 'Symplectic Top.'}
+            ],
+            strengths: ["Pairing-Based Crypto", "Web Security", "Post-Quantum", "Blockchains", "AG", "Symplectic Top."],
+            application: { deadline: '2025-12-03', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Ideal for those with entrepreneurial goals.' },
+            financials: { stipend: 50000, col_value: 94500 },
+            narrative: {
+                main: "A premier department that blends deep theory with practical innovation, located in the dynamic and interdisciplinary atmosphere of Silicon Valley.",
+                crypto: "Anchored by Dan Boneh, a giant in the field whose work spans from foundational theory to widely used practical systems. The world-class Mathematics department provides strong informal synergy.",
+                higher_structures: "Particularly noted for the influence of Ravi Vakil, a brilliant geometer and expositor whose work and notes (e.g., \"The Rising Sea\") have shaped a generation of algebraic geometers.",
+                environment: "Located in Silicon Valley, Stanford has a dynamic and interdisciplinary atmosphere. The geometry and topology group is world-renowned."
+            }
+        },
+        {
+            id: 'berkeley',
+            name: 'University of California, Berkeley',
+            tier: 1,
+            rank: 3,
+            synergy: 'High',
+            departments: "EECS",
+            faculty: [
+                { name: 'Shafi Goldwasser', title: 'Prof., EECS; Director, Simons Inst.', focus: 'Cryptography, complexity theory, computational number theory.' },
+                { name: 'Sanjam Garg', title: 'Assoc. Prof., EECS', focus: 'Groundbreaking work on program obfuscation.' },
+                { name: 'David Wagner', title: 'Prof., EECS', focus: 'Cryptanalysis, cipher design, web security.' },
+                { name: 'D. Nadler', title: 'Faculty', focus: 'DAG, Rep. Theory'},
+                { name: 'D. Eisenbud', title: 'Faculty', focus: 'Comm. Algebra'}
+            ],
+            strengths: ["Zero-Knowledge/SNARKs", "Obfuscation", "Secure Computation", "DAG", "Rep. Theory", "Comm. Algebra"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'The Simons Institute provides an environment of constant intellectual ferment.' },
+            financials: { stipend: 45000, col_value: 59500 },
+            narrative: {
+                main: "One of the world's great public university mathematics departments, with particular strength in algebraic geometry, topology, and mathematical physics.",
+                crypto: "The faculty includes leading experts on cutting-edge topics like zero-knowledge SNARKs (Chiesa) and software obfuscation (Garg). The synergy with Berkeley's elite Mathematics department is exceptionally strong.",
+                higher_structures: "With David Nadler on the faculty, Berkeley is a premier destination for studying derived algebraic geometry from the perspective of geometric representation theory.",
+                environment: "The combination of a top-tier department and a world-class research institute (SLMath) is unique. SLMath runs semester-long programs on cutting-edge topics, attracting the best mathematicians from around the world."
+            }
+        },
+        {
+            id: 'ucla',
+            name: 'University of California, Los Angeles',
+            tier: 3,
+            rank: 4,
+            synergy: 'Very High',
+            departments: "CS, Mathematics",
+            faculty: [
+                { name: 'Amit Sahai', title: 'Prof., CS (by courtesy, Math)', focus: 'World leader in iO, attribute-based and functional encryption.' },
+                { name: 'Rafail Ostrovsky', title: 'Distinguished Prof., CS & Math', focus: 'All aspects of cryptography, foundational work in MPC.' },
+                { name: 'T. Tao', title: 'Faculty', focus: 'Analysis, Number Theory'},
+                { name: 'M. Hill', title: 'Faculty', focus: 'Alg. Topology'}
+            ],
+            strengths: ["Obfuscation", "Functional Encryption", "MPC", "Zero-Knowledge", "Analysis", "Automorphic Forms"],
+            application: { deadline: '2025-12-01', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Best suited for a student with broad interests who wants to be in a powerful department.' },
+            financials: { stipend: 42000, col_value: 51800 },
+            narrative: {
+                main: "UCLA stands out as a paradigm of deep, formal integration between Computer Science and Mathematics. Its leaders, Amit Sahai and Rafail Ostrovsky, both hold joint appointments in both departments.",
+                crypto: "The primary graduate cryptography course is officially cross-listed, a powerful signal of its mathematical rigor. This structure, combined with a world-class Number Theory group in the Math department, creates a seamless and ideal environment for a mathematically-focused student.",
+                higher_structures: "The presence of Terence Tao and a strong group in number theory and automorphic forms makes UCLA a stimulating environment for seeing deep connections across mathematics.",
+                environment: "The department and the IAS co-publish the Annals of Mathematics. Graduate students at Princeton have full access to the intellectual life of the IAS, which is a core component of the graduate experience, offering direct access to mathematicians defining the frontiers of the subject."
+            }
+        },
+        {
+            id: 'ut-austin',
+            name: 'University of Texas at Austin',
+            tier: -1, // Not specified in higher structures list
+            rank: 5,
+            synergy: 'High',
+            departments: "Computer Science",
+            faculty: [
+                { name: 'Brent Waters', title: 'Faculty', focus: 'Attribute-Based Encryption (ABE)' },
+                { name: 'David Wu', title: 'Faculty', focus: 'Program Obfuscation' }
+            ],
+            strengths: ["ABE/FE", "Adaptive Security", "Obfuscation", "Proof Systems"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Top-tier CS department with a highly influential theory group.' },
+            financials: { stipend: 40000, col_value: 35000 },
+            narrative: {
+                main: "UT Austin has a top-tier CS department with a highly influential theory group. The cryptography research is explicitly theoretical, focusing on advanced topics like Attribute-Based Encryption (ABE) and program obfuscation.",
+                crypto: "A strong Number Theory group in the Mathematics department provides excellent synergy, allowing for a robust educational path combining CS-based cryptography research with advanced number theory courses.",
+                higher_structures: "",
+                environment: "A strong Number Theory group in the Mathematics department provides excellent synergy."
+            }
+        },
+        {
+            id: 'cornell',
+            name: 'Cornell University',
+            tier: -1,
+            rank: 6,
+            synergy: 'Very High',
+            departments: "CS, Mathematics",
+            faculty: [
+                { name: 'Rafael Pass', title: 'Faculty', focus: 'Foundations of Cryptography' },
+                { name: 'Ari Juels', title: 'Faculty', focus: 'Blockchains, Systems Security' }
+            ],
+            strengths: ["Foundations", "Complexity", "Blockchains", "Lattices"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Strong groups on both Ithaca and NYC Cornell Tech campuses.' },
+            financials: { stipend: 48000, col_value: 45000 },
+            narrative: {
+                main: "Cornell boasts top-ranked CS and Math departments, with strong security groups on both its Ithaca and NYC Cornell Tech campuses.",
+                crypto: "The synergy is exceptionally clear and formal: an advanced graduate course on Lattices—a central topic in modern cryptography—is officially cross-listed between the CS and Math departments and requires a senior-level pure mathematics course as a prerequisite.",
+                higher_structures: "",
+                environment: "The synergy is exceptionally clear and formal, highlighted by a cross-listed graduate course on Lattices."
+            }
+        },
+        {
+            id: 'nyu',
+            name: 'New York University (Courant)',
+            tier: -1,
+            rank: 7,
+            synergy: 'Very High',
+            departments: "CS, Mathematics",
+            faculty: [
+                { name: 'Oded Regev', title: 'Faculty', focus: 'Learning with Errors (LWE), Lattices' },
+                { name: 'Yevgeniy Dodis', title: 'Faculty', focus: 'Foundations, Randomness' },
+                { name: 'Noga Bitansky', title: 'Faculty', focus: 'Foundations of Cryptography' }
+            ],
+            strengths: ["Lattices/LWE", "Foundations", "Quantum Crypto", "Randomness"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Nearly ideal for exploring mathematical frontiers of cryptography, particularly lattice theory.' },
+            financials: { stipend: 50000, col_value: 65450 },
+            narrative: {
+                main: "NYU's Courant Institute is a world-leading center for applied mathematics, defined by its seamless integration of math and computer science.",
+                crypto: "The cryptography group is a theoretical powerhouse, featuring seminal figures like Oded Regev, who introduced the Learning with Errors (LWE) problem—the foundation for most post-quantum cryptography.",
+                higher_structures: "",
+                environment: "For a student wishing to explore the mathematical frontiers of cryptography, particularly lattice theory, the environment at Courant is nearly ideal."
+            }
+        },
+        {
+            id: 'princeton',
+            name: 'Princeton University',
+            tier: 1,
+            rank: 8,
+            synergy: 'Very High',
+            departments: "Computer Science, Mathematics",
+            faculty: [
+                { name: 'Zeev Dvir', title: 'Prof., CS & Math', focus: 'Complexity theory, coding theory, randomness.' },
+                { name: 'Mark Zhandry', title: 'Asst. Prof., CS', focus: 'Post-quantum cryptography, theoretical limits.' },
+                { name: 'J. Lurie', title: 'Faculty, IAS', focus: 'Higher Categories, DAG'},
+                { name: 'B. Bhatt', title: 'Faculty, IAS/Princeton', focus: 'Arithmetic/Derived AG'}
+            ],
+            strengths: ["Complexity", "Theory", "Security & Privacy", "Higher Categories", "DAG"],
+            application: { deadline: '2025-12-01', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Unparalleled access to a world-class mathematical education.' },
+            financials: { stipend: 51500, col_value: 51800 },
+            narrative: {
+                main: "Princeton possesses arguably the world's most prestigious Mathematics department alongside a top-tier CS department. The true strength here is the unparalleled access to a world-class mathematical education.",
+                crypto: "The main cryptography course is a model of a theoretical, proof-based approach, explicitly stating 'No programming knowledge is needed.'",
+                higher_structures: "Princeton University and the Institute for Advanced Study (IAS) create a single, unparalleled ecosystem for research in pure mathematics. An application to Princeton is effectively an application for access to the entire Princeton/IAS intellectual complex.",
+                environment: "The department and the IAS co-publish the Annals of Mathematics. Graduate students at Princeton have full access to the intellectual life of the IAS."
+            }
+        },
+        {
+            id: 'umd',
+            name: 'University of Maryland, College Park',
+            tier: -1,
+            rank: 9,
+            synergy: 'Very High',
+            departments: "CS, Math, ECE",
+            faculty: [
+                { name: 'Jonathan Katz', title: 'Faculty', focus: 'Foundations, Provable Security' },
+                { name: 'Dana Dachman-Soled', title: 'Faculty', focus: 'Post-Quantum Cryptography' }
+            ],
+            strengths: ["Foundations", "Provable Security", "Post-Quantum Crypto"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Ideal for rigorous, theory-focused research.' },
+            financials: { stipend: 43000, col_value: 38000 },
+            narrative: {
+                main: "UMD is a major hub for cryptography, benefiting from its proximity to federal agencies like NIST. The institutional synergy is one of the strongest possible.",
+                crypto: "The primary cryptography course is formally cross-listed across three departments: Computer Science, Mathematics, and Electrical & Computer Engineering. The program is led by respected figures like Jonathan Katz, co-author of a seminal textbook.",
+                higher_structures: "",
+                environment: "The institutional synergy is one of the strongest possible, with a primary course cross-listed across CS, Math, and ECE."
+            }
+        },
+        {
+            id: 'brown',
+            name: 'Brown University',
+            tier: 3,
+            rank: 10,
+            synergy: 'Very High',
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'Jeffrey Hoffstein', title: 'Prof. of Mathematics', focus: 'Co-inventor of NTRU, number theory, automorphic forms.' },
+                { name: 'Jill Pipher', title: 'Prof. of Mathematics', focus: 'Co-inventor of NTRU, harmonic analysis, partial differential equations.' },
+                { name: 'Joseph H. Silverman', title: 'Prof. of Mathematics', focus: 'Co-inventor of NTRU, world-renowned expert on elliptic curves.' },
+                { name: 'Anna Lysyanskaya', title: 'Faculty', focus: 'Theoretical Cryptography' },
+                { name: 'D. Abramovich', title: 'Faculty', focus: 'AG, Stacks'},
+                { name: 'T. Goodwillie', title: 'Faculty', focus: 'Alg. Topology, K-theory'}
+            ],
+            strengths: ["Number-Theoretic Crypto", "Lattices/NTRU", "Elliptic Curves", "AG, Stacks", "K-theory"],
+            application: { deadline: '2026-01-03', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Premier destination for students with a specific interest in mathematical cryptography.' },
+            financials: { stipend: 45000, col_value: 39200 },
+            narrative: {
+                main: "Brown is unique among top institutions in that its Department of Mathematics has a major, long-standing research presence in cryptography. It is one of the few places to genuinely pursue a 'Mathematics PhD in Cryptography.'",
+                crypto: "The department features world-renowned number theorists like Jeffrey Hoffstein (co-inventor of NTRU) and Joseph Silverman (a leading expert on elliptic curves) who work directly on cryptographic problems.",
+                higher_structures: "An excellent choice for a student interested in foundational topics like stacks (with Abramovich) or the deep structure of K-theory (with Goodwillie).",
+                environment: "A historically strong and well-regarded department in the Ivy League, with a notable legacy and current strength in algebraic geometry and topology."
+            }
+        },
+        {
+            id: 'cmu',
+            name: 'Carnegie Mellon University',
+            tier: -1,
+            rank: 11,
+            synergy: 'High',
+            departments: "Computer Science",
+            faculty: [
+                { name: 'Vipul Goyal', title: 'Faculty', focus: 'Obfuscation, Advanced Primitives' },
+                { name: 'Aayush Jain', title: 'Faculty', focus: 'Obfuscation, Unclonable Commitments' }
+            ],
+            strengths: ["Obfuscation", "Unclonable Commitments", "Advanced Primitives"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'A top destination for students interested in foundational, cutting-edge research.' },
+            financials: { stipend: 44000, col_value: 35000 },
+            narrative: {
+                main: "CMU's School of Computer Science is legendary. Its theory group is exceptionally strong and includes leading cryptographers whose research is at the absolute frontier of the field.",
+                crypto: "The research focuses on mathematically demanding topics like indistinguishability obfuscation and other advanced primitives. CMU's consistent publication record at top theory conferences makes it a top destination.",
+                higher_structures: "",
+                environment: "Its theory group is exceptionally strong and at the absolute frontier of the field."
+            }
+        },
+        {
+            id: 'uw',
+            name: 'University of Washington',
+            tier: -1,
+            rank: 12,
+            synergy: 'Very High',
+            departments: "CS, Mathematics",
+            faculty: [
+                { name: 'Huijia Lin', title: 'Faculty', focus: 'Foundations, Obfuscation' },
+                { name: 'Stefano Tessaro', title: 'Faculty', focus: 'Foundations of Cryptography' },
+                { name: 'Neal Koblitz', title: 'Faculty, Math Dept.', focus: 'Co-inventor of elliptic curve cryptography' },
+                { name: 'Kristin Lauter', title: 'Faculty, Math Dept.', focus: 'Post-Quantum Cryptography' }
+            ],
+            strengths: ["Foundations", "Obfuscation", "Post-Quantum", "Elliptic Curves"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Outstanding synergy between theoretical CS and foundational math.' },
+            financials: { stipend: 46000, col_value: 48000 },
+            narrative: {
+                main: "The University of Washington features a powerful dual-track strength. The CS department has a major center for foundational research, while the Mathematics department is home to Neal Koblitz, a co-inventor of elliptic curve cryptography.",
+                crypto: "This dual presence of key faculty in both departments creates an outstanding synergy, allowing students to draw on deep expertise from both the theoretical CS and foundational math perspectives.",
+                higher_structures: "",
+                environment: "The dual presence of key faculty in both departments creates an outstanding synergy."
+            }
+        },
+        {
+            id: 'uiuc',
+            name: 'University of Illinois Urbana-Champaign',
+            tier: 2,
+            rank: 13,
+            synergy: 'Moderate',
+            departments: "Computer Science",
+            faculty: [
+                { name: 'Ling Ren', title: 'Faculty', focus: 'Distributed Cryptography' },
+                { name: 'P. Dey', title: 'Faculty', focus: 'Algebraic Topology' },
+                { name: 'V. Stojanoska', title: 'Faculty', focus: 'Algebraic Topology' }
+            ],
+            strengths: ["Distributed Crypto", "Threshold Signatures", "Provable Security", "Algebraic Topology"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'A high-priority destination for a student with a core interest in algebraic topology.' },
+            financials: { stipend: 40000, col_value: 28350 },
+            narrative: {
+                main: "UIUC is a public university powerhouse in engineering and computer science. Its security and privacy research area is broad and deep, with a strong contingent of theoretical researchers.",
+                crypto: "Ling Ren works on problems in distributed cryptography. A strong history in theoretical computer science provides a solid foundation for cryptographic research.",
+                higher_structures: "UIUC is repeatedly cited in community discussions as having a 'very strong' and large research group in algebraic topology. A large group provides a diversity of potential advisors and a critical mass of graduate students.",
+                environment: "A large group provides a diversity of potential advisors and a critical mass of graduate students, fostering a collaborative and dynamic learning environment."
+            }
+        },
+        {
+            id: 'georgia-tech',
+            name: 'Georgia Institute of Technology',
+            tier: -1,
+            rank: 14,
+            synergy: 'Moderate',
+            departments: "Computer Science",
+            faculty: [
+                { name: 'Vassilis Zikas', title: 'Faculty', focus: 'MPC, Byzantine Agreement' },
+                { name: 'Julian Jaeger', title: 'Faculty', focus: 'Foundations' }
+            ],
+            strengths: ["MPC", "Byzantine Agreement", "Foundations"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Actively growing its theoretical expertise, making it a dynamic place for research.' },
+            financials: { stipend: 38000, col_value: 34000 },
+            narrative: {
+                main: "Georgia Tech's research in security is comprehensive, with significant strengths in both systems and theory.",
+                crypto: "The theory group includes faculty like Vassilis Zikas, whose research focuses on the foundations of distributed computing and cryptography, including secure multi-party computation. The program is actively growing its theoretical expertise.",
+                higher_structures: "",
+                environment: "The program is actively growing its theoretical expertise, making it a dynamic place for research."
+            }
+        },
+        {
+            id: 'jhu',
+            name: 'Johns Hopkins University',
+            tier: 2,
+            rank: 15,
+            synergy: 'Moderate',
+            departments: "Computer Science",
+            faculty: [
+                { name: 'Matthew Green', title: 'Faculty', focus: 'Applied Provable Security, Privacy-Enhancing Tech' },
+                { name: 'Abhishek Rubin', title: 'Faculty', focus: 'Applied Cryptography' },
+                { name: 'Emily Riehl', title: 'Faculty, Math Dept.', focus: 'Higher Category Theory, Homotopy Theory' }
+            ],
+            strengths: ["Applied Provable Security", "Privacy-Enhancing Tech", "Higher Category Theory", "Homotopy Theory"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Strong environment for the intersection of deep theory and its correct, rigorous application.' },
+            financials: { stipend: 42000, col_value: 34300 },
+            narrative: {
+                main: "The Johns Hopkins Information Security Institute is a major center for security research. The pure mathematics group is exceptionally strong and theoretically focused.",
+                crypto: "Faculty like Matthew Green are well-known experts whose work, while often having a strong applied focus, is grounded in a deep understanding of cryptographic principles.",
+                higher_structures: "Johns Hopkins has established itself as a world center for higher category theory and its foundations, largely due to the influence of Emily Riehl. It is the top choice for a student whose primary passion is for the foundational, structural development of ∞-category theory itself.",
+                environment: "The research group is focused and cohesive. The presence of a leading theorist like Riehl attracts top-tier postdocs and visitors, creating a vibrant seminar environment."
+            }
+        },
+        {
+            id: 'ucsd',
+            name: 'University of California, San Diego',
+            tier: -1,
+            rank: 16,
+            synergy: 'High',
+            departments: "Computer Science",
+            faculty: [
+                { name: 'Daniele Micciancio', title: 'Faculty', focus: 'Lattices' },
+                { name: 'Mihir Bellare', title: 'Faculty', focus: 'Provable Security, Random Oracle Model' }
+            ],
+            strengths: ["Lattices", "Provable Security", "Random Oracle Model"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Top-tier destination for theoretical research.' },
+            financials: { stipend: 43000, col_value: 55000 },
+            narrative: {
+                main: "UCSD's CryptoSec group is home to some of the most influential figures in the field.",
+                crypto: "Daniele Micciancio is a world leader in lattice-based cryptography, and Mihir Bellare is a giant in provable security, having developed many of the formal models and proof techniques that are now standard. Their presence makes UCSD a top-tier destination for theoretical research.",
+                higher_structures: "",
+                environment: "UCSD's CryptoSec group is home to some of the most influential figures in the field."
+            }
+        },
+        {
+            id: 'michigan',
+            name: 'University of Michigan, Ann Arbor',
+            tier: 3,
+            rank: 17,
+            synergy: 'High',
+            departments: "Computer Science, Mathematics",
+            faculty: [
+                { name: 'Chris Peikert', title: 'Faculty', focus: 'Lattices/LWE, Post-Quantum Cryptography' },
+                { name: 'K. Smith', title: 'Faculty', focus: 'AG' },
+                { name: 'J. Bell', title: 'Faculty', focus: 'Topology' },
+                { name: 'D. Burns', title: 'Faculty', focus: 'Topology' }
+            ],
+            strengths: ["Lattices/LWE", "Post-Quantum Cryptography", "AG", "Topology"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Strong choice for a theoretically-inclined student.' },
+            financials: { stipend: 40000, col_value: 36050 },
+            narrative: {
+                main: "An elite public university with top-ranked CS and Math departments. A solid choice for a student looking for a large, comprehensive department with many potential advisors across different but related fields.",
+                crypto: "The CS theory group is home to Chris Peikert, a major figure in the development of lattice-based cryptography whose work on the Learning with Errors (LWE) problem is foundational to post-quantum security.",
+                higher_structures: "A large, consistently top-ranked department with broad strengths across mathematics. It is noted for having strong groups in both algebraic geometry and topology.",
+                environment: "Ann Arbor is a classic college town with a vibrant intellectual life. The math department is large and offers a wide range of seminars and courses."
+            }
+        },
+        {
+            id: 'penn',
+            name: 'University of Pennsylvania',
+            tier: 3,
+            rank: 18,
+            synergy: 'High',
+            departments: "CS, Mathematics",
+            faculty: [
+                { name: 'K. Eisenträger', title: 'Faculty', focus: 'Algorithmic Number Theory' },
+                { name: 'R. Ghrist', title: 'Faculty', focus: 'Applied Topology' },
+                { name: 'T. Pantev', title: 'Faculty', focus: 'AG, Math Physics' },
+                { name: 'J. Wolfson', title: 'Faculty', focus: 'Homotopy Theory' }
+            ],
+            strengths: ["Algorithmic Number Theory", "Logic", "Formal Methods", "Applied Topology", "Homotopy Theory"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Good fit for a student interested in the interface between pure topology and its applications.' },
+            financials: { stipend: 42000, col_value: 35350 },
+            narrative: {
+                main: "The University of Pennsylvania has strong programs with a noteworthy focus on the intersection of logic, security, and cryptography.",
+                crypto: "The Math department features faculty whose work in algorithmic number theory has direct applications to cryptography. The CS department's strengths in programming languages and formal methods provide a unique environment for studying the provable security of cryptographic implementations.",
+                higher_structures: "Highlighted as having a growing and dynamic program in algebraic topology, with faculty working on surgery theory, homotopy theory, and K-theory.",
+                environment: "Part of the rich intellectual ecosystem of Philadelphia, Penn offers a well-rounded environment for a topologist, with strong connections to mathematical physics."
+            }
+        },
+        {
+            id: 'cuny',
+            name: 'CUNY Graduate Center',
+            tier: -1,
+            rank: 19,
+            synergy: 'Very High',
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'Vladimir Shpilrain', title: 'Faculty', focus: 'Algebraic Cryptography' },
+                { name: 'Delaram Kahrobaei', title: 'Faculty', focus: 'Post-Quantum, Group-Based Crypto' },
+                { name: 'Alexei Miasnikov', title: 'Faculty', focus: 'Group-Based Crypto' }
+            ],
+            strengths: ["Algebraic Cryptography", "Post-Quantum", "Group-Based Crypto"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Deep focus on highly specialized and mathematical subfields.' },
+            financials: { stipend: 38000, col_value: 65450 },
+            narrative: {
+                main: "The CUNY Graduate Center offers a unique environment where cryptography is an explicit research area within both the Mathematics and Computer Science PhD programs.",
+                crypto: "Faculty hold appointments in both departments and have a deep focus on highly specialized and mathematical subfields like algebraic and non-commutative cryptography, backed by a suite of dedicated graduate courses.",
+                higher_structures: "",
+                environment: "Faculty hold appointments in both departments and have a deep focus on highly specialized and mathematical subfields."
+            }
+        },
+        {
+            id: 'ucsb',
+            name: 'University of California, Santa Barbara',
+            tier: -1,
+            rank: 20,
+            synergy: 'Moderate',
+            departments: "Computer Science",
+            faculty: [
+                { name: 'Prabhanjan Ananth', title: 'Faculty', focus: 'Quantum Cryptography, Foundations' }
+            ],
+            strengths: ["Quantum Cryptography", "Foundations"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Noteworthy program for foundational research.' },
+            financials: { stipend: 45000, col_value: 58000 },
+            narrative: {
+                main: "UCSB has emerged as a significant center for computer science research with a well-regarded security and cryptography group.",
+                crypto: "The university is home to a vibrant group of researchers, including faculty like Prabhanjan Ananth who work on advanced, highly theoretical topics at the intersection of classical and quantum cryptography.",
+                higher_structures: "",
+                environment: "The university is home to a vibrant group of researchers working on advanced, highly theoretical topics."
+            }
+        },
+        {
+            id: 'chicago',
+            name: 'University of Chicago',
+            tier: 1,
+            rank: -1, // Not in crypto lists
+            synergy: 'High', // Inferred
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'A. Beilinson', title: 'Faculty', focus: 'Geom. Langlands' },
+                { name: 'V. Drinfeld', title: 'Faculty', focus: 'Geom. Langlands' },
+                { name: 'M. Emerton', title: 'Faculty', focus: 'Number Theory' },
+                { name: 'B. Farb', title: 'Faculty', focus: 'Topology' }
+            ],
+            strengths: ["Geom. Langlands", "Number Theory", "Topology"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Unparalleled environment for a student focused on deep applications of higher structures.' },
+            financials: { stipend: 46000, col_value: 37450 },
+            narrative: {
+                main: "The University of Chicago's Department of Mathematics is legendary, with a culture of intense intellectualism.",
+                crypto: "",
+                higher_structures: "For a student interested in the arithmetic and representation-theoretic aspects of modern geometry, Chicago possesses a concentration of faculty talent that is arguably unmatched anywhere. The application should demonstrate a sophisticated interest in questions related to automorphic forms, motives, and the work of Beilinson and Drinfeld.",
+                environment: "The department is large and dynamic, with over 30 tenure-track faculty and a similar number of prestigious Dickson Instructors. This ensures a constant influx of new ideas."
+            }
+        },
+        {
+            id: 'northwestern',
+            name: 'Northwestern University',
+            tier: 2,
+            rank: -1,
+            synergy: 'Moderate',
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'P. Goerss', title: 'Faculty', focus: 'Homotopy Theory' },
+                { name: 'E. Getzler', title: 'Faculty', focus: 'Math Physics, DAG' },
+                { name: 'B. Tsygan', title: 'Faculty', focus: 'Noncomm. Geometry' },
+                { name: 'Xiao Wang', title: 'Faculty', focus: 'MPC, Zero-Knowledge' },
+                { name: 'Sandy Zabell', title: 'Faculty', focus: 'History of Cryptography' }
+            ],
+            strengths: ["Homotopy Theory", "Math Physics, DAG", "Noncomm. Geometry", "MPC", "History of Cryptography"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Tailor application to specific research directions of current faculty.' },
+            financials: { stipend: 46350, col_value: 40250 },
+            narrative: {
+                main: "Northwestern University maintains a strong and well-regarded research group in algebraic topology and homotopy theory, with significant presence in the field.",
+                crypto: "Offers two distinct avenues: a modern, systems-oriented research program in the CS department focused on post-quantum and applied crypto, and a unique opportunity in the Math/Stats department to study the history of mathematical cryptography.",
+                higher_structures: "The department is known for a high-quality and supportive environment for students in algebraic topology and related fields, benefiting from its location in the vibrant Chicago metropolitan area.",
+                environment: "The department is known for a high-quality and supportive environment for students in algebraic topology and related fields."
+            }
+        },
+        {
+            id: 'stonybrook',
+            name: 'Stony Brook University (SUNY)',
+            tier: 2,
+            rank: -1,
+            synergy: 'High',
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'R. Lazarsfeld', title: 'Faculty', focus: 'Hodge Theory, Derived Cats.' },
+                { name: 'C. Schnell', title: 'Faculty', focus: 'Hodge Theory, Derived Cats.' },
+                { name: 'R. Laza', title: 'Faculty', focus: 'Moduli' },
+                { name: 'J. Starr', title: 'Faculty', focus: 'AG' },
+                { name: 'Omkant Pandey', title: 'Faculty', focus: 'Theoretical and applied cryptography, privacy.' },
+                { name: 'Supartha Podder', title: 'Faculty', focus: 'Quantum and classical complexity theory, quantum cryptography.' }
+            ],
+            strengths: ["Hodge Theory", "Derived Cats.", "Moduli", "AG", "Quantum Cryptography"],
+            application: { deadline: '2026-01-08', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Highlight interest in areas like D-modules or the geometry of moduli spaces.' },
+            financials: { stipend: 40000, col_value: 49000 },
+            narrative: {
+                main: "Stony Brook has a long and distinguished tradition in geometry and topology, amplified by the on-campus Simons Center for Geometry and Physics. The algebraic geometry group is large, highly active, and exceptionally well-regarded.",
+                crypto: "The CS department has assembled a solid team covering theoretical, applied, and quantum cryptography. The curriculum emphasizes rigorous mathematical foundations.",
+                higher_structures: "An outstanding choice for a student interested in the deep interplay between classical algebraic geometry, Hodge theory, and derived categories. An application should highlight an interest in these areas, perhaps mentioning D-modules or the geometry of moduli spaces.",
+                environment: "The constant flow of workshops and visitors to the Simons Center ensures a world-class intellectual atmosphere."
+            }
+        },
+        {
+            id: 'columbia',
+            name: 'Columbia University',
+            tier: 2,
+            rank: -1,
+            synergy: 'High',
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'A. Okounkov', title: 'Faculty', focus: 'Geom. Rep. Theory' },
+                { name: 'J. de Jong', title: 'Faculty', focus: 'Stacks' },
+                { name: 'R. Friedman', title: 'Faculty', focus: 'AG' },
+                { name: 'Tal Malkin', title: 'Faculty', focus: 'Secure Computation, Blockchain' },
+                { name: 'Moti Yung', title: 'Faculty', focus: 'Secure Multi-Party Computation (MPC)' }
+            ],
+            strengths: ["Geom. Rep. Theory", "Stacks", "AG", "Secure Computation", "Blockchain"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Top-tier choice for a student with geometrically-motivated interests.' },
+            financials: { stipend: 48000, col_value: 65450 },
+            narrative: {
+                main: "Columbia's algebraic geometry group has a celebrated history, with two Fields Medals awarded for work done at the university. The current group maintains this tradition of excellence with a strong geometric focus and connections to physics and representation theory.",
+                crypto: "Research is robustly centered in its highly active Cryptography Lab. This lab-centric model fosters a cohesive, collaborative environment that strongly connects deep theory to high-impact applications.",
+                higher_structures: "Johan de Jong's leadership of the Stacks Project, a fundamental resource for modern algebraic geometry, is a major feature of the department. A top-tier choice for a student with geometrically-motivated interests.",
+                environment: "Located in New York City, Columbia is at the center of a dense hub of mathematical activity."
+            }
+        },
+        {
+            id: 'minnesota',
+            name: 'University of Minnesota, Twin Cities',
+            tier: 3,
+            rank: -1,
+            synergy: 'Moderate',
+            departments: "Mathematics",
+            faculty: [
+                { name: 'T. Lawson', title: 'Faculty', focus: 'K-theory' },
+                { name: 'C. Westerland', title: 'Faculty', focus: 'Alg. Topology' },
+                { name: 'M. Sarazola', title: 'Faculty', focus: 'Homotopy Theory' },
+                { name: 'Andrew Odlyzko', title: 'Faculty', focus: 'Cryptography, computational complexity, number theory.' }
+            ],
+            strengths: ["K-theory", "Alg. Topology", "Homotopy Theory", "Number Theory", "Complexity Theory"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Great choice for a student wanting to focus on core algebraic topology within a dedicated and friendly group.' },
+            financials: { stipend: 38000, col_value: 36400 },
+            narrative: {
+                main: "Possesses a solid and interactive group in algebraic topology with deep connections to other fields. The School of Mathematics is very active, with a cohesive group in topology that ensures a supportive and collaborative graduate student experience.",
+                crypto: "Features a unique structure where distinguished mathematician Andrew Odlyzko holds a primary appointment in the School of Mathematics. This provides a rare opportunity for students to study cryptography directly within a math department.",
+                higher_structures: "A great choice for a student wanting to focus on core algebraic topology (like K-theory) or foundational category theory within a dedicated and friendly group.",
+                environment: "The School of Mathematics is very active, with a cohesive group in topology that ensures a supportive and collaborative graduate student experience."
+            }
+        },
+        {
+            id: 'oregon',
+            name: 'University of Oregon',
+            tier: 3,
+            rank: -1,
+            synergy: 'Moderate',
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'D. Dugger', title: 'Faculty', focus: 'Homotopy Theory' },
+                { name: 'N. Addington', title: 'Faculty', focus: 'Derived Categories' },
+                { name: 'B. Elias', title: 'Faculty', focus: 'Categorification' },
+                { name: 'Patricia Hersh', title: 'Faculty', focus: 'Teaches mathematical cryptography.' },
+                { name: 'Yingjiu Li', title: 'Faculty', focus: 'Applied cryptography, IoT and cloud security.' }
+            ],
+            strengths: ["Homotopy Theory", "Derived Categories", "Categorification", "Applied Crypto"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Excellent choice for a student wanting to work specifically with faculty like Dan Dugger or Nicolas Addington.' },
+            financials: { stipend: 35000, col_value: 37100 },
+            narrative: {
+                main: "Home to a strong and diverse group in geometry and topology, with specific expertise in areas central to modern research.",
+                crypto: "Provides a clear division of labor: the Math department offers foundational mathematical education in cryptography, while the active, hands-on research in building and analyzing secure systems resides in the Computer Science department.",
+                higher_structures: "An excellent choice for a student wanting to work specifically with faculty like Dan Dugger or Nicolas Addington on central topics in modern homotopy theory and algebraic geometry.",
+                environment: "The faculty includes experts in key modern areas, providing direct mentorship opportunities in derived categories and motivic homotopy theory."
+            }
+        },
+        {
+            id: 'uva',
+            name: 'University of Virginia',
+            tier: 3,
+            rank: -1,
+            synergy: 'Moderate',
+            departments: "Mathematics, CS",
+            faculty: [
+                { name: 'J. Bergner', title: 'Faculty', focus: 'Higher Categories' },
+                { name: 'T. E. Mark', title: 'Faculty', focus: 'Low-dim. Topology' },
+                { name: 'Mohammad Hajiabadi', title: 'Faculty', focus: 'Theoretical aspects of crypto and computational assumptions.' },
+                { name: 'Ken Ono', title: 'Faculty', focus: 'World-renowned number theorist (modular forms, elliptic curves).' }
+            ],
+            strengths: ["Higher Categories", "Low-dim. Topology", "Complexity Assumptions", "Number Theory"],
+            application: { deadline: '2026-01-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Ideal program for a student wishing to specialize deeply in the formal theory of higher categories.' },
+            financials: { stipend: 35000, col_value: 36400 },
+            narrative: {
+                main: "A key destination for higher category theory due to the presence of Julie Bergner, a leading expert on the homotopy theory of (∞,1)-categories.",
+                crypto: "Provides a solid environment for research in theoretical cryptography through its CS department. The work focuses on foundational questions about the power and limits of cryptographic primitives, complemented by the resources of a strong math department.",
+                higher_structures: "The ideal program for a student wishing to specialize deeply in the formal theory of higher categories under the guidance of a leading expert.",
+                environment: "The department offers focused expertise in a foundational area, providing a unique opportunity to learn from one of the authors of a key text on the subject."
+            }
+        },
+        {
+            id: 'tamu',
+            name: 'Texas A&M University',
+            tier: 3,
+            rank: -1,
+            synergy: 'Moderate',
+            departments: "Mathematics, CSE",
+            faculty: [
+                { name: 'M. Papanikolas', title: 'Faculty', focus: 'Arithmetic Geom.' },
+                { name: 'F. Sottile', title: 'Faculty', focus: 'AG' },
+                { name: 'G. Pearlstein', title: 'Faculty', focus: 'Hodge Theory' },
+                { name: 'Juan Garay', title: 'Faculty', focus: 'Security of cryptographic protocols, blockchains.' },
+                { name: 'Andreas Klappenecker', title: 'Faculty', focus: 'Algebraic coding theory, quantum computation.' }
+            ],
+            strengths: ["Arithmetic Geom.", "AG", "Hodge Theory", "Protocol Security", "Blockchain", "Quantum Algorithms"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Good fit for a student interested in the arithmetic side of the subject or in computational approaches.' },
+            financials: { stipend: 35000, col_value: 28700 },
+            narrative: {
+                main: "Noted for specific strengths in arithmetic geometry and in more combinatorial and computational algebraic geometry.",
+                crypto: "Provides a solid research environment in its CSE department's theory group. The program has established strength in both classical protocol security (especially for blockchain) and the increasingly important area of quantum information.",
+                higher_structures: "A good fit for a student interested in the arithmetic side of the subject (function field arithmetic) or in computational and combinatorial approaches to algebraic geometry.",
+                environment: "The department has a large and active faculty covering a wide range of geometry and number theory, with specific research groups offering focused mentorship."
+            }
+        },
+        {
+            id: 'uic',
+            name: 'University of Illinois Chicago (UIC)',
+            tier: 3,
+            rank: -1,
+            synergy: 'Moderate',
+            departments: "MSCS, CS",
+            faculty: [
+                { name: 'I. Coskun', title: 'Faculty', focus: 'AG' },
+                { name: 'K. Tucker', title: 'Faculty', focus: 'AG, Comm. Alg.' },
+                { name: 'W. Zhang', title: 'Faculty', focus: 'AG' },
+                { name: 'Bonnie Saunders', title: 'Faculty', focus: 'Director of the CryptoClub Project, teaching cryptography.' },
+                { name: 'Alina Carmen Cojocaru', title: 'Faculty', focus: 'Number theorist (elliptic curves).' }
+            ],
+            strengths: ["AG", "Comm. Alg.", "Cryptography Education", "Number Theory"],
+            application: { deadline: '2025-12-15', platform: 'University Portal', prereq: 'Bachelors or equivalent', docs: 'GRE, TOEFL/IELTS, SOP, LORs, Transcripts', notes: 'Strong choice for a student who wants to be in a large, dedicated algebraic geometry group.' },
+            financials: { stipend: 38000, col_value: 37450 },
+            narrative: {
+                main: "Often mentioned with its sister campus at Urbana-Champaign, UIC has a very large and powerful research group dedicated to algebraic geometry and number theory.",
+                crypto: "Offers a solid environment for learning the mathematical foundations of cryptography, with a particular strength in educational outreach. The MSCS department is the primary hub.",
+                higher_structures: "A strong choice for a student who wants to be in a large, dedicated algebraic geometry group with a broad range of potential advisors.",
+                environment: "Located in Chicago, the department is part of a major hub of mathematical research. The algebraic geometry group is large and vibrant."
+            }
+        }
+    ]
+};
+
+    // --- Application Logic ---
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        // Global state and chart variables
+        let state = { currentView: 'dashboard' };
+        let frPrestigeChart, frCostChart;
+        let currentUsFilters = { search: '', tier: 'All', synergy: 'All', sort: 'name' };
+
+
+        // --- Navigation ---
+        function switchView(viewId) {
+            state.currentView = viewId;
+            document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === `${viewId}-view`));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.dataset.view === viewId));
+            window.scrollTo(0, 0);
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+        }
+
+        document.querySelectorAll('.nav-link, .nav-btn').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchView(e.target.dataset.view);
+            });
+        });
+        
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // --- German M.Sc. View Logic ---
+        const deGrid = document.getElementById('de-university-grid');
+        const deSearch = document.getElementById('de-search-name');
+        const deSort = document.getElementById('de-sort-deadline');
+
+        function renderDeGrid() {
+            let data = [...masterData.germanMSc];
+            const searchTerm = deSearch.value.toLowerCase();
+            if (searchTerm) {
+                 data = data.filter(u =>
+                    u.name.toLowerCase().includes(searchTerm) ||
+                    u.faculty.map(f => f.name).join(' ').toLowerCase().includes(searchTerm)
+                );
+            }
+            if (deSort.value === 'asc') data.sort((a,b) => new Date(a.deadline) - new Date(b.deadline));
+            if (deSort.value === 'desc') data.sort((a,b) => new Date(b.deadline) - new Date(a.deadline));
+
+            deGrid.innerHTML = '';
+            data.forEach(uni => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-5 cursor-pointer flex flex-col justify-between';
+                card.dataset.id = uni.id;
+                const labsHtml = uni.labs.map(lab => lab.name).join('<br> ');
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-lg text-slate-800">${uni.name}</h4>
+                            <span class="text-xs font-semibold bg-green-100 text-green-800 px-2 py-1 rounded-full">Tier ${uni.tier}</span>
+                        </div>
+                        <p class="text-sm text-slate-500">${uni.city}</p>
+                        <div class="text-sm font-semibold text-slate-600 mt-2">Key Labs: ${labsHtml}</div>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-2">Deadline: ${new Date(uni.deadline).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+                `;
+                card.addEventListener('click', () => openModal(uni.id, 'german'));
+                deGrid.appendChild(card);
+            });
+        }
+        
+        deSearch.addEventListener('input', renderDeGrid);
+        deSort.addEventListener('change', renderDeGrid);
+
+
+        // --- France M2 View Logic ---
+        const frGrid = document.getElementById('fr-university-grid');
+        const frRegionFilter = document.getElementById('fr-filter-region');
+        const frResearchFilter = document.getElementById('fr-filter-research');
+        const frSortCost = document.getElementById('fr-sort-cost');
+
+        function populateFrFilters() {
+            const researchAreas = new Set(masterData.franceM2.flatMap(u => u.strengths));
+            frResearchFilter.innerHTML = '<option value="all">All Areas</option>';
+            [...researchAreas].sort().forEach(area => {
+                frResearchFilter.innerHTML += `<option value="${area}">${area}</option>`;
+            });
+        }
+        
+        function renderFrGrid() {
+            let data = [...masterData.franceM2];
+            if (frRegionFilter.value !== 'all') data = data.filter(u => u.region === frRegionFilter.value);
+            if (frResearchFilter.value !== 'all') data = data.filter(u => u.strengths.includes(frResearchFilter.value));
+            if (frSortCost.value === 'asc') data.sort((a,b) => a.cost.avg - b.cost.avg);
+            if (frSortCost.value === 'desc') data.sort((a,b) => b.cost.avg - a.cost.avg);
+
+            frGrid.innerHTML = '';
+            data.forEach(uni => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-5 cursor-pointer flex flex-col justify-between';
+                card.dataset.id = uni.id;
+                const labsHtml = uni.labs.map(lab => lab.name).join('<br> ');
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-lg text-slate-800">${uni.name}</h4>
+                            <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Tier ${uni.tier}</span>
+                        </div>
+                        <p class="text-sm text-slate-500">${uni.city}</p>
+                        <div class="text-sm font-semibold text-slate-600 mt-2">Labs: ${labsHtml}</div>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-2">~€${uni.cost.avg}/month</p>
+                `;
+                card.addEventListener('click', () => openModal(uni.id, 'france'));
+                frGrid.appendChild(card);
+            });
+        }
+        
+        function createFrCharts() {
+            const prestigeCtx = document.getElementById('fr-prestige-chart').getContext('2d');
+            frPrestigeChart = new Chart(prestigeCtx, {
+                type: 'scatter',
+                data: {
+                    datasets: masterData.franceM2.map(school => ({
+                        label: school.name,
+                        data: [{ x: school.cost.avg, y: school.tier, name: school.name }],
+                        backgroundColor: school.tier === 1 ? 'rgba(2, 132, 199, 0.8)' : school.tier === 2 ? 'rgba(132, 204, 22, 0.8)' : 'rgba(249, 115, 22, 0.8)',
+                        pointRadius: 8, pointHoverRadius: 12
+                    }))
+                },
+                options: { scales: { y: { reverse: true, min: 0.5, max: 3.5, ticks: { stepSize: 1 } } } }
+            });
+            const costCtx = document.getElementById('fr-cost-chart').getContext('2d');
+            const sortedCostData = [...masterData.franceM2].sort((a, b) => a.cost.avg - b.cost.avg);
+            frCostChart = new Chart(costCtx, {
+                type: 'bar',
+                data: {
+                    labels: sortedCostData.map(d => d.name),
+                    datasets: [{ 
+                        label: 'Avg. Monthly Cost (€)', 
+                        data: sortedCostData.map(d => d.cost.avg),
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: 'rgba(59, 130, 246, 1)'
+                    }]
+                },
+                options: { 
+                    indexAxis: 'y', 
+                    responsive: true, 
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value) { return '€' + value; }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        [frRegionFilter, frResearchFilter, frSortCost].forEach(el => el.addEventListener('change', renderFrGrid));
+
+        // --- U.S. PhD View Logic ---
+        const usList = document.getElementById('us-university-list');
+        const usDetails = document.getElementById('us-university-details');
+        const usSearch = document.getElementById('us-search');
+        const usSort = document.getElementById('us-sort');
+        const usTierFilters = document.getElementById('us-tier-filters');
+        const usSynergyFilters = document.getElementById('us-synergy-filters');
+        
+        function populateUsFilters() {
+            usTierFilters.innerHTML = ['All', '1', '2', '3'].map(t => `<button data-filter="tier" data-value="${t}" class="filter-btn px-3 py-1 text-sm rounded-full ${t === 'All' ? 'active' : ''}">${t}</button>`).join('');
+            usSynergyFilters.innerHTML = ['All', 'Very High', 'High', 'Moderate'].map(s => `<button data-filter="synergy" data-value="${s}" class="filter-btn px-3 py-1 text-sm rounded-full ${s === 'All' ? 'active' : ''}">${s}</button>`).join('');
+        }
+        
+        function renderUsList() {
+            let data = [...masterData.usPhD];
+            
+            if (currentUsFilters.tier !== 'All') {
+                data = data.filter(u => u.tier == parseInt(currentUsFilters.tier));
+            }
+            if (currentUsFilters.synergy !== 'All') {
+                data = data.filter(u => u.synergy === currentUsFilters.synergy);
+            }
+            if (currentUsFilters.search) {
+                const searchTerm = currentUsFilters.search.toLowerCase();
+                data = data.filter(u =>
+                    u.name.toLowerCase().includes(searchTerm) ||
+                    u.faculty.map(f => f.name).join(' ').toLowerCase().includes(searchTerm)
+                );
+            }
+
+            switch(currentUsFilters.sort) {
+                case 'stipend_desc':
+                    data.sort((a, b) => b.financials.stipend - a.financials.stipend);
+                    break;
+                case 'stipend_asc':
+                    data.sort((a, b) => a.financials.stipend - b.financials.stipend);
+                    break;
+                case 'deadline':
+                    data.sort((a, b) => new Date(a.application.deadline) - new Date(b.application.deadline));
+                    break;
+                case 'name':
+                default:
+                    data.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            usList.innerHTML = '';
+            data.forEach(uni => {
+                const card = document.createElement('div');
+                card.className = 'p-4 mb-3 bg-white rounded-lg shadow-sm hover:shadow-md hover:bg-orange-50 cursor-pointer';
+                card.dataset.id = uni.id;
+                card.innerHTML = `
+                    <h4 class="font-bold text-slate-800">${uni.name}</h4>
+                    <p class="text-sm text-slate-600 truncate">Faculty: ${uni.faculty.map(f => f.name).join(', ')}</p>
+                `;
+                card.addEventListener('click', () => renderUsDetails(uni));
+                usList.appendChild(card);
+            });
+        }
+        
+        function renderUsDetails(uni) {
+            if (!uni) {
+                usDetails.innerHTML = `<div class="text-center p-8">Select a university to see details.</div>`;
+                return;
+            }
+            const facultyHtml = uni.faculty.map(f => `<li><span class="font-semibold">${f.name}</span> (${f.title}): ${f.focus}</li>`).join('');
+            usDetails.innerHTML = `
+                <h3 class="text-xl font-bold">${uni.name}</h3>
+                <div class="mt-4 space-y-4">
+                    <div><h5 class="font-semibold">Main Narrative</h5><p class="text-slate-600">${uni.narrative.main}</p></div>
+                    ${uni.narrative.crypto ? `<div><h5 class="font-semibold">Cryptography Insight</h5><p class="text-slate-600">${uni.narrative.crypto}</p></div>` : ''}
+                    ${uni.narrative.higher_structures ? `<div><h5 class="font-semibold">Higher Structures Insight</h5><p class="text-slate-600">${uni.narrative.higher_structures}</p></div>` : ''}
+                    <div><h5 class="font-semibold">Environment</h5><p class="text-slate-600">${uni.narrative.environment}</p></div>
+                    <div><h5 class="font-semibold">Key Faculty</h5><ul class="list-disc list-inside text-sm">${facultyHtml}</ul></div>
+                </div>`;
+        }
+
+        usSearch.addEventListener('input', (e) => {
+            currentUsFilters.search = e.target.value;
+            renderUsList();
+        });
+        usSort.addEventListener('change', (e) => {
+            currentUsFilters.sort = e.target.value;
+            renderUsList();
+        });
+        usTierFilters.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                currentUsFilters.tier = e.target.dataset.value;
+                usTierFilters.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                renderUsList();
+            }
+        });
+        usSynergyFilters.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                currentUsFilters.synergy = e.target.dataset.value;
+                usSynergyFilters.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                renderUsList();
+            }
+        });
+
+        // --- Application Hub Logic ---
+        const accordionContainer = document.getElementById('strategy-accordion');
+        const deTimelineStandardContainer = document.getElementById('de-timeline-standard');
+        const deTimelineVpdContainer = document.getElementById('de-timeline-vpd');
+
+        const strategyData = [
+            { title: "Decoding German Research Structure", content: "German university applications are highly document-focused. The 'Module Handbook' or detailed course descriptions are often the most critical part of your application, as admissions committees use them to verify you have the required background knowledge. Be meticulous in preparing this." },
+            { title: "A Tiered Application Strategy (U.S.)", content: "For top programs, diversify. A strong portfolio might include 4-5 Tier 1 'reach' schools, 5-6 Tier 2 'match' schools, and 3-4 Tier 3 'likely' schools." },
+            { title: "The Letter of Motivation", content: "This is a key document. Tailor it to each university, naming 2-3 faculty members and specific research groups (like an SFB or Cluster of Excellence) whose work aligns with your interests and explain why. Prove you have done your homework." }
+        ];
+        const deTimelineStandardData = [
+            { phase: 'Sept 2025 - Jan 2026', desc: 'Preparation: Finalize target list, contact recommenders, book tests (if needed), start drafting CV and motivation letters.' },
+            { phase: 'Feb 2026 - Apr 2026', desc: 'Document Assembly: Gather official transcripts, diploma, and meticulously compile detailed course descriptions (Module Handbook). Refine motivation letters.' },
+            { phase: 'May 2026 - July 2026', desc: 'Submission Phase: Submit applications according to each university\'s deadline. Verify all documents, including LORs, are received.' },
+            { phase: 'Aug 2026 onwards', desc: 'Decisions & Enrollment: Receive admission offers, accept a spot, and begin the visa and enrollment process.' }
+        ];
+
+        const deTimelineVpdData = [
+            { phase: 'Jan 2026 - Mar 2026', desc: '<strong>Early Start:</strong> Prepare and certify all documents required by uni-assist for the VPD. This process is separate from the university application.' },
+            { phase: 'By Early April 2026', desc: '<strong>Crucial Step:</strong> Submit your completed application for the VPD to uni-assist. The 4-6 week processing time starts now.' },
+            { phase: 'May 2026', desc: '<strong>Final Submission:</strong> Once you receive the VPD from uni-assist, immediately submit your final application to the university portal before their deadline (e.g., May 31 for FU Berlin). ' },
+            { phase: 'Aug 2026 onwards', desc: 'Decisions & Enrollment: Receive admission offers, accept a spot, and begin the visa and enrollment process.' }
+        ];
+
+        function renderAppHub() {
+            accordionContainer.innerHTML = strategyData.map(item => `
+                <div class="bg-slate-50 border border-slate-200 rounded-lg">
+                    <button class="accordion-toggle w-full flex justify-between items-center text-left p-4">
+                        <span class="font-semibold">${item.title}</span>
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div class="accordion-content hidden p-4 pt-0"><p class="text-slate-600">${item.content}</p></div>
+                </div>
+            `).join('');
+
+            deTimelineStandardContainer.innerHTML = `<div class="relative pl-6 border-l-2 border-slate-300">${deTimelineStandardData.map(item => `
+                <div class="mb-6 relative">
+                    <div class="absolute -left-[30px] top-1.5 w-4 h-4 bg-green-600 rounded-full border-2 border-white"></div>
+                    <h4 class="font-bold text-green-700">${item.phase}</h4>
+                    <p class="text-slate-600">${item.desc}</p>
+                </div>`).join('')}</div>`;
+            
+             deTimelineVpdContainer.innerHTML = `<div class="relative pl-6 border-l-2 border-slate-300">${deTimelineVpdData.map(item => `
+                <div class="mb-6 relative">
+                    <div class="absolute -left-[30px] top-1.5 w-4 h-4 bg-red-600 rounded-full border-2 border-white"></div>
+                    <h4 class="font-bold text-red-700">${item.phase}</h4>
+                    <p class="text-slate-600">${item.desc}</p>
+                </div>`).join('')}</div>`;
+
+            accordionContainer.addEventListener('click', e => {
+                const toggle = e.target.closest('.accordion-toggle');
+                if (toggle) {
+                    toggle.classList.toggle('open');
+                    toggle.nextElementSibling.classList.toggle('hidden');
+                }
+            });
+        }
+
+        // --- Modal Logic ---
+        const modal = document.getElementById('universal-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        function openModal(id, type) {
+            const data = (type === 'german') ? masterData.germanMSc.find(u => u.id === id) :
+                         (type === 'france') ? masterData.franceM2.find(u => u.id === id) : 
+                         masterData.usPhD.find(u => u.id === id);
+            if (!data) return;
+
+            let contentHtml = '';
+            if (type === 'german') {
+                let facultyHtml = data.faculty.map(f => `<li class="py-1"><span class="font-semibold">${f.name}</span>: ${f.focus}</li>`).join('');
+                let labsHtml = data.labs.map(lab => `
+                    <div class="py-2 border-b border-slate-100 last:border-b-0">
+                        <p class="font-semibold text-slate-800">${lab.name}</p>
+                        <p class="text-sm text-slate-600 mt-1">${lab.description}</p>
+                    </div>
+                `).join('');
+                let docsHtml = data.application.docs.map(doc => `<li class="py-1">${doc}</li>`).join('');
+                 let noteHtml = data.application.note ? `<div class="mt-2 p-3 bg-blue-100 border-l-4 border-blue-500 text-blue-700 rounded-r-lg text-sm"><p>${data.application.note}</p></div>` : (data.note ? `<div class="mt-2 p-3 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded-r-lg"><p><strong class="font-bold">Personal Note:</strong> ${data.note}</p></div>` : '');
+
+
+                contentHtml = `
+                    <div class="flex justify-between items-start">
+                        <h2 class="text-2xl font-bold mb-2">${data.name}</h2>
+                        <a href="${data.application.platform_url}" target="_blank" class="bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">Apply Now →</a>
+                    </div>
+                    ${noteHtml}
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mt-4">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Key Faculty & Research</h4>
+                            <ul class="text-sm space-y-1 mb-4">${facultyHtml}</ul>
+                            <div class="space-y-2">${labsHtml}</div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Application Checklist</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1 bg-slate-100 p-3 rounded-md">${docsHtml}</ul>
+                            <h4 class="font-bold text-lg mt-4 mb-2">English Proficiency</h4>
+                            <p class="text-sm text-slate-600 p-3 bg-slate-100 rounded-md">${data.application.english_req}</p>
+                        </div>
+                    </div>`;
+
+            } else if (type === 'france') {
+                let facultyHtml = data.faculty.map(f => `<li class="py-1"><span class="font-semibold">${f.name}</span> (${f.title}): ${f.focus}</li>`).join('');
+                let labsHtml = data.labs.map(lab => `
+                    <div class="py-2 border-b border-slate-100 last:border-b-0">
+                        <p class="font-semibold text-slate-800">${lab.name}</p>
+                        ${lab.team ? `<p class="text-sm font-medium text-blue-700">Équipe: ${lab.team}</p>` : ''}
+                        <p class="text-sm text-slate-600 mt-1">${lab.description}</p>
+                    </div>
+                `).join('');
+
+                contentHtml = `
+                    <h2 class="text-2xl font-bold mb-2">${data.name}</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mt-4">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Application Details</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                <li><strong>Platform:</strong> ${data.application.platform}</li>
+                                <li><strong>Timeline:</strong> ${data.application.timeline}</li>
+                                <li><strong>Tuition:</strong> ${data.application.tuition || 'N/A'}</li>
+                                <li><strong>Notes:</strong> ${data.application.notes}</li>
+                            </ul>
+                            <h4 class="font-bold text-lg mt-4 mb-2">Notable Faculty</h4>
+                            <ul class="text-sm space-y-1">${facultyHtml}</ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2">Research Labs</h4>
+                            <div class="space-y-2">${labsHtml}</div>
+                            <h4 class="font-bold text-lg mt-4 mb-2">Cost Breakdown (Monthly)</h4>
+                            <div class="h-64"><canvas id="modal-cost-chart"></canvas></div>
+                        </div>
+                    </div>`;
+            }
+
+            modalContent.innerHTML = contentHtml;
+            modal.classList.remove('hidden');
+
+            if (type === 'france') {
+                 new Chart(document.getElementById('modal-cost-chart').getContext('2d'), {
+                    type: 'bar', 
+                    data: { 
+                        labels: Object.keys(data.costBreakdown), 
+                        datasets: [{ 
+                            label: 'Cost',
+                            data: Object.values(data.costBreakdown),
+                            backgroundColor: ['rgba(54, 162, 235, 0.6)','rgba(255, 206, 86, 0.6)','rgba(75, 192, 192, 0.6)','rgba(153, 102, 255, 0.6)',]
+                        }] 
+                    },
+                    options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { ticks: { callback: function(value) { return '€' + value; } } } } }
+                });
+            }
+        }
+        
+        closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+
+        // --- Initializations ---
+        function init() {
+            switchView('dashboard');
+            
+            // German M.Sc.
+            renderDeGrid();
+
+            // France M2
+            populateFrFilters();
+            renderFrGrid();
+            createFrCharts();
+
+            // US PhD
+            populateUsFilters();
+            renderUsList();
+            renderUsDetails(null); // Initial empty state
+
+            // App Hub
+            renderAppHub();
+        }
+
+        init();
+    });
+    </script>
+
+</body>
+</html>
+
