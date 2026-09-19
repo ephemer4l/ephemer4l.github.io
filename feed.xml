@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Efe İzbudak — Blog</title>
+        <link>https://ephemer4l.me/</link>
+        <description>Posts by Efe İzbudak.</description>
+        <language>en</language>
+        <lastBuildDate>Sat, 19 Sep 2026 19:30:14 +0000</lastBuildDate>
+        <atom:link href="https://ephemer4l.me/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>The Digital Shackles of Proprietary Bloatware: Why Confluence is an Insult to Our Cryptographic Mission</title>
+            <link>https://ephemer4l.me/blog/confluence-bloatware.html</link>
+            <guid isPermaLink="true">https://ephemer4l.me/blog/confluence-bloatware.html</guid>
+            <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+            <description>By adopting standard enterprise platforms like Atlassian Confluence, engineering teams unwittingly surrender their freedom to a bloated, proprietary walled garden. A reflection on data sovereignty, software performance, and the necessity of local-first tools.</description>
+        </item>
+    </channel>
+</rss>
