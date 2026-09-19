@@ -6,10 +6,11 @@
     <meta name="description" content="Efe İzbudak - Mathematics Researcher">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ephemer4l.me/">
+    <link rel="alternate" type="application/rss+xml" title="Efe İzbudak — Blog" href="https://ephemer4l.me/feed.xml">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Efe İzbudak | Mathematics Researcher">
-    <meta property="og:description" content="BSc Student in Mathematics at METU. Interests: Higher structures, derived geometry, lattice-based cryptography, and homomorphic encryption.">
+    <meta property="og:description" content="MSc Student in Mathematics at Universität Hamburg. Interests: Higher structures, derived geometry, lattice-based cryptography, and homomorphic encryption.">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://ephemer4l.me/">
     <meta property="og:image" content="https://ephemer4l.me/profile.png">
@@ -17,7 +18,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Efe İzbudak">
-    <meta name="twitter:description" content="Mathematics Researcher at METU.">
+    <meta name="twitter:description" content="Mathematics Researcher at Universität Hamburg.">
     <meta name="twitter:image" content="https://ephemer4l.me/profile.png">
 
     <!-- Favicon (FontAwesome Infinity Icon) -->
@@ -25,7 +26,9 @@
 
     <title>Efe İzbudak | ephemer4l</title>
 
-    <!-- Schema.org JSON-LD Structured Data for Google -->
+    <!-- Schema.org JSON-LD Structured Data for Google.
+         Add an ORCID iD and arXiv author page to "sameAs" once you have them:
+         "https://orcid.org/0000-0000-0000-0000", "https://arxiv.org/a/izbudak_e_1" -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,6 +45,10 @@
       "affiliation": [
         {
           "@type": "CollegeOrUniversity",
+          "name": "Universität Hamburg"
+        },
+        {
+          "@type": "CollegeOrUniversity",
           "name": "Sabanci University"
         }
       ],
@@ -52,18 +59,10 @@
     }
     </script>
 
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" async></script>
 
-    <!-- Privacy-friendly analytics (Plausible) -->
+    <!-- Privacy-friendly analytics (Plausible).
+         To drop the third-party request, proxy or self-host the script and
+         point src at your own origin, e.g. src="/js/p.js". -->
     <script defer data-domain="ephemer4l.me" src="https://plausible.io/js/script.js"></script>
 
     <!-- Prevent Dark Mode FOUC -->
@@ -170,6 +169,12 @@
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
             color: var(--accent-color);
+        }
+
+        /* Small amounts of upright mathematics in running text. */
+        .mathish {
+            font-family: Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
+            font-style: normal;
         }
 
         a {
@@ -496,6 +501,17 @@
             transform: scale(1.05);
         }
 
+        /* Icon follows the effective theme, including before any JS runs. */
+        .theme-toggle-btn .icon-sun { display: none; }
+
+        html[data-theme="dark"] .theme-toggle-btn .icon-moon { display: none; }
+        html[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; }
+
+        @media (prefers-color-scheme: dark) {
+            html:not([data-theme="light"]) .theme-toggle-btn .icon-moon { display: none; }
+            html:not([data-theme="light"]) .theme-toggle-btn .icon-sun { display: block; }
+        }
+
         .quick-nav {
             position: sticky;
             top: 0;
@@ -533,6 +549,22 @@
         }
 
         .quick-nav a.active { border-color: var(--accent-color); }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .profile-header { animation: none; }
+            .link-badge:hover,
+            .project-card:hover,
+            .theme-toggle-btn:hover { transform: none; }
+        }
 
         @media print {
             body { background: #fff !important; color: #000 !important; font-size: 12pt; }
@@ -580,13 +612,14 @@
 </head>
 <body>
 
-<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<button id="theme-toggle" class="theme-toggle-btn" aria-pressed="false" aria-label="Switch to dark theme">
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
 </button>
 
 <main>
     <header class="profile-header">
-        <img src="profile.png" title="Efe İzbudak" alt="Efe İzbudak at the whiteboard" class="profile-img" loading="lazy">
+        <img src="profile.png" title="Efe İzbudak" alt="Efe İzbudak at the whiteboard" class="profile-img" width="320" height="320" fetchpriority="high" decoding="async">
         <div class="profile-info">
             <a href="https://ephemer4l.me/" style="text-decoration: none;">
                 <h1>Efe İzbudak</h1>
@@ -606,6 +639,8 @@
                 <a href="mailto:efe@liberior.org" class="link-badge" aria-label="Send an email to Efe">📧 efe@liberior.org</a>
                 <a href="https://github.com/ephemer4l" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub Profile">💻 GitHub</a>
                 <a href="https://pixelfed.social/@ephemer4l" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="Visit Pixelfed Profile">📷 Pixelfed</a>
+                <!-- Once you have an ORCID iD, add it here and in the JSON-LD "sameAs" above:
+                <a href="https://orcid.org/0000-0000-0000-0000" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="ORCID profile">🆔 ORCID</a> -->
             </div>
         </div>
     </header>
@@ -681,7 +716,29 @@
             <span class="pub-links">Work in progress</span>
         </div>
 
-        <!-- (Preserved Paper from earlier step) Shifted Contact Structures on Exact Symplectic Fibrations -->
+        <!-- 4. Monodromic Perverse Sheaves on Shifted Contact Stacks -->
+        <div class="pub-item">
+            <span class="pub-title">Monodromic Perverse Sheaves on Shifted Contact Stacks</span>
+            <span class="pub-authors">Efe İzbudak (2026)</span>
+            <span class="pub-links"><a href="https://arxiv.org/abs/2609.18796" target="_blank">arXiv:2609.18796 [math.AG]</a></span>
+            <details class="bibtex-toggle">
+                <summary>▶ Cite BibTeX</summary>
+                <div class="bibtex-wrapper">
+                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
+<pre><code>@misc{izbudak2026monodromicperversesheavesshifted,
+      title={Monodromic Perverse Sheaves on Shifted Contact Stacks},
+      author={Efe \.{I}zbudak},
+      year={2026},
+      eprint={2609.18796},
+      archivePrefix={arXiv},
+      primaryClass={math.AG},
+      url={https://arxiv.org/abs/2609.18796},
+}</code></pre>
+                </div>
+            </details>
+        </div>
+
+        <!-- 5. Shifted Contact Structures on Exact Symplectic Fibrations -->
         <div class="pub-item">
             <span class="pub-title">Shifted Contact Structures on Exact Symplectic Fibrations</span>
             <span class="pub-authors">Mehmet Fırat Arıkan, Kadri İlker Berktav, and Efe İzbudak (2026)</span>
@@ -690,20 +747,20 @@
                 <summary>▶ Cite BibTeX</summary>
                 <div class="bibtex-wrapper">
                     <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{arıkan2026shiftedcontactstructuresexact,
-      title={Shifted Contact Structures on Exact Symplectic Fibrations}, 
-      author={Mehmet Fırat Arıkan and Kadri İlker Berktav and Efe İzbudak},
+<pre><code>@misc{arikan2026shiftedcontactstructuresexact,
+      title={Shifted Contact Structures on Exact Symplectic Fibrations},
+      author={Mehmet F{\i}rat Ar{\i}kan and Kadri \.{I}lker Berktav and Efe \.{I}zbudak},
       year={2026},
       eprint={2609.08617},
       archivePrefix={arXiv},
       primaryClass={math.SG},
-      url={https://arxiv.org/abs/2609.08617}, 
+      url={https://arxiv.org/abs/2609.08617},
 }</code></pre>
                 </div>
             </details>
         </div>
 
-        <!-- 4. Shifted Symplectic Fibrations and Derived Thurston Theorem -->
+        <!-- 6. Shifted Symplectic Fibrations and Derived Thurston Theorem -->
         <div class="pub-item">
             <span class="pub-title">Shifted Symplectic Fibrations and Derived Thurston Theorem</span>
             <span class="pub-authors">Mehmet Fırat Arıkan, Kadri İlker Berktav, and Efe İzbudak (2026)</span>
@@ -712,42 +769,42 @@
                 <summary>▶ Cite BibTeX</summary>
                 <div class="bibtex-wrapper">
                     <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{arıkan2026shiftedsymplecticfibrationsderived,
-      title={Shifted Symplectic Fibrations and Derived Thurston Theorem}, 
-      author={Mehmet Fırat Arıkan and Kadri İlker Berktav and Efe İzbudak},
+<pre><code>@misc{arikan2026shiftedsymplecticfibrationsderived,
+      title={Shifted Symplectic Fibrations and Derived Thurston Theorem},
+      author={Mehmet F{\i}rat Ar{\i}kan and Kadri \.{I}lker Berktav and Efe \.{I}zbudak},
       year={2026},
       eprint={2606.21717},
       archivePrefix={arXiv},
       primaryClass={math.SG},
-      url={https://arxiv.org/abs/2606.21717}, 
+      url={https://arxiv.org/abs/2606.21717},
 }</code></pre>
                 </div>
             </details>
         </div>
 
-        <!-- 5. Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences -->
+        <!-- 7. Equivariant Contact Darboux Quotients -->
         <div class="pub-item">
-            <span class="pub-title">Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences</span>
+            <span class="pub-title">Equivariant Contact Darboux Quotients</span>
             <span class="pub-authors">Efe İzbudak (2026)</span>
             <span class="pub-links"><a href="https://arxiv.org/abs/2606.11179" target="_blank">arXiv:2606.11179 [math.AG]</a></span>
             <details class="bibtex-toggle">
                 <summary>▶ Cite BibTeX</summary>
                 <div class="bibtex-wrapper">
                     <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{i̇zbudak2026equivariantcontactdarbouxquotients,
-      title={Equivariant Contact Darboux Quotients and Perversely Categorified Legendrian Correspondences}, 
-      author={Efe İzbudak},
+<pre><code>@misc{izbudak2026equivariantcontactdarbouxquotients,
+      title={Equivariant Contact Darboux Quotients},
+      author={Efe \.{I}zbudak},
       year={2026},
       eprint={2606.11179},
       archivePrefix={arXiv},
       primaryClass={math.AG},
-      url={https://arxiv.org/abs/2606.11179}, 
+      url={https://arxiv.org/abs/2606.11179},
 }</code></pre>
                 </div>
             </details>
         </div>
-        
-        <!-- 6. AKSZ Construction for Shifted Contact Structures -->
+
+        <!-- 8. AKSZ Construction for Shifted Contact Structures -->
         <div class="pub-item">
             <span class="pub-title">AKSZ Construction for Shifted Contact Structures</span>
             <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
@@ -756,20 +813,20 @@
                 <summary>▶ Cite BibTeX</summary>
                 <div class="bibtex-wrapper">
                     <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{i̇zbudak2026akszconstructionshiftedcontact,
-      title={AKSZ Construction for Shifted Contact Structures}, 
-      author={Efe İzbudak and Kadri İlker Berktav},
+<pre><code>@misc{izbudak2026akszconstructionshiftedcontact,
+      title={AKSZ Construction for Shifted Contact Structures},
+      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
       year={2026},
       eprint={2606.13866},
       archivePrefix={arXiv},
       primaryClass={math.AG},
-      url={https://arxiv.org/abs/2606.13866}, 
+      url={https://arxiv.org/abs/2606.13866},
 }</code></pre>
                 </div>
             </details>
         </div>
 
-        <!-- 7. A Derived Legendrian Category for Shifted Contact Stacks -->
+        <!-- 9. A Derived Legendrian Category for Shifted Contact Stacks -->
         <div class="pub-item">
             <span class="pub-title">A Derived Legendrian Category for Shifted Contact Stacks</span>
             <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
@@ -779,19 +836,19 @@
                 <div class="bibtex-wrapper">
                     <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
 <pre><code>@misc{izbudak2026derivedlegendriancategoryshifted,
-      title={A Derived Legendrian Category for Shifted Contact Stacks}, 
+      title={A Derived Legendrian Category for Shifted Contact Stacks},
       author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
       year={2026},
       eprint={2605.13792},
       archivePrefix={arXiv},
       primaryClass={math.AG},
-      url={https://arxiv.org/abs/2605.13792}, 
+      url={https://arxiv.org/abs/2605.13792},
 }</code></pre>
                 </div>
             </details>
         </div>
 
-        <!-- 8. Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem -->
+        <!-- 10. Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem -->
         <div class="pub-item">
             <span class="pub-title">Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem</span>
             <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
@@ -801,19 +858,19 @@
                 <div class="bibtex-wrapper">
                     <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
 <pre><code>@misc{izbudak2026equivariantquotientsderivedsymplectic,
-      title={Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem}, 
+      title={Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem},
       author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
       year={2026},
       eprint={2605.08394},
       archivePrefix={arXiv},
       primaryClass={math.AG},
-      url={https://arxiv.org/abs/2605.08394}, 
+      url={https://arxiv.org/abs/2605.08394},
 }</code></pre>
                 </div>
             </details>
         </div>
 
-        <!-- 9. Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases -->
+        <!-- 11. Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases -->
         <div class="pub-item">
             <span class="pub-title">Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases</span>
             <span class="pub-authors">Efe İzbudak, Kübra Kaytancı, Ferruh Özbudak, and Erkay Savaş (2026)</span>
@@ -823,7 +880,7 @@
                 <div class="bibtex-wrapper">
                     <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
 <pre><code>@misc{cryptoeprint:2026/1592,
-      author = {Efe İzbudak and Kubra Kaytanci and Ferruh Ozbudak and Erkay Savas},
+      author = {Efe \.{I}zbudak and K{\&quot;u}bra Kaytanc{\i} and Ferruh {\&quot;O}zbudak and Erkay Sava{\c s}},
       title = {Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases},
       howpublished = {Cryptology {ePrint} Archive, Paper 2026/1592},
       year = {2026},
@@ -833,7 +890,7 @@
             </details>
         </div>
 
-        <!-- 10. Network Efficient Fully Homomorphic Encryption -->
+        <!-- 12. Network Efficient Fully Homomorphic Encryption -->
         <div class="pub-item">
             <span class="pub-title">Network Efficient Fully Homomorphic Encryption</span>
             <span class="pub-authors">Efe İzbudak, Ali Şah Özcan, and Tolun Tosun (2026)</span>
@@ -846,23 +903,7 @@
         <ul class="entry-list">
             <li class="entry-item">
                 <div class="entry-header">
-                    <span class="entry-title">Constructing Spaces</span>
-                    <span class="entry-meta">Dec 2026 | METU</span>
-                </div>
-                <div class="entry-desc"><a href="https://ephemer4l.me/notes/spaces.pdf" target="_blank">📄 Notes</a></div>
-            </li>
-            
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title">Moduli Problems and Stacks</span>
-                    <span class="entry-meta">Dec 2026 | METU</span>
-                </div>
-                <div class="entry-desc"><a href="https://ephemer4l.me/notes/genesis_of_stacks.pdf" target="_blank">📄 Notes</a></div>
-            </li>
-
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title">Contractibility & Basics of $\mathrm{Set}_\Delta$</span>
+                    <span class="entry-title">Contractibility &amp; Basics of <span class="mathish">Set<sub>Δ</sub></span></span>
                     <span class="entry-meta">Apr - May 2026 | METU</span>
                 </div>
                 <div class="entry-desc">
@@ -870,6 +911,23 @@
                     <a href="https://ephemer4l.me/notes/basics_of_sset.pdf" target="_blank">📄 Basics Notes</a>
                 </div>
             </li>
+
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title">Constructing Spaces</span>
+                    <span class="entry-meta">Dec 2025 | METU</span>
+                </div>
+                <div class="entry-desc"><a href="https://ephemer4l.me/notes/spaces.pdf" target="_blank">📄 Notes</a></div>
+            </li>
+            
+            <li class="entry-item">
+                <div class="entry-header">
+                    <span class="entry-title">Moduli Problems and Stacks</span>
+                    <span class="entry-meta">Dec 2025 | METU</span>
+                </div>
+                <div class="entry-desc"><a href="https://ephemer4l.me/notes/genesis_of_stacks.pdf" target="_blank">📄 Notes</a></div>
+            </li>
+
 
             <li class="entry-item">
                 <div class="entry-header">
@@ -951,7 +1009,7 @@
         <div style="margin-top: 0.5rem; display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
             <span style="white-space: nowrap;"><span style="color: #f26822; font-weight: bold;">ɱ</span> Monero (<a href="xmr-qr.png" style="text-decoration:underline;">QR</a>):</span>
             <code id="monero-addr" style="word-break: break-all; flex: 1; min-width: 200px;">89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code>
-            <button class="copy-btn" onclick="copyCrypto()" aria-label="Copy Monero Address">📋 Copy</button>
+            <button class="copy-btn" onclick="copyCrypto(this)" aria-label="Copy Monero Address">📋 Copy</button>
         </div>
     </div>
     <p style="margin-top: 2rem;">&copy; <span id="current-year">2026</span> Efe İzbudak. All rights reserved.</p>
@@ -963,85 +1021,84 @@
 
     // Theme Toggle Logic
     const themeBtn = document.getElementById('theme-toggle');
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // An explicit choice wins; otherwise follow the system setting.
+    function effectiveTheme() {
+        return document.documentElement.getAttribute('data-theme')
+            || (darkQuery.matches ? 'dark' : 'light');
+    }
+
+    function syncToggleState() {
+        const isDark = effectiveTheme() === 'dark';
+        themeBtn.setAttribute('aria-pressed', String(isDark));
+        themeBtn.setAttribute('aria-label',
+            isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+
     themeBtn.addEventListener('click', () => {
-        const html = document.documentElement;
-        // Check current computed theme via background color check
-        const isDark = getComputedStyle(html).getPropertyValue('--bg-color').trim() === '#121212';
-        
-        if (isDark) {
-            html.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        } else {
-            html.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        }
+        const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        syncToggleState();
     });
 
-    // Clipboard copy functionality
-    function copyCrypto() {
-        const addr = document.getElementById('monero-addr').innerText;
-        const btn = document.querySelector('.copy-btn');
-        
-        // Creating a temporary textarea to ensure clipboard compatibility across all browser security environments
-        const textArea = document.createElement("textarea");
-        textArea.value = addr;
-        
-        // Move outside of viewport
-        textArea.style.position = "absolute";
-        textArea.style.left = "-999999px";
-        
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        
-        try {
-            document.execCommand('copy');
-            const originalText = btn.innerText;
-            btn.innerText = '✅ Copied';
-            btn.style.borderColor = '#28a745';
-            btn.style.color = '#28a745';
-            
-            setTimeout(() => {
-                btn.innerText = '📋 Copy';
-                btn.style.borderColor = '';
-                btn.style.color = '';
-            }, 2000);
-        } catch (err) {
-            console.error('Unable to copy', err);
-        }
-        
-        document.body.removeChild(textArea);
+    // Follow system changes while no explicit choice is stored.
+    darkQuery.addEventListener('change', () => {
+        if (!document.documentElement.hasAttribute('data-theme')) syncToggleState();
+    });
+
+    syncToggleState();
+
+    // Clipboard helpers
+    function flashButton(btn, doneLabel) {
+        const original = btn.innerText;
+        btn.innerText = doneLabel;
+        btn.style.color = '#28a745';
+        btn.style.borderColor = '#28a745';
+        setTimeout(() => {
+            btn.innerText = original;
+            btn.style.color = '';
+            btn.style.borderColor = '';
+        }, 2000);
     }
-    
-    // BibTeX Copy Functionality
-    window.copyBibtex = function(btn) {
-        const pre = btn.nextElementSibling;
-        const code = pre.textContent;
-        
-        const textArea = document.createElement("textarea");
-        textArea.value = code;
-        textArea.style.position = "absolute";
-        textArea.style.left = "-999999px";
+
+    function legacyCopy(text) {
+        // Fallback for insecure contexts (plain http, some embedded browsers).
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'absolute';
+        textArea.style.left = '-999999px';
         document.body.appendChild(textArea);
-        textArea.focus();
         textArea.select();
-        
         try {
             document.execCommand('copy');
-            const originalText = btn.innerText;
-            btn.innerText = 'Copied!';
-            btn.style.color = '#28a745';
-            btn.style.borderColor = '#28a745';
-            
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.color = '';
-                btn.style.borderColor = '';
-            }, 2000);
+        } finally {
+            document.body.removeChild(textArea);
+        }
+    }
+
+    async function copyText(text, btn, doneLabel) {
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+            } else {
+                legacyCopy(text);
+            }
+            flashButton(btn, doneLabel);
         } catch (err) {
             console.error('Unable to copy', err);
         }
-        document.body.removeChild(textArea);
+    }
+
+    // Acts on the button that was clicked, not on the first one in the document.
+    function copyCrypto(btn) {
+        copyText(document.getElementById('monero-addr').innerText, btn, '✅ Copied');
+    }
+
+    window.copyBibtex = function (btn) {
+        copyText(btn.nextElementSibling.textContent, btn, 'Copied!');
     };
 
     // ScrollSpy Navigation Highlight
