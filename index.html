@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Efe İzbudak - Mathematics Researcher">
     <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
     <link rel="canonical" href="https://ephemer4l.me/">
     <link rel="alternate" type="application/rss+xml" title="Efe İzbudak — Blog" href="https://ephemer4l.me/feed.xml">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Efe İzbudak | Mathematics Researcher">
     <meta property="og:description" content="MSc Student in Mathematics at Universität Hamburg. Interests: Higher structures and derived geometry.">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://ephemer4l.me/">
     <meta property="og:image" content="https://ephemer4l.me/profile.png">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Efe İzbudak">
     <meta name="twitter:description" content="Mathematics Researcher at Universität Hamburg.">
     <meta name="twitter:image" content="https://ephemer4l.me/profile.png">
 
-    <!-- Favicon (FontAwesome Infinity Icon) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%230366d6' d='M67.2 173.2C26.1 202.9 0 252 0 304c0 88.4 71.6 160 160 160c59.3 0 111-32.2 139.5-81.6l8.5-14.7 8.5 14.7C345 431.8 396.7 464 456 464c88.4 0 160-71.6 160-160c0-52-26.1-101.1-67.2-130.8C507.7 143.5 453.3 128 400 128c-52 0-101.1 26.1-130.8 67.2l-21.2 29.5-21.2-29.5C197.1 154.1 148 128 96 128c-53.3 0-107.7 15.5-148.8 45.2zM400 192c32.4 0 65 10.5 90.6 29.4C516.3 240.2 536 271.4 536 304c0 44.2-35.8 80-80 80c-26.7 0-51-13.1-65.7-34.8L350.5 280.4c-16.7-24.6-45.7-39.4-75.7-39.4c-4.2 0-8.4 .3-12.6 .9L311.4 173.6c27-29.7 65.6-45.6 104.6-45.6zM151.7 172.9c16.7 24.6 45.7 39.4 75.7 39.4c4.2 0 8.4-.3 12.6-.9l-49.2 68.3c-27 29.7-65.6 45.6-104.6 45.6c-32.4 0-65-10.5-90.6-29.4C19.7 267.8 0 236.6 0 204c0-44.2 35.8-80 80-80c26.7 0 51 13.1 65.7 34.8L185.5 231.6l-33.8-58.7z'/></svg>">
+    <!-- Favicon (FontAwesome Infinity Icon), in the CV's maroon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%23AD2231' d='M67.2 173.2C26.1 202.9 0 252 0 304c0 88.4 71.6 160 160 160c59.3 0 111-32.2 139.5-81.6l8.5-14.7 8.5 14.7C345 431.8 396.7 464 456 464c88.4 0 160-71.6 160-160c0-52-26.1-101.1-67.2-130.8C507.7 143.5 453.3 128 400 128c-52 0-101.1 26.1-130.8 67.2l-21.2 29.5-21.2-29.5C197.1 154.1 148 128 96 128c-53.3 0-107.7 15.5-148.8 45.2zM400 192c32.4 0 65 10.5 90.6 29.4C516.3 240.2 536 271.4 536 304c0 44.2-35.8 80-80 80c-26.7 0-51-13.1-65.7-34.8L350.5 280.4c-16.7-24.6-45.7-39.4-75.7-39.4c-4.2 0-8.4 .3-12.6 .9L311.4 173.6c27-29.7 65.6-45.6 104.6-45.6zM151.7 172.9c16.7 24.6 45.7 39.4 75.7 39.4c4.2 0 8.4-.3 12.6-.9l-49.2 68.3c-27 29.7-65.6 45.6-104.6 45.6c-32.4 0-65-10.5-90.6-29.4C19.7 267.8 0 236.6 0 204c0-44.2 35.8-80 80-80c26.7 0 51 13.1 65.7 34.8L185.5 231.6l-33.8-58.7z'/></svg>">
 
     <title>Efe İzbudak | ephemer4l</title>
 
@@ -54,1073 +55,415 @@
     }
     </script>
 
-
     <!-- Privacy-friendly analytics (Plausible).
          To drop the third-party request, proxy or self-host the script and
          point src at your own origin, e.g. src="/js/p.js". -->
     <script defer data-domain="ephemer4l.me" src="https://plausible.io/js/script.js"></script>
 
-    <!-- Prevent Dark Mode FOUC -->
-    <script>
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
-    </script>
-
     <style>
+        /* The page follows the CV: Palatino, near-black text, grey details,
+           and the CV's maroon for the name and the small-caps section heads. */
         :root {
-            /* Light Theme */
-            --bg-color: #fdfdfc;
-            --text-main: #222222;
-            --text-muted: #555555;
-            --accent-color: #0366d6;
-            --accent-hover: #005cc5;
-            --border-color: #e0e0e0;
-            --code-bg: #f4f4f4;
-            --card-bg: #ffffff;
-        }
-
-        html[data-theme="dark"] {
-            /* Dark Theme */
-            --bg-color: #121212;
-            --text-main: #e0e0e0;
-            --text-muted: #aaaaaa;
-            --accent-color: #58a6ff;
-            --accent-hover: #79c0ff;
-            --border-color: #333333;
-            --code-bg: #1e1e1e;
-            --card-bg: #1a1a1a;
+            --paper: #ffffff;
+            --ink: #1a1a1a;
+            --detail: #626262;
+            --accent: #ad2231;
+            --line: #d9d9d9;
         }
 
         @media (prefers-color-scheme: dark) {
-            html:not([data-theme="light"]) {
-                /* Dark Theme Fallback */
-                --bg-color: #121212;
-                --text-main: #e0e0e0;
-                --text-muted: #aaaaaa;
-                --accent-color: #58a6ff;
-                --accent-hover: #79c0ff;
-                --border-color: #333333;
-                --code-bg: #1e1e1e;
-                --card-bg: #1a1a1a;
+            :root {
+                --paper: #1b1b1b;
+                --ink: #e6e4e1;
+                --detail: #a6a6a6;
+                --accent: #ec8f9a;
+                --line: #3a3a3a;
             }
-        }
-
-        * {
-            box-sizing: border-box;
         }
 
         html {
-            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.65;
-            color: var(--text-main);
-            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
-            font-size: 18px;
-            transition: background-color 0.3s, color 0.3s;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Palatino Linotype", Palatino, "Book Antiqua", "TeX Gyre Pagella", "URW Palladio L", P052, Georgia, serif;
+            font-size: 1.0625rem;
+            line-height: 1.6;
             overflow-wrap: break-word;
         }
 
-        main {
-            max-width: 1050px;
+        main, footer {
+            max-width: 43rem;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 0 1.25rem;
         }
 
-        section {
-            margin-bottom: 4.5rem;
-            scroll-margin-top: 6rem;
+        main { padding-top: 3.5rem; }
+
+        p { margin: 0 0 0.9rem; text-wrap: pretty; }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.17em;
+            text-decoration-color: var(--accent);
+            text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
         }
 
-        h1, h2, h3, h4 {
-            font-family: Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
-            font-weight: normal;
-            color: var(--text-main);
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.3;
+        a:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 1px;
+        }
+
+        /* Header: name and contact on the left, photo on the right,
+           as the CV sets name and contact details. */
+        .masthead {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1.75rem;
+            margin-bottom: 2rem;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 0.2rem;
+            margin: 0 0 0.4rem;
+            font-size: 2.6rem;
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--accent);
         }
 
-        h2 {
-            font-size: 1.75rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
+        .masthead p { margin: 0 0 0.15rem; }
 
-        h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
+        .contact { margin-top: 0.8rem !important; }
 
-        /* Small amounts of upright mathematics in running text. */
-        .mathish {
-            font-family: Palatino, "Palatino Linotype", "TeX Gyre Pagella", Georgia, serif;
-            font-style: normal;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.2s ease, text-decoration 0.2s ease;
-        }
-
-        a:hover {
-            color: var(--accent-hover);
-            text-decoration: underline;
-        }
-
-        a:focus-visible, button:focus-visible {
-            outline: 2px dashed var(--accent-color);
-            outline-offset: 4px;
-            border-radius: 2px;
-        }
-        
-        .entry-desc a[target="_blank"]::after,
-        .pub-links a[target="_blank"]::after {
-            content: " ↗";
-            font-size: 0.85em;
-            opacity: 0.7;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .profile-header {
+        .profiles {
             display: flex;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 4rem;
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .profile-img {
-            width: 320px;
-            height: 320px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 2px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            flex-shrink: 0;
-        }
-
-        .profile-info {
-            flex: 1 1 0;
-            min-width: 0;
-        }
-
-        .lead-text {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .speech-notice {
-            margin-bottom: 1.5rem;
-            padding: 1rem 1.2rem;
-            border-left: 3px solid var(--accent-color);
-            background: var(--code-bg);
-            border-radius: 6px;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .links-grid {
-            display: flex;
-            gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .link-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            text-decoration: none !important;
-            white-space: nowrap;
-        }
-
-        .link-badge:hover {
-            border-color: var(--accent-color);
-            background: var(--code-bg);
-            transform: translateY(-1px);
-        }
-
-        ul { padding-left: 1.5rem; }
-        li { margin-bottom: 0.6rem; }
-
-        .entry-list {
             list-style: none;
+            margin: 0;
             padding: 0;
         }
 
-        .entry-item { margin-bottom: 2rem; }
-
-        .entry-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.5rem 1rem;
+        /* The slash follows each link, so a wrapped line never starts with one. */
+        .profiles li:not(:last-child)::after {
+            content: "/";
+            color: var(--detail);
+            padding: 0 0.45em;
         }
 
-        .entry-title {
-            font-weight: bold;
-            font-size: 1.15rem;
-            flex: 1 1 0;
-            min-width: 200px;
+        .portrait {
+            flex: 0 0 auto;
+            width: 9.5rem;
+            height: 9.5rem;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            border-radius: 2px;
         }
 
-        .entry-meta {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            text-align: right;
-            flex-shrink: 0;
+        /* Section heads mirror the CV: maroon small caps over a maroon rule. */
+        h2 {
+            margin: 2.6rem 0 0.9rem;
+            padding-bottom: 0.15rem;
+            border-bottom: 1px solid var(--accent);
+            font-size: 1.3rem;
+            font-weight: 400;
+            font-variant-caps: small-caps;
+            letter-spacing: 0.02em;
+            color: var(--accent);
         }
 
-        .entry-desc {
-            margin-top: 0.4rem;
-            font-size: 1rem;
+        h3 {
+            margin: 1.3rem 0 0.5rem;
+            font-size: 1.0625rem;
+            font-weight: 400;
+            font-variant-caps: small-caps;
+            letter-spacing: 0.02em;
+            color: var(--detail);
         }
 
-        .pub-item {
-            margin-bottom: 1.8rem;
-            padding-left: 1.2rem;
-            border-left: 3px solid var(--border-color);
-        }
+        h2 + h3 { margin-top: 0; }
 
-        .pub-item:hover { border-left-color: var(--accent-color); }
-
-        .pub-title {
-            font-weight: bold;
-            display: block;
-            font-size: 1.05rem;
-        }
-
-        .pub-authors {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            display: block;
-        }
-
-        .pub-links {
-            font-size: 0.9rem;
-            margin-top: 0.3rem;
-            display: block;
-        }
-        
-        details.bibtex-toggle { margin-top: 0.4rem; }
-        
-        details.bibtex-toggle summary {
-            cursor: pointer;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            user-select: none;
-            display: inline-block;
-            transition: color 0.2s ease;
-        }
-        
-        details.bibtex-toggle summary:hover { color: var(--accent-color); }
-
-        .bibtex-wrapper {
-            position: relative;
-            margin-top: 0.5rem;
-        }
-        
-        details.bibtex-toggle pre {
-            background: var(--code-bg);
-            padding: 1rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            overflow-x: auto;
-            border: 1px solid var(--border-color);
+        /* Dated entries: date on the left, item on the right. */
+        .entries {
+            list-style: none;
             margin: 0;
+            padding: 0;
         }
 
-        .bibtex-copy-btn {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.2s ease;
-        }
-
-        .bibtex-wrapper:hover .bibtex-copy-btn,
-        .bibtex-copy-btn:focus-visible { opacity: 1; }
-
-        .bibtex-copy-btn:hover {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-            background: var(--code-bg);
-        }
-
-        .project-grid {
+        .entries li {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: 6.5rem minmax(0, 1fr);
+            column-gap: 1rem;
+            margin-bottom: 0.7rem;
         }
 
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.4rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+        .when {
+            color: var(--detail);
+            font-size: 0.9375rem;
+            font-variant-numeric: lining-nums tabular-nums;
+            padding-top: 0.08rem;
         }
 
-        .project-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-color: var(--accent-color);
+        .detail {
+            display: block;
+            color: var(--detail);
+            font-size: 0.9375rem;
         }
 
-        .project-card h3 {
-            margin-top: 0;
-            font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .with { color: var(--detail); }
+
+        /* A line that belongs to the list above it starts in the item column. */
+        .more { margin-left: 7.5rem; }
+
+        .software {
+            margin: 0;
+            padding-left: 1.1rem;
         }
 
-        .project-card p {
-            margin: 0.6rem 0 0 0;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
+        .software li { margin-bottom: 0.35rem; }
 
         code {
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            background-color: var(--code-bg);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
+            font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
             font-size: 0.85em;
-            word-break: break-all;
         }
 
         footer {
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--text-muted);
+            margin-top: 3.5rem;
+            padding-bottom: 3rem;
+            color: var(--detail);
+            font-size: 0.875rem;
         }
 
-        .crypto-box {
-            display: inline-block;
-            text-align: left;
-            background: var(--code-bg);
-            padding: 1.2rem;
-            border-radius: 6px;
-            margin-top: 1rem;
-            border: 1px solid var(--border-color);
-            max-width: 100%;
-        }
+        footer p { margin-bottom: 0.4rem; }
 
-        .crypto-box img {
-            vertical-align: middle;
-            height: 1.2rem;
-            margin-right: 0.5rem;
-        }
-        
-        .copy-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
+        .address { word-break: break-all; }
 
-        .copy-btn:hover {
-            background: var(--code-bg);
-            border-color: var(--accent-color);
-        }
-
-        .nowrap { white-space: nowrap; }
-
-        .theme-toggle-btn {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.6rem;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            z-index: 100;
-        }
-
-        .theme-toggle-btn:hover {
-            background: var(--code-bg);
-            border-color: var(--accent-color);
-            transform: scale(1.05);
-        }
-
-        /* Icon follows the effective theme, including before any JS runs. */
-        .theme-toggle-btn .icon-sun { display: none; }
-
-        html[data-theme="dark"] .theme-toggle-btn .icon-moon { display: none; }
-        html[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; }
-
-        @media (prefers-color-scheme: dark) {
-            html:not([data-theme="light"]) .theme-toggle-btn .icon-moon { display: none; }
-            html:not([data-theme="light"]) .theme-toggle-btn .icon-sun { display: block; }
-        }
-
-        .quick-nav {
-            position: sticky;
-            top: 0;
-            background-color: rgba(253, 253, 252, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 50;
-            display: flex;
-            gap: 1.5rem;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 3.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
-            transition: background-color 0.3s;
-        }
-
-        html[data-theme="dark"] .quick-nav { background-color: rgba(18, 18, 18, 0.85); }
-        @media (prefers-color-scheme: dark) {
-            html:not([data-theme="light"]) .quick-nav { background-color: rgba(18, 18, 18, 0.85); }
-        }
-
-        .quick-nav a {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 0.2rem;
-            transition: color 0.2s, border-color 0.2s;
-        }
-
-        .quick-nav a:hover, .quick-nav a.active {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .quick-nav a.active { border-color: var(--accent-color); }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-
-            .profile-header { animation: none; }
-            .link-badge:hover,
-            .project-card:hover,
-            .theme-toggle-btn:hover { transform: none; }
+        @media (max-width: 34rem) {
+            main { padding-top: 2rem; }
+            .masthead { gap: 1rem; }
+            h1 { font-size: 2.1rem; }
+            .portrait { width: 6.5rem; height: 6.5rem; }
+            .entries li { grid-template-columns: minmax(0, 1fr); }
+            .when { padding-top: 0; }
+            .more { margin-left: 0; }
         }
 
         @media print {
-            body { background: #fff !important; color: #000 !important; font-size: 12pt; }
-            main { max-width: 100%; padding: 0; margin: 0; }
-            .profile-header { align-items: flex-start; margin-bottom: 2rem; }
-            .profile-img { width: 150px; height: 150px; box-shadow: none; border: 1px solid #ccc; }
-            .links-grid { flex-direction: column; gap: 0.2rem; }
-            .link-badge { border: none; background: transparent; padding: 0; display: block; color: #000 !important; }
-            .link-badge::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
-            .crypto-box, .theme-toggle-btn, .quick-nav, .bibtex-toggle, .speech-notice { display: none !important; }
-            a { color: #000 !important; text-decoration: underline; }
-            section { page-break-inside: avoid; margin-bottom: 2rem; }
-            h1, h2, h3 { color: #000 !important; border-bottom-color: #000 !important; }
-            .entry-desc a[target="_blank"]::after, .pub-links a[target="_blank"]::after { content: ""; }
-        }
-
-        @media (max-width: 768px) {
-            .profile-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 2rem;
-            }
-            .profile-img { width: 260px; height: 260px; }
-            .links-grid { justify-content: center; }
-            .speech-notice { text-align: left; }
-        }
-
-        @media (max-width: 600px) {
-            .profile-img { width: 220px; height: 220px; }
-            .theme-toggle-btn {
-                top: 1rem;
-                right: 1rem;
-                position: fixed;
-            }
-            .entry-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.2rem;
-            }
-            .entry-meta { text-align: left; }
-            .entry-title { padding-right: 0; }
+            :root { --paper: #fff; --ink: #000; --detail: #444; }
+            body { font-size: 11pt; }
+            main { padding-top: 0; }
+            a { text-decoration: none; }
+            footer .donate { display: none; }
         }
     </style>
 </head>
 <body>
 
-<button id="theme-toggle" class="theme-toggle-btn" aria-pressed="false" aria-label="Switch to dark theme">
-    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-</button>
-
 <main>
-    <header class="profile-header">
-        <img src="profile.png" title="Efe İzbudak" alt="Efe İzbudak at the whiteboard" class="profile-img" width="320" height="320" fetchpriority="high" decoding="async">
-        <div class="profile-info">
-            <a href="https://ephemer4l.me/" style="text-decoration: none;">
-                <h1>Efe İzbudak</h1>
-            </a>
-            <p class="lead-text">
-                MSc Student in Mathematics at Universität Hamburg.<br>
-                Supervisor: Tobias Dyckerhoff<br><br>
-                <strong>Interests:</strong> Higher structures and derived geometry.
-            </p>
-            
-            <div class="speech-notice">
-                <strong>Read my silenced valedictory address</strong> to the METU Class of 2026 <a href="https://ephemer4l.me/speech.html">here</a>.
-            </div>
-            
-            <div class="links-grid">
-                <a href="cv.pdf" class="link-badge" aria-label="Download Curriculum Vitae">📜 Curriculum Vitae</a>
-                <a href="mailto:efe@liberior.org" class="link-badge" aria-label="Send an email to Efe">📧 efe@liberior.org</a>
-                <a href="https://github.com/ephemer4l" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub Profile">💻 GitHub</a>
-                <a href="https://pixelfed.social/@ephemer4l" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="Visit Pixelfed Profile">📷 Pixelfed</a>
-                <a href="https://orcid.org/0009-0001-2430-8902" class="link-badge" target="_blank" rel="noopener noreferrer" aria-label="View ORCID profile">🆔 ORCID</a>
-            </div>
+    <header class="masthead">
+        <div>
+            <h1>Efe İzbudak</h1>
+            <p>MSc student in mathematics</p>
+            <p><a href="https://www.math.uni-hamburg.de/en.html">Universität Hamburg</a></p>
+            <p class="contact"><a href="mailto:efe@liberior.org">efe@liberior.org</a></p>
+            <ul class="profiles">
+                <li><a href="cv.pdf">CV</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="https://github.com/ephemer4l">GitHub</a></li>
+                <li><a href="https://orcid.org/0009-0001-2430-8902">ORCID</a></li>
+                <li><a href="https://pixelfed.social/@ephemer4l">Pixelfed</a></li>
+            </ul>
         </div>
+        <img class="portrait" src="profile.png" alt="Efe İzbudak at the whiteboard" width="320" height="320" decoding="async">
     </header>
 
-    <nav class="quick-nav">
-        <a href="#education">↓ Education</a>
-        <a href="#publications">↓ Publications</a>
-        <a href="#talks">↓ Talks</a>
-        <a href="#blog">↓ Blog</a>
-        <a href="#projects">↓ Software</a>
-    </nav>
+    <p>I am writing my master's thesis on shifted contact structures at Universität Hamburg, under the supervision of <a href="https://www.math.uni-hamburg.de/home/dyckerhoff/">Tobias Dyckerhoff</a>. I am interested in higher structures and derived geometry; my current work develops derived contact geometry, the contact counterpart of shifted symplectic geometry.</p>
 
-    <section id="education">
-        <h2>Education & Research</h2>
-        <ul class="entry-list">
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title"><a href="https://www.math.uni-hamburg.de/en.html" target="_blank">Universität Hamburg</a></span>
-                    <span class="entry-meta">Oct 2026 – Sep 2027 | Hamburg, DE</span>
-                </div>
-                <div class="entry-desc">
-                    MSc in Mathematics.<br>
-                    Master's thesis <em>Shifted Contact Structures</em>, in derived contact geometry, under the supervision of Tobias Dyckerhoff.
-                </div>
+    <p>Read my <a href="https://ephemer4l.me/speech.html">silenced valedictory address</a> to the METU Class of 2026.</p>
+
+    <section id="papers">
+        <h2>Papers</h2>
+
+        <h3>Preprints</h3>
+        <ul class="entries">
+            <li>
+                <span class="when">Sep 2026</span>
+                <div>Monodromic Perverse Sheaves on Shifted Contact Stacks
+                    <span class="detail"><a href="https://arxiv.org/abs/2609.18796">arXiv:2609.18796</a></span></div>
             </li>
-
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title"><a href="https://math.metu.edu.tr" target="_blank">Middle East Technical University</a></span>
-                    <span class="entry-meta">Aug 2022 – Jun 2026 | Ankara, TR</span>
-                </div>
-                <div class="entry-desc">
-                    BSc in Mathematics (GPA: 4.00/4.00, ranked 1st in the university).<br>
-                    <strong><a href="https://ephemer4l.me/higherstructures/#about" target="_blank" rel="noopener noreferrer">Higher Structures Group</a>:</strong> Investigating shifted contact structures on derived stacks with Kadri İlker Berktav <span class="nowrap">(Mar 2026 – Current)</span>.
-                </div>
+            <li>
+                <span class="when">Sep 2026</span>
+                <div>Shifted Contact Structures on Exact Symplectic Fibrations <span class="with">(with Mehmet Fırat Arıkan and Kadri İlker Berktav)</span>
+                    <span class="detail"><a href="https://arxiv.org/abs/2609.08617">arXiv:2609.08617</a></span></div>
             </li>
+            <li>
+                <span class="when">Jun 2026</span>
+                <div>Shifted Symplectic Fibrations and Derived Thurston Theorem <span class="with">(with Mehmet Fırat Arıkan and Kadri İlker Berktav)</span>
+                    <span class="detail"><a href="https://arxiv.org/abs/2606.21717">arXiv:2606.21717</a>, submitted</span></div>
+            </li>
+            <li>
+                <span class="when">Jun 2026</span>
+                <div>AKSZ Construction for Shifted Contact Structures <span class="with">(with Kadri İlker Berktav)</span>
+                    <span class="detail"><a href="https://arxiv.org/abs/2606.13866">arXiv:2606.13866</a></span></div>
+            </li>
+            <li>
+                <span class="when">Jun 2026</span>
+                <div>Equivariant Contact Darboux Quotients
+                    <span class="detail"><a href="https://arxiv.org/abs/2606.11179">arXiv:2606.11179</a></span></div>
+            </li>
+            <li>
+                <span class="when">May 2026</span>
+                <div>A Derived Legendrian Category for Shifted Contact Stacks <span class="with">(with Kadri İlker Berktav)</span>
+                    <span class="detail"><a href="https://arxiv.org/abs/2605.13792">arXiv:2605.13792</a>, submitted</span></div>
+            </li>
+            <li>
+                <span class="when">May 2026</span>
+                <div>Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem <span class="with">(with Kadri İlker Berktav)</span>
+                    <span class="detail"><a href="https://arxiv.org/abs/2605.08394">arXiv:2605.08394</a>, submitted</span></div>
+            </li>
+        </ul>
 
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title"><a href="https://sabanciuniv.edu" target="_blank">Sabanci University</a> </span>
-                    <span class="entry-meta">Aug 2024 – Jul 2026 | İstanbul, TR</span>
-                </div>
-                <div class="entry-desc">
-                    <strong>Cryptography and Information Security Group:</strong> Analysis of algebraic and approximation-theoretic techniques for homomorphic encryption scheme optimization. Explored client-efficient fully homomorphic encryption paradigms. <br>
-                    <strong>PURE Program <span class="nowrap">(Summers 2024, 2025)</span>:</strong> Developed accelerators for HE. Implemented CKKS bootstrapping, GPU-accelerated algorithms, and supervised undergraduate implementation of TFHE. Supervised by Erkay Savaş. 
-                    (<a href="https://ephemer4l.me/reports/PURE_Final_Report_2024.pdf" target="_blank">2024 Report</a>, <a href="https://ephemer4l.me/reports/PURE_Final_Report_2025.pdf" target="_blank">2025 Report</a>)
-                </div>
+        <h3>In preparation</h3>
+        <ul class="entries">
+            <li>
+                <span class="when"></span>
+                <div>Derived Contact Surgery <span class="with">(with Kadri İlker Berktav, Mehmet Fırat Arıkan, and Hena Üçkum)</span></div>
+            </li>
+            <li>
+                <span class="when"></span>
+                <div>Derived Contactomorphisms <span class="with">(with Mehmet Fırat Arıkan and Kadri İlker Berktav)</span></div>
+            </li>
+            <li>
+                <span class="when"></span>
+                <div>Relative shifted contact structures and equivariant derived fibrations <span class="with">(with Mehmet Fırat Arıkan and Kadri İlker Berktav)</span></div>
+            </li>
+        </ul>
+
+        <h3>Earlier work in cryptography</h3>
+        <ul class="entries">
+            <li>
+                <span class="when">Aug 2026</span>
+                <div>Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases <span class="with">(with Kübra Kaytancı, Ferruh Özbudak, and Erkay Savaş)</span>
+                    <span class="detail"><a href="https://eprint.iacr.org/2026/1592">IACR ePrint 2026/1592</a>, submitted</span></div>
+            </li>
+            <li>
+                <span class="when"></span>
+                <div>Network Efficient Fully Homomorphic Encryption <span class="with">(with Ali Şah Özcan, Tolun Tosun, and Erkay Savaş)</span>
+                    <span class="detail">In preparation</span></div>
             </li>
         </ul>
     </section>
 
-    <section id="publications">
-        <h2>Publications & Preprints</h2>
-
-        <!-- 1. Derived Contact Surgery -->
-        <div class="pub-item">
-            <span class="pub-title">Derived Contact Surgery</span>
-            <span class="pub-authors">Efe İzbudak, Kadri İlker Berktav, M. Fırat Arıkan, and Hena Üçkum (2026)</span>
-            <span class="pub-links">Work in progress</span>
-        </div>
-
-        <!-- 2. Derived Contactomorphisms -->
-        <div class="pub-item">
-            <span class="pub-title">Derived Contactomorphisms</span>
-            <span class="pub-authors">Mehmet Fırat Arıkan, Kadri İlker Berktav, and Efe İzbudak (2026)</span>
-            <span class="pub-links">Work in progress</span>
-        </div>
-
-        <!-- 3. Relative shifted contact structures and equivariant derived fibrations -->
-        <div class="pub-item">
-            <span class="pub-title">Relative shifted contact structures and equivariant derived fibrations</span>
-            <span class="pub-authors">Mehmet Fırat Arıkan, Kadri İlker Berktav, and Efe İzbudak (2026)</span>
-            <span class="pub-links">Work in progress</span>
-        </div>
-
-        <!-- 4. Monodromic Perverse Sheaves on Shifted Contact Stacks -->
-        <div class="pub-item">
-            <span class="pub-title">Monodromic Perverse Sheaves on Shifted Contact Stacks</span>
-            <span class="pub-authors">Efe İzbudak (2026)</span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2609.18796" target="_blank">arXiv:2609.18796 [math.AG]</a></span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{izbudak2026monodromicperversesheavesshifted,
-      title={Monodromic Perverse Sheaves on Shifted Contact Stacks},
-      author={Efe \.{I}zbudak},
-      year={2026},
-      eprint={2609.18796},
-      archivePrefix={arXiv},
-      primaryClass={math.AG},
-      url={https://arxiv.org/abs/2609.18796},
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 5. Shifted Contact Structures on Exact Symplectic Fibrations -->
-        <div class="pub-item">
-            <span class="pub-title">Shifted Contact Structures on Exact Symplectic Fibrations</span>
-            <span class="pub-authors">Mehmet Fırat Arıkan, Kadri İlker Berktav, and Efe İzbudak (2026)</span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2609.08617" target="_blank">arXiv:2609.08617 [math.SG]</a></span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{arikan2026shiftedcontactstructuresexact,
-      title={Shifted Contact Structures on Exact Symplectic Fibrations},
-      author={Mehmet F{\i}rat Ar{\i}kan and Kadri \.{I}lker Berktav and Efe \.{I}zbudak},
-      year={2026},
-      eprint={2609.08617},
-      archivePrefix={arXiv},
-      primaryClass={math.SG},
-      url={https://arxiv.org/abs/2609.08617},
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 6. Shifted Symplectic Fibrations and Derived Thurston Theorem -->
-        <div class="pub-item">
-            <span class="pub-title">Shifted Symplectic Fibrations and Derived Thurston Theorem</span>
-            <span class="pub-authors">Mehmet Fırat Arıkan, Kadri İlker Berktav, and Efe İzbudak (2026)</span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2606.21717" target="_blank">arXiv:2606.21717 [math.SG]</a> &bull; Submitted</span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{arikan2026shiftedsymplecticfibrationsderived,
-      title={Shifted Symplectic Fibrations and Derived Thurston Theorem},
-      author={Mehmet F{\i}rat Ar{\i}kan and Kadri \.{I}lker Berktav and Efe \.{I}zbudak},
-      year={2026},
-      eprint={2606.21717},
-      archivePrefix={arXiv},
-      primaryClass={math.SG},
-      url={https://arxiv.org/abs/2606.21717},
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 7. Equivariant Contact Darboux Quotients -->
-        <div class="pub-item">
-            <span class="pub-title">Equivariant Contact Darboux Quotients</span>
-            <span class="pub-authors">Efe İzbudak (2026)</span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2606.11179" target="_blank">arXiv:2606.11179 [math.AG]</a></span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{izbudak2026equivariantcontactdarbouxquotients,
-      title={Equivariant Contact Darboux Quotients},
-      author={Efe \.{I}zbudak},
-      year={2026},
-      eprint={2606.11179},
-      archivePrefix={arXiv},
-      primaryClass={math.AG},
-      url={https://arxiv.org/abs/2606.11179},
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 8. AKSZ Construction for Shifted Contact Structures -->
-        <div class="pub-item">
-            <span class="pub-title">AKSZ Construction for Shifted Contact Structures</span>
-            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2606.13866" target="_blank">arXiv:2606.13866 [math.AG]</a></span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{izbudak2026akszconstructionshiftedcontact,
-      title={AKSZ Construction for Shifted Contact Structures},
-      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
-      year={2026},
-      eprint={2606.13866},
-      archivePrefix={arXiv},
-      primaryClass={math.AG},
-      url={https://arxiv.org/abs/2606.13866},
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 9. A Derived Legendrian Category for Shifted Contact Stacks -->
-        <div class="pub-item">
-            <span class="pub-title">A Derived Legendrian Category for Shifted Contact Stacks</span>
-            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2605.13792" target="_blank">arXiv:2605.13792 [math.AG]</a> &bull; Submitted</span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{izbudak2026derivedlegendriancategoryshifted,
-      title={A Derived Legendrian Category for Shifted Contact Stacks},
-      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
-      year={2026},
-      eprint={2605.13792},
-      archivePrefix={arXiv},
-      primaryClass={math.AG},
-      url={https://arxiv.org/abs/2605.13792},
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 10. Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem -->
-        <div class="pub-item">
-            <span class="pub-title">Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem</span>
-            <span class="pub-authors">Efe İzbudak and Kadri İlker Berktav (2026)</span>
-            <span class="pub-links"><a href="https://arxiv.org/abs/2605.08394" target="_blank">arXiv:2605.08394 [math.AG]</a> &bull; Submitted</span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{izbudak2026equivariantquotientsderivedsymplectic,
-      title={Equivariant Quotients of Derived Symplectic Spaces and Legendrian Intersection Theorem},
-      author={Efe \.{I}zbudak and Kadri \.{I}lker Berktav},
-      year={2026},
-      eprint={2605.08394},
-      archivePrefix={arXiv},
-      primaryClass={math.AG},
-      url={https://arxiv.org/abs/2605.08394},
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 11. Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases -->
-        <div class="pub-item">
-            <span class="pub-title">Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases</span>
-            <span class="pub-authors">Efe İzbudak, Kübra Kaytancı, Ferruh Özbudak, and Erkay Savaş (2026)</span>
-            <span class="pub-links"><a href="https://eprint.iacr.org/2026/1592" target="_blank">IACR ePrint: 2026/1592</a> &bull; Submitted</span>
-            <details class="bibtex-toggle">
-                <summary>▶ Cite BibTeX</summary>
-                <div class="bibtex-wrapper">
-                    <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy BibTeX to clipboard">Copy</button>
-<pre><code>@misc{cryptoeprint:2026/1592,
-      author = {Efe \.{I}zbudak and K{\&quot;u}bra Kaytanc{\i} and Ferruh {\&quot;O}zbudak and Erkay Sava{\c s}},
-      title = {Sub-Cubic Homomorphic Matrix Multiplication via Self-Dual Normal Bases},
-      howpublished = {Cryptology {ePrint} Archive, Paper 2026/1592},
-      year = {2026},
-      url = {https://eprint.iacr.org/2026/1592}
-}</code></pre>
-                </div>
-            </details>
-        </div>
-
-        <!-- 12. Network Efficient Fully Homomorphic Encryption -->
-        <div class="pub-item">
-            <span class="pub-title">Network Efficient Fully Homomorphic Encryption</span>
-            <span class="pub-authors">Efe İzbudak, Ali Şah Özcan, Tolun Tosun, and Erkay Savaş (2026)</span>
-            <span class="pub-links">Work in progress</span>
-        </div>
+    <section id="talks">
+        <h2>Selected talks</h2>
+        <ul class="entries">
+            <li>
+                <span class="when">May 2026</span>
+                <div>Contractibility in Set<sub>Δ</sub>
+                    <span class="detail">METU (<a href="https://ephemer4l.me/notes/contractibility.pdf">notes</a>)</span></div>
+            </li>
+            <li>
+                <span class="when">Apr 2026</span>
+                <div>Basics of Set<sub>Δ</sub>, three talks
+                    <span class="detail">METU (<a href="https://ephemer4l.me/notes/basics_of_sset.pdf">notes</a>)</span></div>
+            </li>
+            <li>
+                <span class="when">Dec 2025</span>
+                <div>Constructing Spaces
+                    <span class="detail">METU (<a href="https://ephemer4l.me/notes/spaces.pdf">notes</a>)</span></div>
+            </li>
+            <li>
+                <span class="when">Dec 2025</span>
+                <div>Moduli Problems and Stacks
+                    <span class="detail">METU (<a href="https://ephemer4l.me/notes/genesis_of_stacks.pdf">notes</a>)</span></div>
+            </li>
+            <li>
+                <span class="when">Sep 2024</span>
+                <div>All Morphisms Are Equal, But Some Morphisms Are More Equal Than Others
+                    <span class="detail"><a href="https://sites.google.com/view/drp-turkey/">DRP Türkiye</a>, Sabanci University (<a href="https://www.youtube.com/watch?v=7a13k4S1eok">video</a>, <a href="https://ephemer4l.me/reports/DRP_Report.pdf">report</a>, <a href="https://ephemer4l.me/presentations/DRP_Presentation.pdf">slides</a>)</span></div>
+            </li>
+            <li>
+                <span class="when">2024–2025</span>
+                <div>Six talks in cryptography, at Sabanci University, METU and online
+                    <span class="detail">Slides: <a href="https://ephemer4l.me/presentations/Sparse%20Packing%20for%20CKKS.pdf">Sparse Packing for CKKS</a>; <a href="https://ephemer4l.me/presentations/Lattice-Based%20Foundations%20of%20Homomorphic%20Encryption.pdf">Lattice-Based Foundations of Homomorphic Encryption</a>; <a href="https://ephemer4l.me/presentations/Fast%20Multiplication%20and%20PLWE-RLWE%20Equivalence.pdf">Fast Multiplication and PLWE-RLWE Equivalence</a>; <a href="https://ephemer4l.me/presentations/Cryptanalysis%20of%20PLWE%20Based%20on%20Zero-Trace%20Quadratic%20Roots.pdf">Cryptanalysis of PLWE Based on Zero-Trace Quadratic Roots</a>; <a href="https://ephemer4l.me/presentations/hermes.pdf">HERMES Ring Packing</a>; <a href="https://ephemer4l.me/presentations/ccmm.pdf">Ciphertext-Ciphertext Matrix Multiplication</a></span></div>
+            </li>
+        </ul>
     </section>
 
-    <section id="talks">
-        <h2>Selected Talks</h2>
-        <ul class="entry-list">
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title">Contractibility &amp; Basics of <span class="mathish">Set<sub>Δ</sub></span></span>
-                    <span class="entry-meta">Apr - May 2026 | METU</span>
-                </div>
-                <div class="entry-desc">
-                    <a href="https://ephemer4l.me/notes/contractibility.pdf" target="_blank">📄 Contractibility Notes</a> &nbsp;|&nbsp; 
-                    <a href="https://ephemer4l.me/notes/basics_of_sset.pdf" target="_blank">📄 Basics Notes</a>
-                </div>
+    <section id="education">
+        <h2>Education</h2>
+        <ul class="entries">
+            <li>
+                <span class="when">2026–2027</span>
+                <div>MSc in Mathematics, <a href="https://www.math.uni-hamburg.de/en.html">Universität Hamburg</a>
+                    <span class="detail">Thesis: <em>Shifted Contact Structures</em>, supervised by Tobias Dyckerhoff; funded by a DAAD-TEV Master's Scholarship; expected September 2027</span></div>
             </li>
-
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title">Constructing Spaces</span>
-                    <span class="entry-meta">Dec 2025 | METU</span>
-                </div>
-                <div class="entry-desc"><a href="https://ephemer4l.me/notes/spaces.pdf" target="_blank">📄 Notes</a></div>
+            <li>
+                <span class="when">2022–2026</span>
+                <div>BSc in Mathematics, <a href="https://math.metu.edu.tr">Middle East Technical University</a>
+                    <span class="detail">GPA 4.00/4.00, ranked first in the university</span></div>
             </li>
-            
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title">Moduli Problems and Stacks</span>
-                    <span class="entry-meta">Dec 2025 | METU</span>
-                </div>
-                <div class="entry-desc"><a href="https://ephemer4l.me/notes/genesis_of_stacks.pdf" target="_blank">📄 Notes</a></div>
+        </ul>
+    </section>
+
+    <section id="research">
+        <h2>Research experience</h2>
+        <ul class="entries">
+            <li>
+                <span class="when">2026–</span>
+                <div><a href="https://ephemer4l.me/higherstructures/#about">Higher Structures Group</a>, Middle East Technical University
+                    <span class="detail">Shifted contact structures on derived stacks, with <a href="https://sites.google.com/view/kadriilkerberktav/home">Kadri İlker Berktav</a></span></div>
             </li>
-
-
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title">All Morphisms Are Equal, But Some Morphisms Are More Equal Than Others</span>
-                    <span class="entry-meta">Sep 2024 | DRP Türkiye, Sabanci Univ.</span>
-                </div>
-                <div class="entry-desc">
-                    <a href="https://www.youtube.com/watch?v=7a13k4S1eok" target="_blank">🎥 Video</a> &nbsp;|&nbsp;
-                    <a href="https://ephemer4l.me/reports/DRP_Report.pdf" target="_blank">📄 Report</a> &nbsp;|&nbsp;
-                    <a href="https://ephemer4l.me/presentations/DRP_Presentation.pdf" target="_blank">📊 Slides</a>
-                </div>
+            <li>
+                <span class="when">2024–2026</span>
+                <div>Cryptography and Information Security Group, <a href="https://sabanciuniv.edu">Sabanci University</a>
+                    <span class="detail">Algebraic and approximation-theoretic techniques for homomorphic encryption scheme optimization; client-efficient fully homomorphic encryption</span></div>
             </li>
-
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title">Cryptography Series: FHE, PLWE, & Matrix Multiplication</span>
-                    <span class="entry-meta">Fall 2024 - Winter 2025 | Online / METU / Sabanci</span>
-                </div>
-                <div class="entry-desc">
-                    Selected topics covering Ciphertext-Ciphertext Matrix Multiplication, HERMES Ring Packing, Cryptanalysis of PLWE, Lattice-Based Foundations of HE, and Sparse Packing for CKKS.<br>
-                    <em>(See <a href="cv.pdf" target="_blank">CV</a> for comprehensive slide links)</em>
-                </div>
+            <li>
+                <span class="when">2024, 2025</span>
+                <div>Program for Undergraduate Research (PURE), Sabanci University
+                    <span class="detail">Supervised by Erkay Savaş. Implemented CKKS bootstrapping and GPU-accelerated algorithms; supervised undergraduate implementation of TFHE (<a href="https://ephemer4l.me/reports/PURE_Final_Report_2024.pdf">2024 report</a>, <a href="https://ephemer4l.me/reports/PURE_Final_Report_2025.pdf">2025 report</a>)</span></div>
             </li>
         </ul>
     </section>
 
     <section id="blog">
-        <h2>Blog <a href="blog/index.html" style="font-size: 0.9rem; font-weight: normal; margin-left: 10px; padding: 0.3rem 0.7rem; border-radius: 6px; background: var(--code-bg); border: 1px solid var(--border-color); color: var(--text-main); text-decoration: none; display: inline-block; transform: translateY(-2px); transition: all 0.2s;">View all posts &rarr;</a></h2>
-        <ul class="entry-list">
-            <li class="entry-item">
-                <div class="entry-header">
-                    <span class="entry-title"><a href="blog/confluence-bloatware.html">The Digital Shackles of Proprietary Bloatware: Why Confluence is an Insult to Our Cryptographic Mission</a></span>
-                    <span class="entry-meta">Jul 2026</span>
-                </div>
-                <div class="entry-desc">
-                    By adopting standard enterprise platforms like Atlassian Confluence, engineering teams unwittingly surrender their freedom to a bloated, proprietary walled garden. A reflection on data sovereignty, software performance, and the necessity of local-first tools.
-                </div>
+        <h2>Blog</h2>
+        <ul class="entries">
+            <li>
+                <span class="when">Jul 2026</span>
+                <div><a href="blog/confluence-bloatware.html">The Digital Shackles of Proprietary Bloatware: Why Confluence is an Insult to Our Cryptographic Mission</a></div>
             </li>
         </ul>
+        <p class="more"><a href="blog/index.html">All posts</a></p>
     </section>
 
-    <section id="projects">
-        <h2>Software & Open Source</h2>
-        
-        <p>I have maintained packages on Gentoo Linux as a Proxied Maintainer (e.g., <code>sc-im</code>, <code>mutt-wizard</code>) and operate a Tor relay to support global internet freedom. Here are a few active software projects:</p>
-
-        <div class="project-grid">
-            <a href="https://github.com/ephemer4l/confluence-latex-injector" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
-                <h3>⚙️ confluence-latex-injector</h3>
-                <p>A local-first script to compile LaTeX mathematics and brute-force the ADF JSON directly into Confluence.</p>
-            </a>
-            
-            <a href="https://github.com/ephemer4l/pm" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
-                <h3>🔑 pm</h3>
-                <p>Tiny shell script to manage your passwords securely.</p>
-            </a>
-            
-            <a href="https://github.com/ephemer4l/gp" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
-                <h3>🛡️ gp</h3>
-                <p>Tiny shell script to generate strong, secure passwords.</p>
-            </a>
-
-            <a href="https://packages.gentoo.org/maintainer/efe.izbudak@metu.edu.tr" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
-                <h3>🐧 Gentoo Packages</h3>
-                <p>Packages I maintain on the ::gentoo repository.</p>
-            </a>
-            
-            <a href="https://github.com/ephemer4l" target="_blank" rel="noopener noreferrer" class="project-card" style="text-decoration: none; color: inherit;">
-                <h3>💻 GitHub</h3>
-                <p>Other scripts, dotfiles, and open source contributions.</p>
-            </a>
-        </div>
+    <section id="software">
+        <h2>Software</h2>
+        <p>I have maintained packages on Gentoo Linux as a proxied maintainer and operate a Tor relay to support global internet freedom. Some of my software:</p>
+        <ul class="software">
+            <li><a href="https://github.com/ephemer4l/confluence-latex-injector"><code>confluence-latex-injector</code></a>: a local-first script to compile LaTeX mathematics and brute-force the ADF JSON directly into Confluence.</li>
+            <li><a href="https://github.com/ephemer4l/pm"><code>pm</code></a>: a tiny shell script to manage your passwords securely.</li>
+            <li><a href="https://github.com/ephemer4l/gp"><code>gp</code></a>: a tiny shell script to generate strong, secure passwords.</li>
+            <li><a href="https://packages.gentoo.org/maintainer/efe.izbudak@metu.edu.tr">Gentoo packages</a> I maintain on the ::gentoo repository, such as <code>sc-im</code> and <code>mutt-wizard</code>.</li>
+            <li>Other scripts, dotfiles and open-source contributions on <a href="https://github.com/ephemer4l">GitHub</a>.</li>
+        </ul>
     </section>
 </main>
 
 <footer>
-    <div class="crypto-box">
-        <strong>Support / Donations:</strong><br>
-        <div style="margin-top: 0.5rem; display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
-            <span style="white-space: nowrap;"><span style="color: #f26822; font-weight: bold;">ɱ</span> Monero (<a href="xmr-qr.png" style="text-decoration:underline;">QR</a>):</span>
-            <code id="monero-addr" style="word-break: break-all; flex: 1; min-width: 200px;">89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code>
-            <button class="copy-btn" onclick="copyCrypto(this)" aria-label="Copy Monero Address">📋 Copy</button>
-        </div>
-    </div>
-    <p style="margin-top: 2rem;">&copy; <span id="current-year">2026</span> Efe İzbudak. All rights reserved.</p>
+    <p class="donate">Donations in Monero (<a href="xmr-qr.png">QR code</a>): <code class="address">89aSeF89zPFFpNBUk3g1KkVMSuLWrRmQYKjeWZUo3C26X1iptBVjfSnZY6WvMBrahkhhvzZw53Mnd7zjVUxJVz8LT8hjQZv</code></p>
+    <p>Last updated October 2026.</p>
 </footer>
-
-<script>
-    // Dynamically set current year
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Theme Toggle Logic
-    const themeBtn = document.getElementById('theme-toggle');
-    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // An explicit choice wins; otherwise follow the system setting.
-    function effectiveTheme() {
-        return document.documentElement.getAttribute('data-theme')
-            || (darkQuery.matches ? 'dark' : 'light');
-    }
-
-    function syncToggleState() {
-        const isDark = effectiveTheme() === 'dark';
-        themeBtn.setAttribute('aria-pressed', String(isDark));
-        themeBtn.setAttribute('aria-label',
-            isDark ? 'Switch to light theme' : 'Switch to dark theme');
-    }
-
-    themeBtn.addEventListener('click', () => {
-        const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        syncToggleState();
-    });
-
-    // Follow system changes while no explicit choice is stored.
-    darkQuery.addEventListener('change', () => {
-        if (!document.documentElement.hasAttribute('data-theme')) syncToggleState();
-    });
-
-    syncToggleState();
-
-    // Clipboard helpers
-    function flashButton(btn, doneLabel) {
-        const original = btn.innerText;
-        btn.innerText = doneLabel;
-        btn.style.color = '#28a745';
-        btn.style.borderColor = '#28a745';
-        setTimeout(() => {
-            btn.innerText = original;
-            btn.style.color = '';
-            btn.style.borderColor = '';
-        }, 2000);
-    }
-
-    function legacyCopy(text) {
-        // Fallback for insecure contexts (plain http, some embedded browsers).
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        textArea.setAttribute('readonly', '');
-        textArea.style.position = 'absolute';
-        textArea.style.left = '-999999px';
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-            document.execCommand('copy');
-        } finally {
-            document.body.removeChild(textArea);
-        }
-    }
-
-    async function copyText(text, btn, doneLabel) {
-        try {
-            if (navigator.clipboard && window.isSecureContext) {
-                await navigator.clipboard.writeText(text);
-            } else {
-                legacyCopy(text);
-            }
-            flashButton(btn, doneLabel);
-        } catch (err) {
-            console.error('Unable to copy', err);
-        }
-    }
-
-    // Acts on the button that was clicked, not on the first one in the document.
-    function copyCrypto(btn) {
-        copyText(document.getElementById('monero-addr').innerText, btn, '✅ Copied');
-    }
-
-    window.copyBibtex = function (btn) {
-        copyText(btn.nextElementSibling.textContent, btn, 'Copied!');
-    };
-
-    // ScrollSpy Navigation Highlight
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.quick-nav a');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -60% 0px',
-        threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => observer.observe(section));
-</script>
 
 </body>
 </html>
